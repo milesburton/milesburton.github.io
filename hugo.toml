@@ -1,0 +1,86 @@
+baseURL = 'https://milesburton.com/'
+languageCode = 'en-gb'
+title = 'Miles Burton'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  author = "Miles Burton"
+  description = "Software engineer, maker, and open source contributor. Creator of the Arduino Temperature Control Library."
+  keywords = ["software", "arduino", "embedded", "maker", "open source"]
+  defaultTheme = "auto"
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Miles"
+    Content = """
+Software engineer and maker based in the UK. I build things with code and electronics.
+
+Best known for the [Arduino Temperature Control Library](https://github.com/milesburton/Arduino-Temperature-Control-Library) — used by thousands of makers worldwide.
+
+This site is a collection of my projects, thoughts, and technical write-ups.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/milesburton"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/maboroshi/"
+
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://www.youtube.com/@maboroshi"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 40
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    noClasses = false
