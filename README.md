@@ -1,40 +1,46 @@
-# milesburton.com
+# Astro Starter Kit: Basics
 
-Personal website built with [Hugo](https://gohugo.io/) using the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
-
-## Local Development
-
-### Prerequisites
-
-- [Hugo Extended](https://gohugo.io/installation/) (v0.145.0 or later)
-
-### Setup
-
-```bash
-# Clone with submodules (for the theme)
-git clone --recursive https://github.com/milesburton/milesburton.com.git
-cd milesburton.com
-
-# Start the dev server
-hugo server -D
+```sh
+npm create astro@latest -- --template basics
 ```
 
-Visit `http://localhost:1313` to preview the site.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-### Creating Content
+## 🚀 Project Structure
 
-```bash
-# New blog post
-hugo new blog/my-new-post.md
+Inside of your Astro project, you'll see the following folders and files:
 
-# New project page
-hugo new projects/my-project.md
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-## Deployment
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
+## 🧞 Commands
 
-## License
+All commands are run from the root of the project, from a terminal:
 
-Content is copyright Miles Burton. Code is MIT licensed.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

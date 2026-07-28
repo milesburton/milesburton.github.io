@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Miles Burton</title>
+		<meta
+			name="description"
+			content="Personal homepage for Miles Burton, software engineering, projects, and writing."
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100%;
+		font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+		background: radial-gradient(circle at 10% 10%, #0f172a 0%, #090e1a 45%, #020617 100%);
+		color: #e2e8f0;
+	}
+</style>
