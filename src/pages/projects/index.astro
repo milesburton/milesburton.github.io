@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+	{
+		name: 'Arduino-Temperature-Control-Library',
+		href: 'https://github.com/milesburton/Arduino-Temperature-Control-Library',
+		description: 'Arduino library for interfacing with Maxim/Dallas 1-Wire temperature sensors (DS18B20 and family). Widely used across the Arduino and ESP32 ecosystems.',
+		tags: ['C++', 'Embedded', '1-Wire'],
+	},
+	{
+		name: 'veta-trading-platform',
+		href: 'https://github.com/milesburton/veta-trading-platform',
+		description: 'A near-real-world trading platform for paper-trading against algorithmic strategies, using both simulated and real market data.',
+		tags: ['TypeScript', 'Trading', 'WIP'],
+	},
+	{
+		name: 'teslacam',
+		href: 'https://github.com/milesburton/teslacam',
+		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
+		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
+	},
+	{
+		name: 'aprs-station-map',
+		href: 'https://github.com/milesburton/aprs-station-map',
+		description: 'Live APRS station map with real-time updates, filtering, and statistics — built for Raspberry Pi but portable to any *nix host.',
+		tags: ['TypeScript', 'Amateur Radio', 'Raspberry Pi'],
+	},
+	{
+		name: 'nightwatch-dx',
+		href: 'https://github.com/milesburton/nightwatch-dx',
+		description: 'HF SDR monitoring system with a multi-tier architecture for 20m band scanning and CW decoding.',
+		tags: ['Python', 'SDR', 'Amateur Radio'],
+	},
+	{
+		name: 'Android-Configuration-Manager',
+		href: 'https://github.com/milesburton/Android-Configuration-Manager',
+		description: 'A library that drives Android Shared Preferences through simple annotations, acting as a lightweight ORM.',
+		tags: ['Android', 'Groovy'],
+	},
+];
+---
+
+<Layout title="Projects" description="Open-source projects and libraries by Miles Burton.">
+	<main class="shell">
+		<header class="page-header">
+			<p class="kicker">Engineering</p>
+			<h1>Projects</h1>
+			<p class="intro">
+				A selection of open-source work — embedded libraries, trading systems, and infrastructure
+				tooling. See the full list on <a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>.
+			</p>
+		</header>
+
+		<ul class="project-list">
+			{projects.map((project) => (
+				<li class="project-card">
+					<a href={project.href} target="_blank" rel="noreferrer" class="project-name">
+						{project.name}
+					</a>
+					<p class="project-description">{project.description}</p>
+					<ul class="tags">
+						{project.tags.map((tag) => (
+							<li>{tag}</li>
+						))}
+					</ul>
+				</li>
+			))}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	.shell {
+		max-width: 860px;
+		margin: 0 auto;
+		padding: 4rem 2rem 5rem;
+	}
+
+	.page-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.kicker {
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		font-size: 0.78rem;
+		font-weight: 600;
+		margin: 0 0 0.75rem;
+	}
+
+	h1 {
+		font-size: clamp(1.9rem, 4vw, 2.6rem);
+		margin: 0;
+	}
+
+	.intro {
+		margin-top: 0.85rem;
+		max-width: 60ch;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.intro a {
+		color: var(--accent-strong);
+		text-decoration: none;
+	}
+
+	.intro a:hover {
+		text-decoration: underline;
+	}
+
+	.project-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 1rem;
+	}
+
+	.project-card {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		padding: 1.25rem 1.5rem;
+	}
+
+	.project-name {
+		font-size: 1.05rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--text);
+	}
+
+	.project-name:hover {
+		color: var(--accent-strong);
+	}
+
+	.project-description {
+		margin: 0.5rem 0 0.85rem;
+		color: var(--text-muted);
+		font-size: 0.92rem;
+		line-height: 1.55;
+	}
+
+	.tags {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.tags li {
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		color: var(--text-dim);
+		background: var(--bg-raised);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.2rem 0.6rem;
+	}
+</style>

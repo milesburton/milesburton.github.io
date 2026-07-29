@@ -1,30 +1,229 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Miles Burton',
+	description = 'Software engineer working on trading systems, infrastructure, and embedded projects.',
+} = Astro.props;
+
+const nav = [
+	{ href: '/', label: 'Home' },
+	{ href: '/projects/', label: 'Projects' },
+	{ href: '/blog/', label: 'Blog' },
+	{ href: '/wiki/Main_Page/', label: 'Wiki' },
+	{ href: '/contact/', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="https://avatars.githubusercontent.com/u/1205171?s=400&u=812ae0dcddc153c8d8776609f2f557f731822afa&v=4" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Miles Burton</title>
-		<meta
-			name="description"
-			content="Personal homepage for Miles Burton, software engineering, projects, and writing."
-		/>
+		<title>{title} — milesburton.com</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
-		<slot />
+		<div class="frame">
+			<aside class="sidebar">
+				<a href="/" class="brand">
+					<img src="https://avatars.githubusercontent.com/u/1205171?s=400&u=812ae0dcddc153c8d8776609f2f557f731822afa&v=4" alt="" class="avatar" />
+					<span>Miles Burton</span>
+				</a>
+				<nav>
+					<ul>
+						{nav.map((item) => (
+							<li>
+								<a
+									href={item.href}
+									aria-current={currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/' ? 'page' : undefined}
+								>
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+				<div class="sidebar-footer">
+					<a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>
+					<a href="/contact/">Get in touch</a>
+				</div>
+			</aside>
+			<div class="content-area">
+				<slot />
+			</div>
+		</div>
 	</body>
 </html>
 
-<style>
+<style is:global>
+	:root {
+		--bg: #05070d;
+		--bg-raised: #0b1120;
+		--bg-card: #0f172a;
+		--border: rgba(148, 163, 184, 0.16);
+		--border-strong: rgba(148, 163, 184, 0.32);
+		--text: #e2e8f0;
+		--text-muted: #94a3b8;
+		--text-dim: #64748b;
+		--accent: #38bdf8;
+		--accent-strong: #7dd3fc;
+		font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
-		font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-		background: radial-gradient(circle at 10% 10%, #0f172a 0%, #090e1a 45%, #020617 100%);
-		color: #e2e8f0;
+		background: var(--bg);
+		color: var(--text);
+	}
+
+	body {
+		font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+		line-height: 1.5;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	code, pre {
+		font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+	}
+</style>
+
+<style>
+	.frame {
+		display: flex;
+		min-height: 100vh;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+
+	.sidebar {
+		flex: 0 0 240px;
+		display: flex;
+		flex-direction: column;
+		padding: 2rem 1.25rem;
+		border-right: 1px solid var(--border);
+		position: sticky;
+		top: 0;
+		height: 100vh;
+	}
+
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.02rem;
+		color: var(--text);
+		margin-bottom: 2.25rem;
+	}
+
+	.avatar {
+		width: 34px;
+		height: 34px;
+		border-radius: 50%;
+		border: 1px solid var(--border-strong);
+	}
+
+	nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	nav a {
+		display: block;
+		padding: 0.5rem 0.65rem;
+		border-radius: 6px;
+		text-decoration: none;
+		color: var(--text-muted);
+		font-size: 0.92rem;
+		font-weight: 500;
+		transition: background 120ms ease, color 120ms ease;
+	}
+
+	nav a:hover {
+		background: var(--bg-raised);
+		color: var(--text);
+	}
+
+	nav a[aria-current='page'] {
+		background: rgba(56, 189, 248, 0.1);
+		color: var(--accent-strong);
+	}
+
+	.sidebar-footer {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.sidebar-footer a {
+		font-size: 0.85rem;
+		color: var(--text-dim);
+		text-decoration: none;
+	}
+
+	.sidebar-footer a:hover {
+		color: var(--accent-strong);
+	}
+
+	.content-area {
+		flex: 1;
+		min-width: 0;
+	}
+
+	@media (max-width: 860px) {
+		.frame {
+			flex-direction: column;
+		}
+
+		.sidebar {
+			position: static;
+			height: auto;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			border-right: none;
+			border-bottom: 1px solid var(--border);
+			padding: 1rem 1.25rem;
+		}
+
+		.brand {
+			margin-bottom: 0;
+			margin-right: auto;
+		}
+
+		nav ul {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.sidebar-footer {
+			display: none;
+		}
 	}
 </style>
