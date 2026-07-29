@@ -1,68 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-const posts = [
-	{
-		title: "Introducing the DallasTemperature Arduino Library's ESP-WebServer Sketch",
-		date: '2025-02-06',
-		href: 'https://blog.milesburton.com/2025/02/06/introducing-the-dallastemperature-arduino-librarys-esp-webserver-sketch-real-time-data-at-your-fingertips-%f0%9f%8c%90%f0%9f%93%88/',
-		excerpt: 'A new example for the ESP platform: a web-accessible dashboard showing historical temperature data with a REST endpoint for integration.',
-	},
-	{
-		title: "Ghosts in the machine? A very peculiar encounter with Google's Gemini AI LLM",
-		date: '2025-02-05',
-		href: 'https://blog.milesburton.com/2025/02/05/ghosts-in-the-machine-a-very-peculiar-encounter-with-googles-gemini-ai-llm/',
-		excerpt: 'An unusual and thought-provoking exchange while testing Gemini.',
-	},
-	{
-		title: 'Building Your Own 24/7 Retro Gaming Kiosk with the Raspberry Pi',
-		date: '2025-01-07',
-		href: 'https://blog.milesburton.com/2025/01/07/building-your-own-24-7-retro-gaming-kiosk-with-the-raspberry-pi/',
-		excerpt: 'A walkthrough of setting up an always-on retro gaming kiosk powered by a Raspberry Pi.',
-	},
-	{
-		title: 'Learn MicroPython with ChatGPT: Build Your Own Pong Game on the Raspberry Pi Pico',
-		date: '2025-01-05',
-		href: 'https://blog.milesburton.com/2025/01/05/learn-micropython-with-chatgpt-build-your-own-pong-game-on-the-raspberry-pi-pico/',
-		excerpt: 'Using ChatGPT as a learning aid to build a Pong clone in MicroPython on the Pico.',
-	},
-	{
-		title: 'Replacing the ISP-Supplied Router with OPNsense on Vodafone FTTP (OpenReach)',
-		date: '2024-12-15',
-		href: 'https://blog.milesburton.com/2024/12/15/replacing-the-isp-supplied-router-with-opnsense-on-vodafone-fttp-openreach/',
-		excerpt: 'Notes on ditching the ISP router in favour of OPNsense on a Vodafone full-fibre connection.',
-	},
-	{
-		title: 'Can a mystery AliExpress server be any good? Intel N100/16Gig/1TSSD/6x i226 2.5g',
-		date: '2024-07-06',
-		href: 'https://blog.milesburton.com/2024/07/06/can-a-mystery-aliexpress-server-be-any-good-intel-n100-16gig-1tssd-6x-i226-2-5g/',
-		excerpt: 'A hands-on review of a budget Intel N100 mini-server picked up from AliExpress.',
-	},
-	{
-		title: "Currents of Change: A First-Hand Look at Sainsbury's Crayford EV Charging Haven",
-		date: '2023-11-05',
-		href: 'https://blog.milesburton.com/2023/11/05/currents-of-change-a-first-hand-look-at-sainsburys-crayford-ev-charging-haven/',
-		excerpt: 'A look at the EV charging setup at a Sainsbury’s in Crayford.',
-	},
-	{
-		title: 'Are we seeing the true reason for smart meters?',
-		date: '2022-11-24',
-		href: 'https://blog.milesburton.com/2022/11/24/are-we-seeing-the-true-reason-for-smart-meters/',
-		excerpt: 'Some thoughts on the rollout and real motivations behind smart meters.',
-	},
-	{
-		title: 'Cost of living crisis and the Electric Car',
-		date: '2022-10-10',
-		href: 'https://blog.milesburton.com/2022/10/10/cost-of-living-crisis-and-the-electric-car/',
-		excerpt: 'Weighing EV ownership costs against the backdrop of the cost of living crisis.',
-	},
-	{
-		title: 'Tesla Autopilot from London to Brighton (and back) Timelapse',
-		date: '2019-03-25',
-		href: 'https://blog.milesburton.com/2019/03/25/tesla-autopilot-from-london-to-brighton-and-back-timelapse/',
-		excerpt: 'A timelapse and write-up of a London-to-Brighton round trip using Tesla Autopilot.',
-	},
-];
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
@@ -73,19 +14,19 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 			<p class="kicker">Writing</p>
 			<h1>Blog</h1>
 			<p class="intro">
-				A snapshot of recent posts. The archive is in the process of being migrated from WordPress
-				into this site — until that's complete, posts link out to the original.
+				{posts.length} posts on infrastructure, embedded electronics, networking, and the
+				occasional deep dive — migrated here from an old WordPress blog.
 			</p>
 		</header>
 
 		<ul class="post-list">
 			{posts.map((post) => (
 				<li class="post-card">
-					<a href={post.href} target="_blank" rel="noreferrer" class="post-title">
-						{post.title}
+					<a href={`/blog/${post.data.slug}/`} class="post-title">
+						{post.data.title}
 					</a>
-					<time datetime={post.date}>{formatter.format(new Date(post.date))}</time>
-					<p class="post-excerpt">{post.excerpt}</p>
+					<time datetime={post.data.date.toISOString()}>{formatter.format(post.data.date)}</time>
+					{post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
 				</li>
 			))}
 		</ul>

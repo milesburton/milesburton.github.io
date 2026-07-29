@@ -1,0 +1,17 @@
+---
+title: "Improving EV Charging Infrastructure  – Part Four"
+date: 2019-01-20
+slug: "improving-ev-charging-infrastructure-part-five"
+categories: ["Electric Vehicles","Renewables","Tesla"]
+tags: []
+excerpt: "(This article was originally written for a local publication) First and foremost the location and types of charger, Ecotricity hit the nail on the head with their balance of Rapid and Fast chargers – a charger than can put 100+ miles per hour vs. 22. The key is to place a specifi"
+---
+<p><em>(This article was originally written for a local publication)</em></p>
+<p><span style="font-weight:400;">First and foremost the location and types of charger, Ecotricity hit the nail on the head with their balance of Rapid and Fast chargers &#8211; a charger than can put 100+ miles per hour vs. 22. The key is to place a specific quantity with room for expansion at strategic sites. </span></p>
+<p><span style="font-weight:400;">As for fast chargers, I&#8217;d simply place them at key shopping locations and places undergoing regeneration. As a courtesy to other drivers, I&#8217;d always place them towards the back of the car parks to minimise ICEing. I&#8217;d also take advantage of Street light conversion we discussed in part one. </span></p>
+<p><span style="font-weight:400;">Parking enforcement, idle fees and overflow should also play part in any new installations. The first two are intended to discourage ICEing and EVs overstaying once charged. Overflow parking, whilst not always possible at certain locations, alleviate circumstances where an EV is waiting for a charger, or needs to vacate the charge but not leave the location &#8211; this could be as simple as a few additional spaces for mixed use.</span></p>
+<p><span style="font-weight:400;">Government subsidies and grants have been used in the past to encourage the transition to cleaner technologies, whilst I do support this to a degree it must be carefully managed to recipients don&#8217;t simply bake that subsidy into their profit margin. I would to see any public funds managed with careful scrutiny, for example, OLEV home and work charger subsidies should consider the bill of materials and installation of a typical install &#8211; not simply dish out £500. Often the consumer ends up paying the same price!</span></p>
+<p><span style="font-weight:400;">Lack of noise an EV produces, even at moderate speeds should be considered during the tradition to electric. Most of us a accustomed to a fair amount of noise when a car approaches, I&#8217;ve surprised a few people at the supermarket as they suddenly discover a large car moving at walking pace.  I’ve heard of certain manufacturers introducing artificial noise to the vehicle, personally I feel a bit of common sense, good signage, rumble strips, traffic calming would go a long way without removing a key advantage of EVs, minimal noise pollution. </span></p>
+<p><span style="font-weight:400;">EV’s open up new possibilities for the council, as noise and pollution slowly reduces throughout the borough properties built near busy roads suddenly become more attractive to properly developers and customers alike. Previously commercially unviable brownfield sites, and dilapidated properties could see new investment leading to increased council revenue.</span></p>
+<p><span style="font-weight:400;">All in all, it’s great to see Bexley are gaining interest in EVs, and I hope it continues to gain traction. </span></p>
+
