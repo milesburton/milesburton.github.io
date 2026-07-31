@@ -5,8 +5,6 @@ title: Android - Building a ListView with an OnClick Position
 
 # Android - Building a ListView with an OnClick Position
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 The Problem](#the-problem)

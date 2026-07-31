@@ -5,8 +5,6 @@ title: Android Unit Testing - Accessing Private Methods and Members
 
 # Android Unit Testing - Accessing Private Methods and Members
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 If you've writing an Android application you've probably noticed that the JUnit framework doesn't provider any obvious method of accessing private methods and attributes. I've modified the following example so you can access both without any params.
 
 ## Contents

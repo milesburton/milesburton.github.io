@@ -5,11 +5,9 @@ title: Arduino Webserver powered by WiShield with sprinkles - BlinkM
 
 # Arduino Webserver powered by WiShield with sprinkles - BlinkM
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Introduction
 
-As a little experiment (and bloody overdue) I decided to setup a spare Arduino with my \[[ASync-Labs](http://asynclabs.com/)\] WiShield coupled with a \[[BlinkM](http://blinkm.thingm.com/)\]. My fundamental aim, and as a precusor to my upcoming robotics project, was to understand and prototype how two way communication could be made via the web.
+As a little experiment (and bloody overdue) I decided to setup a spare Arduino with my [ASync-Labs](http://asynclabs.com/) WiShield coupled with a [BlinkM](http://blinkm.thingm.com/). My fundamental aim, and as a precusor to my upcoming robotics project, was to understand and prototype how two way communication could be made via the web.
 
 So what did I come up with? Well without further adue:
 

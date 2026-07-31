@@ -5,8 +5,6 @@ title: Adding JSP support to Jetty 7 - NO JSP Support
 
 # Adding JSP support to Jetty 7 - NO JSP Support
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 The follow guide will help you setup JSP support for Jetty 7. if you come across the "NO JSP Support" message this should resolve your problem.
 
 ## Prerequisites

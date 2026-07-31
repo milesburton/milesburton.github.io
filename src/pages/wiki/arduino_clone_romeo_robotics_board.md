@@ -5,8 +5,6 @@ title: Arduino Clone - Romeo Robotics Board
 
 # Arduino Clone - Romeo Robotics Board
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 What is the Romeo?](#what-is-the-romeo)

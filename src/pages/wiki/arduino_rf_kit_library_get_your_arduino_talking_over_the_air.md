@@ -5,8 +5,6 @@ title: Arduino RF Kit Library - Get your Arduino talking over the air
 
 # Arduino RF Kit Library - Get your Arduino talking over the air
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 **UPDATE:** I've recently released the HyperCom library which sits upon VirtualWire. Check out this HyperCom Packet Library *(not yet migrated)*
 
 ## Introduction
@@ -17,11 +15,11 @@ First up, this isn't my library. It was developed by Mike McCauley, I believe he
 
 The original "VirtualWire" library has a few compatibility issues with the latest version of the Arduino IDE. After some hunting I found the fix and thought it would be wise to share my findings.
 
-\[VirtualWire 1.3\] [http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.rar](http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.rar)
+[VirtualWire 1.3](http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.rar)
 
-\[Documentation for 1.3\] [http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.pdf](http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.pdf)
+[Documentation for 1.3](http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.pdf)
 
-This library works great with the Seeedstudio RF kits \[315 Mhz\] [http://www.seeedstudio.com/depot/315mhz-rf-link-kit-p-76.html?zenid=018acaf067a10d6fa5f4ebcc711ee267](http://www.seeedstudio.com/depot/315mhz-rf-link-kit-p-76.html?zenid=018acaf067a10d6fa5f4ebcc711ee267) \[433 Mhz\] [http://www.seeedstudio.com/depot/433mhz-rf-link-kit-p-127.html?zenid=018acaf067a10d6fa5f4ebcc711ee267](http://www.seeedstudio.com/depot/433mhz-rf-link-kit-p-127.html?zenid=018acaf067a10d6fa5f4ebcc711ee267)
+This library works great with the Seeedstudio RF kits [315 Mhz](http://www.seeedstudio.com/depot/315mhz-rf-link-kit-p-76.html?zenid=018acaf067a10d6fa5f4ebcc711ee267) [433 Mhz](http://www.seeedstudio.com/depot/433mhz-rf-link-kit-p-127.html?zenid=018acaf067a10d6fa5f4ebcc711ee267)
 
 Like most other libraries, drop VirtualWire (Above) into the hardware\libraries directory and fire up the example sketches per the documentation.
 

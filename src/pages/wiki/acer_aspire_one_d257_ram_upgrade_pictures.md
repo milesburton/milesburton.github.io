@@ -5,8 +5,6 @@ title: Acer Aspire One D257 Ram Upgrade - Pictures
 
 # Acer Aspire One D257 Ram Upgrade - Pictures
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 Upgrading the Aspire One D257 RAM to 2GB](#upgrading-the-aspire-one-d257-ram-to-2gb)

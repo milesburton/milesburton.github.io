@@ -5,17 +5,14 @@ title: 2023 Development Machine Build
 
 # 2023 Development Machine Build
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 After something like 12 years of good service my Intel 3930k finally died on Christmas day 2022, somewhat fitting I thought. I'd intended to to replace the machine a year or two before but then the chip shortage and covid became a thing causing prices to go absolutely insane, and that's assuming you could even get *hold* of parts. Luckily I was able to gather some parts before the world went crazy, a case, PSU and AIO watercooling loop - sadly the rest had to wait a till 2023.
 
 I'm not much of a gamer so I have no particular interest getting stuck on the "upgrade treadmill", forever following the latest and great. Instead I prefer to build a machine which will look after me for as long as possible, or until something significant changes in the market. This time around is no different. For virtualisation and number crunching the Ryzen 5950 and the i9 13900 looked ideal, not being a fanboy I look back favourably on both platforms - it basically boiled down to performance per pound. This time around it looks like Intel was a nose ahead of AMD (which has obscenely expensive motherboards!).
 
 So without further ado, here's the new build breakdown.
 
-||||
-|---|---|---|
 |Component|Model|Features|
+|---|---|---|
 |Processor|Intel i9 13900|8 Performance Cores, 16 Efficiency cores. 32 Threads. Max Frequency: 5.8Ghz|
 |Motherboard|MSI Tomahawk Z790 DDR5|Plethora of M2 SSD options, 2gigE ethernet and WiFi|
 |RAM Memory|Corsair Vengeance PC5-48000 DDR5|6 Ghz. Supposedly only for use with AMD systems. Ah marketing|

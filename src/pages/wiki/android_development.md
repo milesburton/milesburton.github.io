@@ -5,8 +5,6 @@ title: Android Development
 
 # Android Development
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 My Apps](#my-apps)

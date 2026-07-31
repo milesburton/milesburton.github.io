@@ -5,8 +5,6 @@ title: Android Configuration Manager
 
 # Android Configuration Manager
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 What is the Android Configuration Manager (ACM)?](#what-is-the-android-configuration-manager-acm)

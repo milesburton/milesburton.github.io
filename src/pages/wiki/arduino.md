@@ -5,8 +5,6 @@ title: Arduino
 
 # Arduino
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 Introduction](#introduction)
@@ -24,7 +22,7 @@ title: Arduino
 
 ## Introduction
 
-I wont go into to much detail as you can read all about it on \[[Arduino.cc](http://arduino.cc)\] but basically a team of resourceful Italians decided to repurpose the AtMega series of MCUs (somewhat like the processor in your PC) to allow designs, engineers, artists and kids alike to get started with low-level "physical computing".
+I wont go into to much detail as you can read all about it on [Arduino.cc](http://arduino.cc) but basically a team of resourceful Italians decided to repurpose the AtMega series of MCUs (somewhat like the processor in your PC) to allow designs, engineers, artists and kids alike to get started with low-level "physical computing".
 
 You can code in a mixture of ASM and C++ to produce some really impressive stuff. I've seen everything from 3D Scanners, "Smart-Lighting" to games consoles built from these processors. Imagine a little robot powered by a Wii Nunchuck! All possible and all VERY easy!
 
@@ -90,19 +88,19 @@ Sharp GP2D12 Infrared Sensor Review *(not yet migrated)*
 
 *[image pending migration: Stm8s-discovery-debugging.jpg]*
 
-\[[Getting Started with the STM8 Discovery Kit](http://benryves.com/tutorials/stm8s-discovery/)\]
+[Getting Started with the STM8 Discovery Kit](http://benryves.com/tutorials/stm8s-discovery/)
 
-\[[Integrating ASM and C with the STM8 Discovery kit](https://stm8sdiscovery.blogspot.com/2009/12/so-been-playing-with-my-stm8s-discovery.html)\]
+[Integrating ASM and C with the STM8 Discovery kit](https://stm8sdiscovery.blogspot.com/2009/12/so-been-playing-with-my-stm8s-discovery.html)
 
 ## Blogs and reading!
 
-\[[Todbot](http://todbot.com/blog/category/arduino/)\] - Todbot is the man behind the BlinkM and the Wiichuck adapter. Rarely updated but a great blog to keep an eye on
+[Todbot](http://todbot.com/blog/category/arduino/) - Todbot is the man behind the BlinkM and the Wiichuck adapter. Rarely updated but a great blog to keep an eye on
 
-\[[Interfacing the Standard Parallel Port](http://www.beyondlogic.org/spp/parallel.htm)\] - Great article for using your parallel port instead of costly FTDI 232 ports
+[Interfacing the Standard Parallel Port](http://www.beyondlogic.org/spp/parallel.htm) - Great article for using your parallel port instead of costly FTDI 232 ports
 
-\[[Simple Battery monitor](http://www.reuk.co.uk/TL431-Battery-Voltage-Monitor.htm)\] - A simple charge monitor
+[Simple Battery monitor](http://www.reuk.co.uk/TL431-Battery-Voltage-Monitor.htm) - A simple charge monitor
 
-\[[Pachube - Visualising Sensor data](http://community.pachube.com/)\] - Various APIs to visualise sensor data. Eg, graphing temperature or power usage over 10 hours
+[Pachube - Visualising Sensor data](http://community.pachube.com/) - Various APIs to visualise sensor data. Eg, graphing temperature or power usage over 10 hours
 
 ## Cheat Sheets
 
@@ -110,34 +108,34 @@ Tip31 Transistor *(not yet migrated)*
 
 ## Useful links
 
-\[[How to calculate the number of AMPs a circuit is drawing with an Arduino](http://community.pachube.com/node/395)\]
+[How to calculate the number of AMPs a circuit is drawing with an Arduino](http://community.pachube.com/node/395)
 
-\[[Nice and simple AC to DC Circuit](https://en.wikipedia.org/wiki/Rectifier)\]
+[Nice and simple AC to DC Circuit](https://en.wikipedia.org/wiki/Rectifier)
 
-\[[Ohms Law calculator](http://www.the12volt.com/ohm/page2.asp)\]
+[Ohms Law calculator](http://www.the12volt.com/ohm/page2.asp)
 
-\[[Ceramic capacitor code calculator](http://www.electronics2000.co.uk/calc/capacitor-code-calculator.php)\]
+[Ceramic capacitor code calculator](http://www.electronics2000.co.uk/calc/capacitor-code-calculator.php)
 
-\[[Identify a Resistor. Ohms (k)](http://avishowtech.com/mbhp/res.html)\]
+[Identify a Resistor. Ohms (k)](http://avishowtech.com/mbhp/res.html)
 
-\[[Converting between capacitance values uF > nF > pF](http://www.justradios.com/uFnFpF.html)\]
+[Converting between capacitance values uF > nF > pF](http://www.justradios.com/uFnFpF.html)
 
-\[[Arduino Open-Source hardware](http://arduino.cc)\]
+[Arduino Open-Source hardware](http://arduino.cc)
 
 [Arduino Bargains and Sourcing](/wiki/arduino_bargains_and_sourcing/) - Some good deals I've spotted for Arduino related deals and sources (which ship to the UK)
 
-\[[All-About-Circuits](http://www.allaboutcircuits.com/)\] - Learn the basics of electronics
+[All-About-Circuits](http://www.allaboutcircuits.com/) - Learn the basics of electronics
 
-\[[Mike MC's Beginners Guide to Arduino](http://www.earthshinedesign.co.uk/ASKManual/Site/ASKManual.html)\]
+[Mike MC's Beginners Guide to Arduino](http://www.earthshinedesign.co.uk/ASKManual/Site/ASKManual.html)
 
-\[[LM555 Timer Example circuits](http://home.cogeco.ca/~rpaisley4/LM555.html#3)\]
+[LM555 Timer Example circuits](http://home.cogeco.ca/~rpaisley4/LM555.html#3)
 
-\[[Fritzing It's a great way to mock up "Easy" schematics](http://fritzing.org/)
+[Fritzing](http://fritzing.org/) - It's a great way to mock up "Easy" schematics
 
-\[[AVR Assembly user guide](http://www.atmel.com/dyn/resources/prod_documents/doc1022.pdf)\] - User guide for AVR ASM straight from Atmel
+[AVR Assembly user guide](http://www.atmel.com/dyn/resources/prod_documents/doc1022.pdf) - User guide for AVR ASM straight from Atmel
 
 ## Downloads
 
-\[[Arduino Downloads](https://download.milesburton.com/Arduino/)\]
+[Arduino Downloads](https://download.milesburton.com/Arduino/)
 
 TBC - Atmel Datasheet and RISC Assembly codes

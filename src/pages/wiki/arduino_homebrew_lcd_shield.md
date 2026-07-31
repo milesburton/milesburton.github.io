@@ -5,8 +5,6 @@ title: Arduino Homebrew LCD Shield
 
 # Arduino Homebrew LCD Shield
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 Introduction](#introduction)
@@ -24,7 +22,7 @@ After hunting around I couldn't find an LCD shield for the Arduino which fit the
 
 *[image pending migration: PC2004.JPG]*
 
-\[[Check out the video](http://download.milesburton.com/Arduino/HomeBrewLCDShield/HBLCD_Smartie.mp4)\]
+[Check out the video](http://download.milesburton.com/Arduino/HomeBrewLCDShield/HBLCD_Smartie.mp4)
 
 ### Stats
 
@@ -32,21 +30,21 @@ After hunting around I couldn't find an LCD shield for the Arduino which fit the
 
 **Cost:** £7~
 
-You can pickup an LCD from: \[[MnetHardware 20x4](http://www.mnethardware.co.uk/displays/character-lcds/20x4-blue-backlit-lcd-with-hd44780-controller)\]
+You can pickup an LCD from: [MnetHardware 20x4](http://www.mnethardware.co.uk/displays/character-lcds/20x4-blue-backlit-lcd-with-hd44780-controller)
 
 ## Getting started
 
 **Hardware**
 
-£4 \[[PC2004 4x20](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=220415003523)\] - Hitachi HD44780 compatible LCD
+£4 [PC2004 4x20](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=220415003523) - Hitachi HD44780 compatible LCD
 
 £1 Standard Vero 'prototype' board 7\*9cm
 
-£2-3 \[[ICL7660](http://www.maxim-ic.com/quick_view2.cfm/qv_pk/1017/t/al)\] - (If you are building to scale, Maxim provide a free sample service!)
+£2-3 [ICL7660](http://www.maxim-ic.com/quick_view2.cfm/qv_pk/1017/t/al) - (If you are building to scale, Maxim provide a free sample service!)
 
-\[[Pin headers](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=120340379213)\] - You'll only need a few
+[Pin headers](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=120340379213) - You'll only need a few
 
-\[[Female pin headers](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=250420720663)\]
+[Female pin headers](http://cgi.ebay.co.uk/ws/eBayISAPI.dll?ViewItem&ssPageName=STRK:MEWNX:IT&item=250420720663)
 
 Various hookup wire. 22AWG ~.6mm solid core wire
 
@@ -82,10 +80,10 @@ Turns out this shield isn't quite as cheap as I'd have liked. You'll find 'comme
 
 ## Datasheets
 
-\[[ICL7660](http://download.milesburton.com/Arduino/HomeBrewLCDShield/docs/ICL7660DataSheet.pdf)\] - Datasheet for the ICL IC
+[ICL7660](http://download.milesburton.com/Arduino/HomeBrewLCDShield/docs/ICL7660DataSheet.pdf) - Datasheet for the ICL IC
 
-\[[PC2004](http://download.milesburton.com/Arduino/HomeBrewLCDShield/docs/PC2004DataSheet.pdf)\] - Datasheet for the PC2004
+[PC2004](http://download.milesburton.com/Arduino/HomeBrewLCDShield/docs/PC2004DataSheet.pdf) - Datasheet for the PC2004
 
 ## Alternatives
 
-Though a 16x2 LCD, \[[NuElectronics](http://www.nuelectronics.com/estore/index.php?main_page=product_info&cPath=1&products_id=2&zenid=5bd7b612cd63aff8f273cf57187540cf)\] have taken the pain and prepared a pre-built kit. There's quite a few recommendations for this product and is a good direction to take if you'd like to dedicate your time elsewhere.
+Though a 16x2 LCD, [NuElectronics](http://www.nuelectronics.com/estore/index.php?main_page=product_info&cPath=1&products_id=2&zenid=5bd7b612cd63aff8f273cf57187540cf) have taken the pain and prepared a pre-built kit. There's quite a few recommendations for this product and is a good direction to take if you'd like to dedicate your time elsewhere.

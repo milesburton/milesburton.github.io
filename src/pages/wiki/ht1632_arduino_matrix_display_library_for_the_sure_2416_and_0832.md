@@ -5,8 +5,6 @@ title: HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
 
 # HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
 
-*Migrated from the old MediaWiki install. Images referenced in the original article were not recovered during migration and are marked below.*
-
 ## Contents
 
 * [1 Introduction](#introduction)
@@ -28,7 +26,7 @@ title: HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
 
 The reasonably low cost Sure Electronics 2416 has the simple HT1632 controller. This panel has one defining benefit aside from cost, you can cascade up to 4 panels to create all kinds of effects.
 
-If you're interested in purchasing a board and are in the UK check out \[[Mnet:Hardware](http://www.mnethardware.co.uk/displays/led-matrices/sure-2416-24x16-display-for-arduino)\]
+If you're interested in purchasing a board and are in the UK check out [Mnet:Hardware](http://www.mnethardware.co.uk/displays/led-matrices/sure-2416-24x16-display-for-arduino)
 
 ## Library
 
@@ -46,15 +44,15 @@ Just unzip and drop the library into arduino-0018/libraries/MatrixDisplay. Then 
 
 [https://github.com/milesburton/HT1632](https://github.com/milesburton/HT1632) - 0832 Displays
 
-\[[MatrixDisplay 2.01 for 0832 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_201B_0832Version.zip)\] - Matrix Display 2.01 for 0832 Displays
+[MatrixDisplay 2.01 for 0832 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_201B_0832Version.zip) - Matrix Display 2.01 for 0832 Displays
 
 ### Archive
 
-28/11/2010 - \[[MatrixDisplay 2.00 for 1624 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_200.zip)\] - Fully re-written with multi-device support.
+28/11/2010 - [MatrixDisplay 2.00 for 1624 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_200.zip) - Fully re-written with multi-device support.
 
-20/04/2010 - \[[MatrixDisplay for 0832 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_200B_0832Version.zip)\] - Same as MatrixDisplay 200 but for the 08x32 display
+20/04/2010 - [MatrixDisplay for 0832 displays](http://download.milesburton.com/Arduino/Sure2416/MatrixDisplay_200B_0832Version.zip) - Same as MatrixDisplay 200 but for the 08x32 display
 
-20/01/2010 - \[[Sure2416 1.00](http://download.milesburton.com/Arduino/Sure2416/Sure2416_100.zip)\] - The first official release\*
+20/01/2010 - [Sure2416 1.00](http://download.milesburton.com/Arduino/Sure2416/Sure2416_100.zip) - The first official release\*
 
 * I did not write the original code for this release, I purely put it in library form, re-factored a little and added examples. A full re-write is coming soon (including support for 0832 displays)
 
@@ -227,8 +225,8 @@ Sure 2416 Running Pong via Arduino *(not yet migrated)*
 
 ## Datasheet
 
-\[[2416 Datasheet](http://download.milesburton.com/Arduino/Sure2416/DE-DP016.pdf)\]
+[2416 Datasheet](http://download.milesburton.com/Arduino/Sure2416/DE-DP016.pdf)
 
-\[[0832 Datasheet](http://download.milesburton.com/Arduino/Sure2416/DE-DP105_Ver1.0_EN.pdf)\]
+[0832 Datasheet](http://download.milesburton.com/Arduino/Sure2416/DE-DP105_Ver1.0_EN.pdf)
 
-\[[Code from Sure-Electronics](http://download.milesburton.com/Arduino/Sure2416/Code2416.pdf)\]
+[Code from Sure-Electronics](http://download.milesburton.com/Arduino/Sure2416/Code2416.pdf)
