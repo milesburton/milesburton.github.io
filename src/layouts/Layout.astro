@@ -17,6 +17,7 @@ const nav = [
 	{ href: '/blog/', label: 'Blog' },
 	{ href: '/wiki/Main_Page/', label: 'Wiki' },
 	{ href: 'https://www.youtube.com/@M0LHA', label: 'YouTube', external: true },
+	{ href: 'https://github.com/milesburton', label: 'GitHub', external: true },
 	{ href: '/contact/', label: 'Contact' },
 ];
 
@@ -57,10 +58,6 @@ const currentPath = Astro.url.pathname;
 							))}
 						</ul>
 					</nav>
-					<div class="sidebar-footer">
-						<a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>
-						<a href="/contact/">Get in touch</a>
-					</div>
 				</aside>
 				<div class="content-area">
 					<slot />
@@ -290,25 +287,6 @@ const currentPath = Astro.url.pathname;
 		color: var(--accent-strong);
 	}
 
-	.sidebar-footer {
-		margin-top: auto;
-		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
-		padding-top: 1.5rem;
-		border-top: 1px solid var(--border);
-	}
-
-	.sidebar-footer a {
-		font-size: 0.85rem;
-		color: var(--text-dim);
-		text-decoration: none;
-	}
-
-	.sidebar-footer a:hover {
-		color: var(--accent-strong);
-	}
-
 	.content-area {
 		flex: 1;
 		min-width: 0;
@@ -338,10 +316,6 @@ const currentPath = Astro.url.pathname;
 		nav ul {
 			flex-direction: row;
 			flex-wrap: wrap;
-		}
-
-		.sidebar-footer {
-			display: none;
 		}
 	}
 </style>
