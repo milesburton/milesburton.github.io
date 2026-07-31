@@ -13,6 +13,7 @@ const featured = [
 	{
 		href: 'https://github.com/milesburton/veta-trading-platform',
 		external: true,
+		liveHref: 'https://veta.mnetcs.com/',
 		kicker: 'Finance · In progress',
 		title: 'Veta Trading Platform',
 		description: 'A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data — built to help people learn market dynamics without risking capital.',
@@ -70,7 +71,7 @@ const more = [
 			<h2 class="section-title">Featured Projects</h2>
 			<div class="featured-grid">
 				{featured.map((project) => (
-					<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined} class="featured-card">
+					<div class="featured-card">
 						<p class="featured-kicker">{project.kicker}</p>
 						<h3>{project.title}</h3>
 						<p class="featured-description">{project.description}</p>
@@ -79,7 +80,17 @@ const more = [
 								<li>{tag}</li>
 							))}
 						</ul>
-					</a>
+						<div class="featured-links">
+							<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined}>
+								Source
+							</a>
+							{project.liveHref && (
+								<a href={project.liveHref} target="_blank" rel="noreferrer" class="featured-live-link">
+									Live site &rarr;
+								</a>
+							)}
+						</div>
+					</div>
 				))}
 			</div>
 		</section>
@@ -156,20 +167,46 @@ const more = [
 
 	.featured-card {
 		position: relative;
-		display: block;
+		display: flex;
+		flex-direction: column;
 		background: linear-gradient(180deg, rgba(56, 189, 248, 0.07), rgba(15, 23, 42, 0.4));
 		border: 1px solid var(--border-strong);
 		border-radius: 14px;
 		padding: 1.5rem;
-		text-decoration: none;
 		color: inherit;
-		transition: transform 130ms ease, border-color 130ms ease, background 130ms ease;
+		transition: border-color 130ms ease, background 130ms ease;
 	}
 
 	.featured-card:hover {
-		transform: translateY(-3px);
 		border-color: var(--accent-strong);
 		background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.5));
+	}
+
+	.featured-links {
+		margin-top: auto;
+		padding-top: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.featured-links a {
+		font-size: 0.82rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--text-dim);
+	}
+
+	.featured-links a:hover {
+		color: var(--text);
+	}
+
+	.featured-live-link {
+		color: var(--accent-strong) !important;
+	}
+
+	.featured-live-link:hover {
+		color: var(--accent) !important;
 	}
 
 	.featured-kicker {
