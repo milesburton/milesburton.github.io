@@ -1,30 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LemmingStrip from '../components/LemmingStrip.astro';
 
-const tiles = [
+const featured = [
+	{
+		href: 'https://github.com/milesburton/Arduino-Temperature-Control-Library',
+		external: true,
+		kicker: 'Open Source · 1k+ stars',
+		title: 'Arduino Temperature Control Library',
+		description: 'The de-facto Arduino/ESP32 library for Maxim/Dallas 1-Wire temperature sensors (DS18B20 and family). Widely used across the embedded hobbyist and IoT ecosystem.',
+		tags: ['C++', 'Embedded', '1-Wire'],
+	},
+	{
+		href: 'https://github.com/milesburton/veta-trading-platform',
+		external: true,
+		kicker: 'Finance · In progress',
+		title: 'Veta Trading Platform',
+		description: 'A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data — built to help people learn market dynamics without risking capital.',
+		tags: ['TypeScript', 'Trading', 'WIP'],
+	},
+	{
+		href: 'https://github.com/milesburton/teslacam',
+		external: true,
+		kicker: 'Open Source · 100+ stars',
+		title: 'TeslaCam',
+		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
+		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
+	},
+];
+
+const more = [
 	{
 		href: '/projects/',
 		kicker: 'Engineering',
-		title: 'Projects',
-		description: 'Open-source libraries and systems I maintain — from embedded sensor libraries used worldwide to a paper-trading platform for market simulation.',
+		title: 'All Projects',
+		description: 'The rest of the open-source libraries and systems I maintain.',
 	},
 	{
 		href: '/blog/',
 		kicker: 'Writing',
 		title: 'Blog',
-		description: 'Notes on infrastructure, embedded electronics, and networking — home lab builds, self-hosting, and the occasional deep dive.',
+		description: 'Notes on infrastructure, embedded electronics, and networking.',
 	},
 	{
 		href: '/wiki/Main_Page/',
 		kicker: 'Reference',
 		title: 'Wiki & Notes',
-		description: 'A long-running personal knowledge base of guides and reference material, now consolidated into this site.',
+		description: 'A long-running personal knowledge base, being consolidated here.',
 	},
 	{
 		href: '/contact/',
 		kicker: 'Contact',
 		title: 'Get in touch',
-		description: 'Reach out about engineering work, collaboration, or anything you’ve read here.',
+		description: 'Reach out about engineering work, collaboration, or anything here.',
 	},
 ];
 ---
@@ -33,34 +61,58 @@ const tiles = [
 	<main class="shell">
 		<header class="hero">
 			<p class="kicker">Software Engineer</p>
-			<h1>Miles Burton</h1>
+			<div class="headline">
+				<h1>Miles Burton</h1>
+				<LemmingStrip count={3} />
+			</div>
 			<p class="intro">
 				Projects, writing, and reference notes. Mostly infrastructure and embedded systems.
 			</p>
 		</header>
 
-		<section class="tiles">
-			{tiles.map((tile) => (
-				<a href={tile.href} class="tile">
-					<p class="tile-kicker">{tile.kicker}</p>
-					<h2>{tile.title}</h2>
-					<p class="tile-description">{tile.description}</p>
-					<span class="tile-arrow" aria-hidden="true">&rarr;</span>
-				</a>
-			))}
+		<section class="featured">
+			<h2 class="section-title">Featured Projects</h2>
+			<div class="featured-grid">
+				{featured.map((project) => (
+					<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined} class="featured-card">
+						<p class="featured-kicker">{project.kicker}</p>
+						<h3>{project.title}</h3>
+						<p class="featured-description">{project.description}</p>
+						<ul class="tags">
+							{project.tags.map((tag) => (
+								<li>{tag}</li>
+							))}
+						</ul>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="more">
+			<h2 class="section-title">More</h2>
+			<div class="tiles">
+				{more.map((tile) => (
+					<a href={tile.href} class="tile">
+						<p class="tile-kicker">{tile.kicker}</p>
+						<h3>{tile.title}</h3>
+						<p class="tile-description">{tile.description}</p>
+						<span class="tile-arrow" aria-hidden="true">&rarr;</span>
+					</a>
+				))}
+			</div>
 		</section>
 	</main>
 </Layout>
 
 <style>
 	.shell {
-		max-width: 920px;
+		max-width: 1000px;
 		margin: 0 auto;
 		padding: 4rem 2rem 5rem;
 	}
 
 	.hero {
-		margin-bottom: 3rem;
+		margin-bottom: 3.5rem;
 	}
 
 	.kicker {
@@ -70,6 +122,10 @@ const tiles = [
 		font-size: 0.78rem;
 		font-weight: 600;
 		margin: 0 0 0.75rem;
+	}
+
+	.headline {
+		position: relative;
 	}
 
 	h1 {
@@ -87,6 +143,86 @@ const tiles = [
 		line-height: 1.6;
 	}
 
+	.section-title {
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-dim);
+		margin: 0 0 1rem;
+	}
+
+	.featured {
+		margin-bottom: 3rem;
+	}
+
+	.featured-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+
+	.featured-card {
+		position: relative;
+		display: block;
+		background: linear-gradient(180deg, rgba(56, 189, 248, 0.07), rgba(15, 23, 42, 0.4));
+		border: 1px solid var(--border-strong);
+		border-radius: 14px;
+		padding: 1.5rem;
+		text-decoration: none;
+		color: inherit;
+		transition: transform 130ms ease, border-color 130ms ease, background 130ms ease;
+	}
+
+	.featured-card:hover {
+		transform: translateY(-3px);
+		border-color: var(--accent-strong);
+		background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.5));
+	}
+
+	.featured-kicker {
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		margin: 0 0 0.6rem;
+	}
+
+	.featured-card h3 {
+		margin: 0 0 0.6rem;
+		font-size: 1.1rem;
+		color: var(--text);
+		line-height: 1.3;
+	}
+
+	.featured-description {
+		margin: 0 0 1rem;
+		color: var(--text-muted);
+		font-size: 0.88rem;
+		line-height: 1.55;
+	}
+
+	.tags {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.tags li {
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		color: var(--text-dim);
+		background: var(--bg-raised);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.15rem 0.55rem;
+	}
+
 	.tiles {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -99,7 +235,7 @@ const tiles = [
 		background: var(--bg-card);
 		border: 1px solid var(--border);
 		border-radius: 12px;
-		padding: 1.5rem 1.5rem 1.75rem;
+		padding: 1.25rem 1.5rem 1.5rem;
 		text-decoration: none;
 		color: inherit;
 		transition: transform 130ms ease, border-color 130ms ease, background 130ms ease;
@@ -120,22 +256,22 @@ const tiles = [
 		margin: 0 0 0.5rem;
 	}
 
-	.tile h2 {
+	.tile h3 {
 		margin: 0 0 0.5rem;
-		font-size: 1.2rem;
+		font-size: 1.05rem;
 		color: var(--text);
 	}
 
 	.tile-description {
 		margin: 0;
 		color: var(--text-muted);
-		font-size: 0.92rem;
-		line-height: 1.55;
+		font-size: 0.88rem;
+		line-height: 1.5;
 	}
 
 	.tile-arrow {
 		position: absolute;
-		top: 1.5rem;
+		top: 1.25rem;
 		right: 1.5rem;
 		color: var(--text-dim);
 		transition: transform 130ms ease, color 130ms ease;
@@ -144,6 +280,12 @@ const tiles = [
 	.tile:hover .tile-arrow {
 		transform: translateX(3px);
 		color: var(--accent-strong);
+	}
+
+	@media (max-width: 760px) {
+		.featured-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	@media (max-width: 620px) {
