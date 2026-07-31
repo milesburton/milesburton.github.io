@@ -1,4 +1,6 @@
 ---
+import SiteFooter from '../components/SiteFooter.astro';
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -14,6 +16,7 @@ const nav = [
 	{ href: '/projects/', label: 'Projects' },
 	{ href: '/blog/', label: 'Blog' },
 	{ href: '/wiki/Main_Page/', label: 'Wiki' },
+	{ href: 'https://www.youtube.com/@M0LHA', label: 'YouTube', external: true },
 	{ href: '/contact/', label: 'Contact' },
 ];
 
@@ -43,7 +46,9 @@ const currentPath = Astro.url.pathname;
 							<li>
 								<a
 									href={item.href}
-									aria-current={currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/' ? 'page' : undefined}
+									target={item.external ? '_blank' : undefined}
+									rel={item.external ? 'noreferrer' : undefined}
+									aria-current={!item.external && (currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/') ? 'page' : undefined}
 								>
 									{item.label}
 								</a>
@@ -53,12 +58,12 @@ const currentPath = Astro.url.pathname;
 				</nav>
 				<div class="sidebar-footer">
 					<a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>
-					<a href="https://www.youtube.com/@M0LHA" target="_blank" rel="noreferrer">YouTube</a>
 					<a href="/contact/">Get in touch</a>
 				</div>
 			</aside>
 			<div class="content-area">
 				<slot />
+				<SiteFooter />
 			</div>
 		</div>
 	</body>

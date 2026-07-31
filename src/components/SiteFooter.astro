@@ -1,0 +1,57 @@
+---
+const commit = __BUILD_COMMIT__;
+const buildDate = __BUILD_DATE__;
+
+const formatted =
+	buildDate !== 'unknown'
+		? new Intl.DateTimeFormat('en-GB', {
+				day: 'numeric',
+				month: 'short',
+				year: 'numeric',
+				hour: '2-digit',
+				minute: '2-digit',
+			}).format(new Date(buildDate))
+		: 'unknown';
+
+const commitUrl = commit !== 'unknown' ? `https://github.com/milesburton/milesburton.github.io/commit/${commit}` : undefined;
+---
+
+<footer class="site-footer">
+	<span>Last updated {formatted}</span>
+	<span class="sep">·</span>
+	{commitUrl ? (
+		<a href={commitUrl} target="_blank" rel="noreferrer"><code>{commit}</code></a>
+	) : (
+		<code>{commit}</code>
+	)}
+</footer>
+
+<style>
+	.site-footer {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 1.5rem 2rem 2.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.76rem;
+		color: var(--text-dim);
+	}
+
+	.sep {
+		opacity: 0.5;
+	}
+
+	.site-footer a {
+		color: var(--text-dim);
+		text-decoration: none;
+	}
+
+	.site-footer a:hover {
+		color: var(--accent-strong);
+	}
+
+	.site-footer code {
+		font-size: 0.76rem;
+	}
+</style>
