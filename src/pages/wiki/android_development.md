@@ -26,8 +26,8 @@ FAHDroid - Folding@Home Statistics on the go *(not yet migrated)*
 
 ## Tutorials
 
-Android - Building a ListView with an OnClick Position *(not yet migrated)* - If you are struggling to get the onClick method of a ListView to respond properly this work-around is for you.
+[Android - Building a ListView with an OnClick Position](/wiki/android_building_a_listview_with_an_onclick_position/) - If you are struggling to get the onClick method of a ListView to respond properly this work-around is for you.
 
 ## Snippets
 
-Android Unit Testing - Accessing Private Methods and Members *(not yet migrated)*
+[Android Unit Testing - Accessing Private Methods and Members](/wiki/android_unit_testing_accessing_private_methods_and_members/)
