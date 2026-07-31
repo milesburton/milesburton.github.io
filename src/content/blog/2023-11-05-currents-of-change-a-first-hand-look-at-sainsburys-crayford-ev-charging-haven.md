@@ -5,6 +5,7 @@ slug: "currents-of-change-a-first-hand-look-at-sainsburys-crayford-ev-charging-h
 categories: ["Thoughts"]
 tags: ["Electric Vehicles"]
 excerpt: "As the world pivots towards sustainable energy, Sainsbury’s Crayford stands at the forefront of this revolution with their recent launch of fifteen 150kW CCS ultra-rapid chargers, accompanied by a solitary 50kW CHAdeMO charger. During a routine run to pick up groceries, I seized "
+featuredImage: "/blog-media/2023/11/img_9354.jpg"
 ---
 
 <p class="has-text-align-left wp-block-paragraph">As the world pivots towards sustainable energy, Sainsbury&#8217;s Crayford stands at the forefront of this revolution with their recent launch of fifteen 150kW CCS ultra-rapid chargers, accompanied by a solitary 50kW CHAdeMO charger. During a routine run to pick up groceries, I seized the opportunity to test out their state-of-the-art facility and, frankly, the experience was nothing short of impressive.</p>

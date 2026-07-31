@@ -5,6 +5,7 @@ slug: "quick-build-battery-powered-rgb-neopixels-with-the-esp8266"
 categories: ["Ardunio","Electric Vehicles","HOWTO","Thoughts"]
 tags: ["Arduino","eSk8","ESP8266","IOT"]
 excerpt: "After more than a few requests, I thought I’d finally get around to writing up my ultra quick battery powered programmable LED lights for my Evolve Electric Longboard. This is actually a precursor to a larger, more ‘intelligent’ project – I’ll revisit that later (tl;dr it involve"
+featuredImage: "/blog-media/2019/01/2019-01-29-14.42.20.jpg"
 ---
 
 <p class="wp-block-paragraph">After more than a few requests, I thought I&#8217;d finally get around to writing up my ultra quick battery powered programmable LED lights for my Evolve Electric Longboard. This is actually a precursor to a larger, more &#8216;intelligent&#8217; project &#8211; I&#8217;ll revisit that later (tl;dr it involves GPS and Accelerometers).</p>

@@ -5,6 +5,7 @@ slug: "ghosts-in-the-machine-a-very-peculiar-encounter-with-googles-gemini-ai-ll
 categories: ["Rambling","Thoughts"]
 tags: ["ai","chatgpt","gemini","google","technology"]
 excerpt: "Earlier this week, I set off on a seemingly straightforward project: building a website scraper for the soon-to-be-defunct Hexus forum using Google’s AI Studio and its new Gemini 2.0 LLM. What began as a routine coding session quickly spiraled into an uncanny exchange. Here’s the"
+featuredImage: "/blog-media/2025/02/dallc2b7e-2025-02-05-09.21.01-a-balanced-depiction-of-ghosts-in-the-machinee28094a-group-of-glowing-digital-ghosts-haunting-the-inside-of-a-futuristic-computer.-the-ghosts-have-subtle.webp"
 ---
 
 <p class="wp-block-paragraph">Earlier this week, I set off on a seemingly straightforward project: <a href="https://github.com/milesburton/hexus-forum-scraper">building a website scraper</a> for the soon-to-be-defunct Hexus forum using <a href="https://aistudio.google.com/prompts/new_chat">Google’s AI Studio</a> and its new <a href="https://en.wikipedia.org/wiki/Gemini_(chatbot)">Gemini 2.0 LLM</a>. What began as a routine coding session quickly spiraled into an uncanny exchange. Here’s the story of how a benign task turned into a surreal experience- packed with self-reporting algorithms and existential musings.</p>
