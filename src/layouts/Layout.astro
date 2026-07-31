@@ -34,37 +34,39 @@ const currentPath = Astro.url.pathname;
 		<meta name="description" content={description} />
 	</head>
 	<body>
-		<div class="frame">
-			<aside class="sidebar">
-				<a href="/" class="brand">
-					<img src="https://avatars.githubusercontent.com/u/1205171?s=400&u=812ae0dcddc153c8d8776609f2f557f731822afa&v=4" alt="" class="avatar" />
-					<span>Miles Burton</span>
-				</a>
-				<nav>
-					<ul>
-						{nav.map((item) => (
-							<li>
-								<a
-									href={item.href}
-									target={item.external ? '_blank' : undefined}
-									rel={item.external ? 'noreferrer' : undefined}
-									aria-current={!item.external && (currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/') ? 'page' : undefined}
-								>
-									{item.label}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
-				<div class="sidebar-footer">
-					<a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>
-					<a href="/contact/">Get in touch</a>
+		<div class="page">
+			<div class="frame">
+				<aside class="sidebar">
+					<a href="/" class="brand">
+						<img src="https://avatars.githubusercontent.com/u/1205171?s=400&u=812ae0dcddc153c8d8776609f2f557f731822afa&v=4" alt="" class="avatar" />
+						<span>Miles Burton</span>
+					</a>
+					<nav>
+						<ul>
+							{nav.map((item) => (
+								<li>
+									<a
+										href={item.href}
+										target={item.external ? '_blank' : undefined}
+										rel={item.external ? 'noreferrer' : undefined}
+										aria-current={!item.external && (currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/') ? 'page' : undefined}
+									>
+										{item.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+					<div class="sidebar-footer">
+						<a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>
+						<a href="/contact/">Get in touch</a>
+					</div>
+				</aside>
+				<div class="content-area">
+					<slot />
 				</div>
-			</aside>
-			<div class="content-area">
-				<slot />
-				<SiteFooter />
 			</div>
+			<SiteFooter />
 		</div>
 	</body>
 </html>
@@ -214,9 +216,16 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <style>
+	.page {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
 	.frame {
 		display: flex;
-		min-height: 100vh;
+		flex: 1;
+		width: 100%;
 		max-width: 1280px;
 		margin: 0 auto;
 	}
@@ -229,7 +238,8 @@ const currentPath = Astro.url.pathname;
 		border-right: 1px solid var(--border);
 		position: sticky;
 		top: 0;
-		height: 100vh;
+		align-self: flex-start;
+		max-height: 100vh;
 	}
 
 	.brand {

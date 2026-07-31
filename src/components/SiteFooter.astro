@@ -17,20 +17,28 @@ const commitUrl = commit !== 'unknown' ? `https://github.com/milesburton/milesbu
 ---
 
 <footer class="site-footer">
-	<span>Last updated {formatted}</span>
-	<span class="sep">·</span>
-	{commitUrl ? (
-		<a href={commitUrl} target="_blank" rel="noreferrer"><code>{commit}</code></a>
-	) : (
-		<code>{commit}</code>
-	)}
+	<div class="site-footer-inner">
+		<span>Last updated {formatted}</span>
+		<span class="sep">·</span>
+		{commitUrl ? (
+			<a href={commitUrl} target="_blank" rel="noreferrer"><code>{commit}</code></a>
+		) : (
+			<code>{commit}</code>
+		)}
+	</div>
 </footer>
 
 <style>
 	.site-footer {
-		max-width: 720px;
+		width: 100%;
+		border-top: 1px solid var(--border);
+		background: var(--bg-raised);
+	}
+
+	.site-footer-inner {
+		max-width: 1280px;
 		margin: 0 auto;
-		padding: 1.5rem 2rem 2.5rem;
+		padding: 1rem 1.25rem;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -53,5 +61,8 @@ const commitUrl = commit !== 'unknown' ? `https://github.com/milesburton/milesbu
 
 	.site-footer code {
 		font-size: 0.76rem;
+		background: var(--bg-card);
+		border-radius: 4px;
+		padding: 0.1rem 0.4rem;
 	}
 </style>
