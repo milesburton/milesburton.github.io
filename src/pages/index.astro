@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LemmingStrip from '../components/LemmingStrip.astro';
 
 const featured = [
 	{
@@ -61,10 +60,7 @@ const more = [
 	<main class="shell">
 		<header class="hero">
 			<p class="kicker">Software Engineer</p>
-			<div class="headline">
-				<h1>Miles Burton</h1>
-				<LemmingStrip count={3} />
-			</div>
+			<h1>Miles Burton</h1>
 			<p class="intro">
 				Projects, writing, and reference notes. Mostly infrastructure and embedded systems.
 			</p>
@@ -122,10 +118,6 @@ const more = [
 		font-size: 0.78rem;
 		font-weight: 600;
 		margin: 0 0 0.75rem;
-	}
-
-	.headline {
-		position: relative;
 	}
 
 	h1 {
