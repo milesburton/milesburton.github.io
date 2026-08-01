@@ -51,8 +51,21 @@ const currentPath = Astro.url.pathname;
 										target={item.external ? '_blank' : undefined}
 										rel={item.external ? 'noreferrer' : undefined}
 										aria-current={!item.external && (currentPath === item.href || currentPath.startsWith(item.href) && item.href !== '/') ? 'page' : undefined}
+										class={item.external ? 'external' : undefined}
 									>
 										{item.label}
+										{item.external && (
+											<svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													d="M7 17L17 7M9 7h8v8"
+												/>
+											</svg>
+										)}
 									</a>
 								</li>
 							))}
@@ -267,7 +280,9 @@ const currentPath = Astro.url.pathname;
 	}
 
 	nav a {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
 		padding: 0.5rem 0.65rem;
 		border-radius: 6px;
 		text-decoration: none;
@@ -285,6 +300,15 @@ const currentPath = Astro.url.pathname;
 	nav a[aria-current='page'] {
 		background: rgba(56, 189, 248, 0.1);
 		color: var(--accent-strong);
+	}
+
+	.external-icon {
+		flex: 0 0 auto;
+		opacity: 0.6;
+	}
+
+	nav a:hover .external-icon {
+		opacity: 1;
 	}
 
 	.content-area {
