@@ -1,44 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const projects = [
-	{
-		name: 'Arduino-Temperature-Control-Library',
-		href: 'https://github.com/milesburton/Arduino-Temperature-Control-Library',
-		description: 'Arduino library for interfacing with Maxim/Dallas 1-Wire temperature sensors (DS18B20 and family). Widely used across the Arduino and ESP32 ecosystems.',
-		tags: ['C++', 'Embedded', '1-Wire'],
-	},
-	{
-		name: 'veta-trading-platform',
-		href: 'https://github.com/milesburton/veta-trading-platform',
-		description: 'A near-real-world trading platform for paper-trading against algorithmic strategies, using both simulated and real market data.',
-		tags: ['TypeScript', 'Trading', 'WIP'],
-	},
-	{
-		name: 'teslacam',
-		href: 'https://github.com/milesburton/teslacam',
-		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
-		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
-	},
-	{
-		name: 'aprs-station-map',
-		href: 'https://github.com/milesburton/aprs-station-map',
-		description: 'Live APRS station map with real-time updates, filtering, and statistics — built for Raspberry Pi but portable to any *nix host.',
-		tags: ['TypeScript', 'Amateur Radio', 'Raspberry Pi'],
-	},
-	{
-		name: 'nightwatch-dx',
-		href: 'https://github.com/milesburton/nightwatch-dx',
-		description: 'HF SDR monitoring system with a multi-tier architecture for 20m band scanning and CW decoding.',
-		tags: ['Python', 'SDR', 'Amateur Radio'],
-	},
-	{
-		name: 'Android-Configuration-Manager',
-		href: 'https://github.com/milesburton/Android-Configuration-Manager',
-		description: 'A library that drives Android Shared Preferences through simple annotations, acting as a lightweight ORM.',
-		tags: ['Android', 'Groovy'],
-	},
-];
+interface Repo {
+	name: string;
+	html_url: string;
+	description: string | null;
+	language: string | null;
+	stargazers_count: number;
+	pushed_at: string;
+	fork: boolean;
+	private: boolean;
+	archived: boolean;
+}
+
+// Manual overrides for repos with a live deployment separate from GitHub's
+// `homepage` field (which is unset or points at decommissioned properties).
+const liveLinks: Record<string, string> = {
+	'veta-trading-platform': 'https://veta.mnetcs.com/',
+};
+
+let repos: Repo[] = [];
+try {
+	const all: Repo[] = [];
+	for (let page = 1; page <= 10; page++) {
+		const res = await fetch(`https://api.github.com/users/milesburton/repos?per_page=100&type=owner&page=${page}`);
+		if (!res.ok) break;
+		const batch = (await res.json()) as Repo[];
+		all.push(...batch);
+		if (batch.length < 100) break;
+	}
+	repos = all.filter((r) => !r.fork && !r.private && !r.archived);
+} catch {
+	// build-time fetch failure — page renders with an empty list rather than failing the build
+}
+
+repos.sort((a, b) => {
+	if (b.stargazers_count !== a.stargazers_count) return b.stargazers_count - a.stargazers_count;
+	return new Date(b.pushed_at).valueOf() - new Date(a.pushed_at).valueOf();
+});
+
+const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
 ---
 
 <Layout title="Projects" description="Open-source projects and libraries by Miles Burton.">
@@ -47,22 +48,30 @@ const projects = [
 			<p class="kicker">Engineering</p>
 			<h1>Projects</h1>
 			<p class="intro">
-				A selection of open-source work — embedded libraries, trading systems, and infrastructure
-				tooling. See the full list on <a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>.
+				{repos.length > 0 ? `All ${repos.length} public repositories` : 'Public repositories'}, pulled
+				directly from <a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a> —
+				sorted by stars, then most recently active.
 			</p>
 		</header>
 
 		<ul class="project-list">
-			{projects.map((project) => (
+			{repos.map((project) => (
 				<li class="project-card">
-					<a href={project.href} target="_blank" rel="noreferrer" class="project-name">
-						{project.name}
-					</a>
-					<p class="project-description">{project.description}</p>
+					<div class="project-heading">
+						<a href={project.html_url} target="_blank" rel="noreferrer" class="project-name">
+							{project.name}
+						</a>
+						{liveLinks[project.name] && (
+							<a href={liveLinks[project.name]} target="_blank" rel="noreferrer" class="live-link">
+								Live site &rarr;
+							</a>
+						)}
+					</div>
+					{project.description && <p class="project-description">{project.description}</p>}
 					<ul class="tags">
-						{project.tags.map((tag) => (
-							<li>{tag}</li>
-						))}
+						{project.language && <li>{project.language}</li>}
+						{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
+						<li class="muted">Updated {formatter.format(new Date(project.pushed_at))}</li>
 					</ul>
 				</li>
 			))}
@@ -126,6 +135,13 @@ const projects = [
 		padding: 1.25rem 1.5rem;
 	}
 
+	.project-heading {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
 	.project-name {
 		font-size: 1.05rem;
 		font-weight: 600;
@@ -135,6 +151,17 @@ const projects = [
 
 	.project-name:hover {
 		color: var(--accent-strong);
+	}
+
+	.live-link {
+		font-size: 0.82rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--accent-strong);
+	}
+
+	.live-link:hover {
+		color: var(--accent);
 	}
 
 	.project-description {
@@ -162,5 +189,12 @@ const projects = [
 		border: 1px solid var(--border);
 		border-radius: 999px;
 		padding: 0.2rem 0.6rem;
+	}
+
+	.tags li.muted {
+		background: transparent;
+		border-color: transparent;
+		padding-left: 0;
+		font-weight: 500;
 	}
 </style>
