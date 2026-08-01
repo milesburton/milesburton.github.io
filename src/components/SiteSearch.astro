@@ -1,0 +1,315 @@
+---
+---
+
+<button type="button" id="search-trigger" class="search-trigger" aria-haspopup="dialog">
+	<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+		<circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+		<path d="M21 21l-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+	</svg>
+	<span>Search</span>
+	<kbd class="search-kbd">⌘K</kbd>
+</button>
+
+<div id="search-overlay" class="search-overlay" hidden>
+	<div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+		<div class="search-input-row">
+			<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+				<circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+				<path d="M21 21l-4.3-4.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+			</svg>
+			<input id="search-input" type="text" placeholder="Search the site…" autocomplete="off" spellcheck="false" />
+			<kbd class="search-kbd">Esc</kbd>
+		</div>
+		<ul id="search-results" class="search-results"></ul>
+		<p id="search-empty" class="search-empty" hidden>No results.</p>
+	</div>
+</div>
+
+<script>
+	type SearchEntry = { title: string; url: string; section: string; excerpt: string };
+
+	let index: SearchEntry[] | null = null;
+	let activeIndex = -1;
+
+	const trigger = document.getElementById('search-trigger') as HTMLButtonElement;
+	const overlay = document.getElementById('search-overlay') as HTMLDivElement;
+	const input = document.getElementById('search-input') as HTMLInputElement;
+	const resultsList = document.getElementById('search-results') as HTMLUListElement;
+	const emptyState = document.getElementById('search-empty') as HTMLParagraphElement;
+
+	async function ensureIndex() {
+		if (index) return index;
+		const res = await fetch('/search-index.json');
+		index = (await res.json()) as SearchEntry[];
+		return index;
+	}
+
+	function openOverlay() {
+		overlay.hidden = false;
+		document.body.style.overflow = 'hidden';
+		input.value = '';
+		resultsList.innerHTML = '';
+		emptyState.hidden = true;
+		activeIndex = -1;
+		ensureIndex();
+		requestAnimationFrame(() => input.focus());
+	}
+
+	function closeOverlay() {
+		overlay.hidden = true;
+		document.body.style.overflow = '';
+		trigger.focus();
+	}
+
+	function highlight(text: string, query: string): string {
+		if (!query) return text;
+		const idx = text.toLowerCase().indexOf(query.toLowerCase());
+		if (idx === -1) return text;
+		return `${text.slice(0, idx)}<mark>${text.slice(idx, idx + query.length)}</mark>${text.slice(idx + query.length)}`;
+	}
+
+	function render(entries: SearchEntry[], query: string) {
+		resultsList.innerHTML = '';
+		activeIndex = -1;
+		if (entries.length === 0) {
+			emptyState.hidden = false;
+			return;
+		}
+		emptyState.hidden = true;
+		for (const entry of entries.slice(0, 20)) {
+			const li = document.createElement('li');
+			const a = document.createElement('a');
+			a.href = entry.url;
+			a.innerHTML = `
+				<span class="result-section">${entry.section}</span>
+				<span class="result-title">${highlight(entry.title, query)}</span>
+				<span class="result-excerpt">${highlight(entry.excerpt, query)}</span>
+			`;
+			li.appendChild(a);
+			resultsList.appendChild(li);
+		}
+	}
+
+	async function search(query: string) {
+		const idx = await ensureIndex();
+		if (!query.trim()) {
+			render([], '');
+			resultsList.innerHTML = '';
+			emptyState.hidden = true;
+			return;
+		}
+		const q = query.toLowerCase();
+		const matches = idx
+			.map((entry) => {
+				const titleHit = entry.title.toLowerCase().includes(q);
+				const excerptHit = entry.excerpt.toLowerCase().includes(q);
+				const score = titleHit ? 2 : excerptHit ? 1 : 0;
+				return { entry, score };
+			})
+			.filter((r) => r.score > 0)
+			.sort((a, b) => b.score - a.score)
+			.map((r) => r.entry);
+		render(matches, query);
+	}
+
+	trigger.addEventListener('click', openOverlay);
+
+	overlay.addEventListener('click', (e) => {
+		if (e.target === overlay) closeOverlay();
+	});
+
+	document.addEventListener('keydown', (e) => {
+		const isMac = navigator.platform.toLowerCase().includes('mac');
+		const modifierPressed = isMac ? e.metaKey : e.ctrlKey;
+		if (modifierPressed && e.key.toLowerCase() === 'k') {
+			e.preventDefault();
+			if (overlay.hidden) openOverlay();
+			else closeOverlay();
+			return;
+		}
+		if (!overlay.hidden && e.key === 'Escape') {
+			closeOverlay();
+		}
+		if (!overlay.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+			e.preventDefault();
+			const items = Array.from(resultsList.querySelectorAll('a'));
+			if (items.length === 0) return;
+			activeIndex = e.key === 'ArrowDown' ? Math.min(activeIndex + 1, items.length - 1) : Math.max(activeIndex - 1, 0);
+			items.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
+			items[activeIndex]?.scrollIntoView({ block: 'nearest' });
+		}
+		if (!overlay.hidden && e.key === 'Enter') {
+			const items = Array.from(resultsList.querySelectorAll('a'));
+			const target = activeIndex >= 0 ? items[activeIndex] : items[0];
+			if (target) target.click();
+		}
+	});
+
+	input.addEventListener('input', () => search(input.value));
+</script>
+
+<style is:global>
+	.search-trigger {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		width: 100%;
+		margin-bottom: 1.25rem;
+		padding: 0.5rem 0.65rem;
+		background: var(--bg-raised);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		color: var(--text-dim);
+		font-size: 0.85rem;
+		font-family: inherit;
+		cursor: pointer;
+		transition: border-color 120ms ease, color 120ms ease;
+	}
+
+	.search-trigger:hover {
+		border-color: var(--border-strong);
+		color: var(--text);
+	}
+
+	.search-trigger span {
+		flex: 1;
+		text-align: left;
+	}
+
+	.search-kbd {
+		font-size: 0.7rem;
+		font-family: inherit;
+		color: var(--text-dim);
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		padding: 0.1rem 0.35rem;
+	}
+
+	.search-overlay[hidden] {
+		display: none;
+	}
+
+	.search-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(2, 6, 15, 0.7);
+		backdrop-filter: blur(2px);
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding: 10vh 1rem 1rem;
+		z-index: 100;
+	}
+
+	.search-panel {
+		width: 100%;
+		max-width: 560px;
+		background: var(--bg-card);
+		border: 1px solid var(--border-strong);
+		border-radius: 12px;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		max-height: 70vh;
+	}
+
+	.search-input-row {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		padding: 0.9rem 1rem;
+		border-bottom: 1px solid var(--border);
+		color: var(--text-dim);
+		flex: 0 0 auto;
+	}
+
+	#search-input {
+		flex: 1;
+		background: none;
+		border: none;
+		outline: none;
+		color: var(--text);
+		font-size: 0.95rem;
+		font-family: inherit;
+	}
+
+	#search-input::placeholder {
+		color: var(--text-dim);
+	}
+
+	.search-results {
+		list-style: none;
+		margin: 0;
+		padding: 0.5rem;
+		overflow-y: auto;
+	}
+
+	.search-results li a {
+		display: block;
+		padding: 0.6rem 0.75rem;
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.search-results li a:hover,
+	.search-results li a.active {
+		background: var(--bg-raised);
+	}
+
+	.result-section {
+		display: block;
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		margin-bottom: 0.2rem;
+	}
+
+	.result-title {
+		display: block;
+		font-size: 0.92rem;
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.result-excerpt {
+		display: block;
+		margin-top: 0.15rem;
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.search-results mark,
+	.result-excerpt mark {
+		background: rgba(56, 189, 248, 0.25);
+		color: var(--accent-strong);
+		border-radius: 2px;
+	}
+
+	.search-empty {
+		padding: 1.5rem;
+		text-align: center;
+		color: var(--text-dim);
+		font-size: 0.85rem;
+		margin: 0;
+	}
+
+	@media (max-width: 860px) {
+		.search-trigger {
+			width: auto;
+			margin-bottom: 0;
+		}
+
+		.search-trigger span,
+		.search-kbd {
+			display: none;
+		}
+	}
+</style>
