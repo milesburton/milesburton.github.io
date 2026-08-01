@@ -157,6 +157,26 @@ const currentPath = Astro.url.pathname;
 		color: var(--accent-strong);
 	}
 
+	.image-placeholder {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.3rem 0.65rem;
+		margin: 0.15rem 0;
+		background: var(--bg-card);
+		border: 1px dashed var(--border-strong);
+		border-radius: 6px;
+		color: var(--text-dim);
+		font-size: 0.8rem;
+		font-style: normal;
+		cursor: help;
+	}
+
+	.image-placeholder svg {
+		flex: 0 0 auto;
+		opacity: 0.7;
+	}
+
 	.content-area ul,
 	.content-area ol {
 		margin: 0 0 1.1rem;

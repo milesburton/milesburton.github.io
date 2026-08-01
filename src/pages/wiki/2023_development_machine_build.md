@@ -28,66 +28,66 @@ So without further ado, here's the new build breakdown.
 
 You'll have to excuse the dodgy iPhone shots. It was a last second thought to capture the build, but alas here we are. Could be interesting!
 
-* *[image: 120px-Phoenix_Build_-_Preparing_components.jpg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_Preparing_components.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Pulling the components ready for the build
-* *[image: 81px-Phoenix_Build_-_Ready_to_place_the_CPU.jpeg]*
+* <span class="image-placeholder" title="81px-Phoenix_Build_-_Ready_to_place_the_CPU.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Checking the orientation of the CPU before install
-* *[image: 99px-Phoenix_Build_-_CPU_Inplace.jpeg]*
+* <span class="image-placeholder" title="99px-Phoenix_Build_-_CPU_Inplace.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 CPU snug in the LGA1700 socket
-* *[image: 90px-Phoenix_Build_-_Fitted_read_HSF_backing_plate.jpeg]*
+* <span class="image-placeholder" title="90px-Phoenix_Build_-_Fitted_read_HSF_backing_plate.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Fitted HSF back bracket
-* *[image: 102px-Phoenix_Build_-_Samsung_980_Pro_2TB_fitted_to_board.jpeg]*
+* <span class="image-placeholder" title="102px-Phoenix_Build_-_Samsung_980_Pro_2TB_fitted_to_board.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Samsung 980 Pro partially fitted into M2 socket
-* *[image: 120px-Phoenix_Build_-_WD_Black_2TB_ready_for_heat_sink.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_WD_Black_2TB_ready_for_heat_sink.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 WD Black ready for install
-* *[image: 120px-Phoenix_Build_-_WD_Black_2TB_fitted_with_heat_sink.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_WD_Black_2TB_fitted_with_heat_sink.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 WD Black with the heat sink installed
-* *[image: 98px-Phoenix_Build_-_Case_ready_for_motherboard_to_be_installed.jpeg]*
+* <span class="image-placeholder" title="98px-Phoenix_Build_-_Case_ready_for_motherboard_to_be_installed.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Case ready for motherboard to be installed
-* *[image: 89px-Phoenix_Build_-_Motherboard_installed_into_case.jpeg]*
+* <span class="image-placeholder" title="89px-Phoenix_Build_-_Motherboard_installed_into_case.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Phoenix Build - Motherboard installed into case
-* *[image: 86px-Phoenix_Build_-_Graphics_card_installed.jpeg]*
+* <span class="image-placeholder" title="86px-Phoenix_Build_-_Graphics_card_installed.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 nVidia 2080TI fitted
-* *[image: 90px-Phoenix_Build_-_Fitted_AIO_water_cooling_loop_to_the_CPU.jpeg]*
+* <span class="image-placeholder" title="90px-Phoenix_Build_-_Fitted_AIO_water_cooling_loop_to_the_CPU.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 AIO Watercooling fitted to CPU bracket
-* *[image: 94px-Phoenix_Build_-_Hooking_up_all_wires_pure_spaghetti.jpeg]*
+* <span class="image-placeholder" title="94px-Phoenix_Build_-_Hooking_up_all_wires_pure_spaghetti.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Spaghetti junction. First fit of all the electrics
-* *[image: 120px-Phoenix_Build_-_Added_SATA_SSD.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_Added_SATA_SSD.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Trial placement of SATA SSD on the opposite side of the case
-* *[image: 120px-Phoenix_Build_-_First_attempt_at_cable_routing.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_First_attempt_at_cable_routing.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 First cut rerouting cabling. Not great, but a vast improvement
-* *[image: 120px-Phoenix_Build_-_First_attempt_at_cable_routing_view_2.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_First_attempt_at_cable_routing_view_2.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 First cut rerouting cabling. Not great, but a vast improvement. (Another angle)
-* *[image: 90px-Phoenix_Build_-_Rearrangement_of_SSD_and_cooling_loop_power.jpeg]*
+* <span class="image-placeholder" title="90px-Phoenix_Build_-_Rearrangement_of_SSD_and_cooling_loop_power.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Moved SSD so the AIO watercooling power can share the same power line to clean up some of the cabling
-* *[image: 108px-Phoenix_Build_-_Completed_Build_iso_shot.jpeg]*
+* <span class="image-placeholder" title="108px-Phoenix_Build_-_Completed_Build_iso_shot.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Build finished.
-* *[image: 112px-Phoenix_Build_-_Completed_Build_open_side.jpeg]*
+* <span class="image-placeholder" title="112px-Phoenix_Build_-_Completed_Build_open_side.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Build finished.
-* *[image: 83px-Phoenix_Build_-_Completed_Rear.jpeg]*
+* <span class="image-placeholder" title="83px-Phoenix_Build_-_Completed_Rear.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Build finished. Rear shot
-* *[image: 120px-Phoenix_Build_-_Completed_First_run.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_Completed_First_run.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 First run and no blue smoke
-* *[image: 120px-Phoenix_Build_-_Up_and_running%2C_final_shot.jpeg]*
+* <span class="image-placeholder" title="120px-Phoenix_Build_-_Up_and_running%2C_final_shot.jpeg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Final shot from the build. May do a bit more finessing but we're up and running

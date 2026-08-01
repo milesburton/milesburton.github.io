@@ -55,36 +55,36 @@ That's all for now, let me know if you have any questions!
 
 Base with components:
 
-*[image: ArduinoAWD Base.JPG]*
+<span class="image-placeholder" title="ArduinoAWD Base.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Comparison against "net-top"
 
-*[image: ArduinoAWD Base Comparison.JPG]*
+<span class="image-placeholder" title="ArduinoAWD Base Comparison.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 The upper level of the AWD
 
-*[image: Arduino 4WD MCUShelf2.JPG]*
+<span class="image-placeholder" title="Arduino 4WD MCUShelf2.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Close up of the Romeo for reference
 
-*[image: Romeo.JPG]*
+<span class="image-placeholder" title="Romeo.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 AWD with extra battery pack, Pan+Tilt mechanism and custom URM37 sensor mount.
 
-*[image: ArduinoAWD Loaded.JPG]*
+<span class="image-placeholder" title="ArduinoAWD Loaded.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 Same as above
 
-*[image: ArduinoAWD Loaded3.JPG]*
+<span class="image-placeholder" title="ArduinoAWD Loaded3.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 AWD with DF-Robot Mega and servo shield (from YeRobot) mounted without upper panel
 
-*[image: ArduinoAWDBase Mega.JPG]*
+<span class="image-placeholder" title="ArduinoAWDBase Mega.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 With LED sensor
 
-*[image: Arduino4WD MouseSensor.JPG]*
+<span class="image-placeholder" title="Arduino4WD MouseSensor.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 ..another shot
 
-*[image: Arduino4WD MouseSensor2.JPG]*
+<span class="image-placeholder" title="Arduino4WD MouseSensor2.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>

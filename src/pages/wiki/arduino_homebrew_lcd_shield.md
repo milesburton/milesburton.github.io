@@ -20,7 +20,7 @@ title: Arduino Homebrew LCD Shield
 
 After hunting around I couldn't find an LCD shield for the Arduino which fit the bill. After a somewhat sticky start, my second version of this shield works great! Read on if you'd like some pointers developing your own version.
 
-*[image: PC2004.JPG]*
+<span class="image-placeholder" title="PC2004.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 [Check out the video](http://download.milesburton.com/Arduino/HomeBrewLCDShield/HBLCD_Smartie.mp4)
 
@@ -54,21 +54,21 @@ The PC2004 requires a negative power supply. If you find your LCD only works whe
 
 Pete Willard provided the following schematic to produce the negative voltage.
 
-*[image: HBL ICL7660Circuit thumb.jpg]*
+<span class="image-placeholder" title="HBL ICL7660Circuit thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD front thumb.jpg]*
+<span class="image-placeholder" title="HBLCD front thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD back thumb.jpg]*
+<span class="image-placeholder" title="HBLCD back thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD LCDfront thumb.jpg]*
+<span class="image-placeholder" title="HBLCD LCDfront thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD LCDback thumb.jpg]*
+<span class="image-placeholder" title="HBLCD LCDback thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD ArduinoStackProfile thumb.jpg]*
+<span class="image-placeholder" title="HBLCD ArduinoStackProfile thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD Stacked thumb.jpg]*
+<span class="image-placeholder" title="HBLCD Stacked thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
-*[image: HBLCD StackProfile thumb.jpg]*
+<span class="image-placeholder" title="HBLCD StackProfile thumb.jpg"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 ## Reflection & mistakes
 

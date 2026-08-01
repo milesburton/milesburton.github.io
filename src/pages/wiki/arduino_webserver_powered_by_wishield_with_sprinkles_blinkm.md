@@ -11,7 +11,7 @@ As a little experiment (and bloody overdue) I decided to setup a spare Arduino w
 
 So what did I come up with? Well without further adue:
 
-*[image: ArduinoWiShieldAndBlinkM.JPG]*
+<span class="image-placeholder" title="ArduinoWiShieldAndBlinkM.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 ..Alright, you've got me, it's not that impressive but it has brought up some ideas.
 

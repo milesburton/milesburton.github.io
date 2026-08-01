@@ -38,7 +38,7 @@ When the keyboard is loose you'll see the ribbon connecting to the board. The so
 
 Once the keyboard is removed you'll see a number of screws marked "door" (see below). Unscrew each of these.
 
-*[image: D257 TOP.JPG]* *[image: D257 Hard Disk.JPG]* *[image: D257 TOP LEFT.JPG]*
+<span class="image-placeholder" title="D257 TOP.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> <span class="image-placeholder" title="D257 Hard Disk.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> <span class="image-placeholder" title="D257 TOP LEFT.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 ## Step three:
 
@@ -46,7 +46,7 @@ Spin the laptop over. The door, once the screws have been removed is clipped int
 
 Grab your credit card and carefully get it under the right hand side at the back. Push the door away from you as the clips lock outwards (aka, you need to bend it a bit). Work your way around from back to front until the panel comes off. Be really careful as you can break the clips. That said the screws will hold the door securely regardless.
 
-*[image: D257 BOTTOM2.JPG]* *[image: D257 BOTTOM.JPG]*
+<span class="image-placeholder" title="D257 BOTTOM2.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> <span class="image-placeholder" title="D257 BOTTOM.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>
 
 ## Step five:
 
@@ -70,4 +70,4 @@ No more modifications are required. Power it up and enjoy your new ram.
 
 # The Missing Mini-PCI connector on the D257
 
-*[image: D257 Mini-PCI-Connector.JPG]*
+<span class="image-placeholder" title="D257 Mini-PCI-Connector.JPG"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span>

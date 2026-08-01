@@ -64,11 +64,11 @@ System.out.println(persistedConfig.getMyBoolean());
 
 ## Example within NZBAir
 
-*[image: PreferenceLauncherActivity.png]* The Preference Launcher is used as an entry point into the various types of configuration.
+<span class="image-placeholder" title="PreferenceLauncherActivity.png"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> The Preference Launcher is used as an entry point into the various types of configuration.
 
-*[image: PreferenceListActivity.png]* The Preference List Activity manages each provider 'config' object. You can add/remove/edit each item in the list. The concrete class (that which implements the Preference List Activity) defines what actions are taken in response to user events (such as adding a new config or deleting).
+<span class="image-placeholder" title="PreferenceListActivity.png"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> The Preference List Activity manages each provider 'config' object. You can add/remove/edit each item in the list. The concrete class (that which implements the Preference List Activity) defines what actions are taken in response to user events (such as adding a new config or deleting).
 
-*[image: ConfigActivity.png]* The ACM, based on the hints you provider in your configuration object will build a view which can be used to configure an object. NZBAir uses this widely, in this example it is used to configure the general settings.
+<span class="image-placeholder" title="ConfigActivity.png"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Image not yet available</span> The ACM, based on the hints you provider in your configuration object will build a view which can be used to configure an object. NZBAir uses this widely, in this example it is used to configure the general settings.
 
 ## ACM Component Breakdown
 
