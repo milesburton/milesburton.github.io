@@ -1,5 +1,6 @@
 ---
 import SiteFooter from '../components/SiteFooter.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 
 interface Props {
 	title?: string;
@@ -42,6 +43,7 @@ const currentPath = Astro.url.pathname;
 						<img src="https://avatars.githubusercontent.com/u/1205171?s=400&u=812ae0dcddc153c8d8776609f2f557f731822afa&v=4" alt="" class="avatar" />
 						<span>Miles Burton</span>
 					</a>
+					<SiteSearch />
 					<nav>
 						<ul>
 							{nav.map((item) => (
