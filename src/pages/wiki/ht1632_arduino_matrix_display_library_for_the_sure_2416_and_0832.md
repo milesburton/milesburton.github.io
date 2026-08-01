@@ -38,7 +38,7 @@ You'll need Arduino IDE 0017 or 0018 to use this Library.
 
 Just unzip and drop the library into arduino-0018/libraries/MatrixDisplay. Then simple navigate to the various examples through the Arduino IDE.
 
-**Green displays** Iván Lalaguna Alcaine has provided an simple but effective patch for green displays *(not yet migrated)*.
+**Green displays** Iván Lalaguna Alcaine has provided an simple but effective patch for green displays *(coming soon)*.
 
 ### Latest
 
@@ -66,7 +66,7 @@ Just unzip and drop the library into arduino-0018/libraries/MatrixDisplay. Then 
 
 ## Contributors
 
-If you want to contribute please send your changes to me ;) Related Work and Contact *(not yet migrated)*. There's plenty of code within the MatrixDisplay library which has been borrowed from around the web, thanks everyone for opening up your source!
+If you want to contribute please send your changes to me ;) Related Work and Contact *(coming soon)*. There's plenty of code within the MatrixDisplay library which has been borrowed from around the web, thanks everyone for opening up your source!
 
 ## Example
 
@@ -209,9 +209,9 @@ If you are using any MCU besides the AtMega328 you may need to change the "bitBl
 
 ## Projects
 
-Sure 2416 Displaying CPU Graph via Arduino *(not yet migrated)*
+Sure 2416 Displaying CPU Graph via Arduino *(coming soon)*
 
-Sure 2416 Running Pong via Arduino *(not yet migrated)*
+Sure 2416 Running Pong via Arduino *(coming soon)*
 
 ## Media
 

@@ -43,7 +43,7 @@ The Arduino 4WD has a surprising number of miscellaneous holes and mount for you
 
 Power is definitely an issue when you move away from your house outlets. The single on-board battery holder (6xAA) is more than sufficient for an Arduino and a couple of sensors; You'll get about 10-15 minutes of normal usage. I did however find a second battery pack a necessity when I install and use the pan-tilt mechanism. The sudden draw in power can cause the Romeo to reset and it's generally not healthy to draw to much power from a single source.
 
-The Romeo (Review Arduino Clone - Romeo Robotics Board *(not yet migrated)*) - which is an amazing board (if lacking memory) provides several power inputs, one of which is dedicated for servos. I found the many power outputs to be particularly useful for powering various sensors, strictly they're intended for powering servos (etc) but I saw no harm in re-purposing them for my other devices ;).
+The Romeo (Review Arduino Clone - Romeo Robotics Board *(coming soon)*) - which is an amazing board (if lacking memory) provides several power inputs, one of which is dedicated for servos. I found the many power outputs to be particularly useful for powering various sensors, strictly they're intended for powering servos (etc) but I saw no harm in re-purposing them for my other devices ;).
 
 When I can get hold of a dremel I'd like to bore a hole in the bottom of the robot so the mouse sensor can be mounted to detect the position but that's a little drastic for the moment! One handy feature will be an RF transceiver which can be used to control the robot - like a remote control car - or relay sensor data to another machine.
 
@@ -55,36 +55,36 @@ That's all for now, let me know if you have any questions!
 
 Base with components:
 
-*[image pending migration: ArduinoAWD Base.JPG]*
+*[image: ArduinoAWD Base.JPG]*
 
 Comparison against "net-top"
 
-*[image pending migration: ArduinoAWD Base Comparison.JPG]*
+*[image: ArduinoAWD Base Comparison.JPG]*
 
 The upper level of the AWD
 
-*[image pending migration: Arduino 4WD MCUShelf2.JPG]*
+*[image: Arduino 4WD MCUShelf2.JPG]*
 
 Close up of the Romeo for reference
 
-*[image pending migration: Romeo.JPG]*
+*[image: Romeo.JPG]*
 
 AWD with extra battery pack, Pan+Tilt mechanism and custom URM37 sensor mount.
 
-*[image pending migration: ArduinoAWD Loaded.JPG]*
+*[image: ArduinoAWD Loaded.JPG]*
 
 Same as above
 
-*[image pending migration: ArduinoAWD Loaded3.JPG]*
+*[image: ArduinoAWD Loaded3.JPG]*
 
 AWD with DF-Robot Mega and servo shield (from YeRobot) mounted without upper panel
 
-*[image pending migration: ArduinoAWDBase Mega.JPG]*
+*[image: ArduinoAWDBase Mega.JPG]*
 
 With LED sensor
 
-*[image pending migration: Arduino4WD MouseSensor.JPG]*
+*[image: Arduino4WD MouseSensor.JPG]*
 
 ..another shot
 
-*[image pending migration: Arduino4WD MouseSensor2.JPG]*
+*[image: Arduino4WD MouseSensor2.JPG]*

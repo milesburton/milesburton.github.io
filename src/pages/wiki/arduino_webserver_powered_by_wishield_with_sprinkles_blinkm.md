@@ -11,7 +11,7 @@ As a little experiment (and bloody overdue) I decided to setup a spare Arduino w
 
 So what did I come up with? Well without further adue:
 
-*[image pending migration: ArduinoWiShieldAndBlinkM.JPG]*
+*[image: ArduinoWiShieldAndBlinkM.JPG]*
 
 ..Alright, you've got me, it's not that impressive but it has brought up some ideas.
 

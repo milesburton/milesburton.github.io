@@ -20,7 +20,7 @@ Agile Software Development (ASD) has become worryingly synonymous with hacking, 
 
 Sometime ago I stumbled across a great comic strip by Scott Adams which I believes summarises the frustrations of developers everywhere.
 
-*[image pending migration: Dilbert-agile-programming.gif]*
+*[image: Dilbert-agile-programming.gif]*
 
 One of the major attractions of ASD is the ability to refine or drop any aspects of the methodology till you finally end up with something that works for your business. Yet, when I hear a new manager is *"going agile"* a cold shiver goes down my spine.
 

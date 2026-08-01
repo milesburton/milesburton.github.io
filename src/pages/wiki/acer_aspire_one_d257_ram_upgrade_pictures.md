@@ -38,7 +38,7 @@ When the keyboard is loose you'll see the ribbon connecting to the board. The so
 
 Once the keyboard is removed you'll see a number of screws marked "door" (see below). Unscrew each of these.
 
-*[image pending migration: D257 TOP.JPG]* *[image pending migration: D257 Hard Disk.JPG]* *[image pending migration: D257 TOP LEFT.JPG]*
+*[image: D257 TOP.JPG]* *[image: D257 Hard Disk.JPG]* *[image: D257 TOP LEFT.JPG]*
 
 ## Step three:
 
@@ -46,7 +46,7 @@ Spin the laptop over. The door, once the screws have been removed is clipped int
 
 Grab your credit card and carefully get it under the right hand side at the back. Push the door away from you as the clips lock outwards (aka, you need to bend it a bit). Work your way around from back to front until the panel comes off. Be really careful as you can break the clips. That said the screws will hold the door securely regardless.
 
-*[image pending migration: D257 BOTTOM2.JPG]* *[image pending migration: D257 BOTTOM.JPG]*
+*[image: D257 BOTTOM2.JPG]* *[image: D257 BOTTOM.JPG]*
 
 ## Step five:
 
@@ -70,4 +70,4 @@ No more modifications are required. Power it up and enjoy your new ram.
 
 # The Missing Mini-PCI connector on the D257
 
-*[image pending migration: D257 Mini-PCI-Connector.JPG]*
+*[image: D257 Mini-PCI-Connector.JPG]*

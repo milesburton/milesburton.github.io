@@ -20,7 +20,7 @@ title: Arduino Homebrew LCD Shield
 
 After hunting around I couldn't find an LCD shield for the Arduino which fit the bill. After a somewhat sticky start, my second version of this shield works great! Read on if you'd like some pointers developing your own version.
 
-*[image pending migration: PC2004.JPG]*
+*[image: PC2004.JPG]*
 
 [Check out the video](http://download.milesburton.com/Arduino/HomeBrewLCDShield/HBLCD_Smartie.mp4)
 
@@ -54,21 +54,21 @@ The PC2004 requires a negative power supply. If you find your LCD only works whe
 
 Pete Willard provided the following schematic to produce the negative voltage.
 
-*[image pending migration: HBL ICL7660Circuit thumb.jpg]*
+*[image: HBL ICL7660Circuit thumb.jpg]*
 
-*[image pending migration: HBLCD front thumb.jpg]*
+*[image: HBLCD front thumb.jpg]*
 
-*[image pending migration: HBLCD back thumb.jpg]*
+*[image: HBLCD back thumb.jpg]*
 
-*[image pending migration: HBLCD LCDfront thumb.jpg]*
+*[image: HBLCD LCDfront thumb.jpg]*
 
-*[image pending migration: HBLCD LCDback thumb.jpg]*
+*[image: HBLCD LCDback thumb.jpg]*
 
-*[image pending migration: HBLCD ArduinoStackProfile thumb.jpg]*
+*[image: HBLCD ArduinoStackProfile thumb.jpg]*
 
-*[image pending migration: HBLCD Stacked thumb.jpg]*
+*[image: HBLCD Stacked thumb.jpg]*
 
-*[image pending migration: HBLCD StackProfile thumb.jpg]*
+*[image: HBLCD StackProfile thumb.jpg]*
 
 ## Reflection & mistakes
 

@@ -9,7 +9,7 @@ This was a little experiment to combine my recent LCD shield and a previous proj
 
 Very simply I wanted a little bar to display how far away I was from the device and this is what I ended up with.
 
-*[image pending migration: Range Detector]*
+*[image: Range Detector]*
 
 Video: [http://download.milesburton.com/Arduino/URM37toLCD/VIDEO_006.mp4](http://download.milesburton.com/Arduino/URM37toLCD/VIDEO_006.mp4)
 

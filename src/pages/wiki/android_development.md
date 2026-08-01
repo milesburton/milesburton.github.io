@@ -14,9 +14,9 @@ title: Android Development
 
 ## My Apps
 
-NZBAir - Usenet and SABnzbd mobile for Android *(not yet migrated)*
+NZBAir - Usenet and SABnzbd mobile for Android *(coming soon)*
 
-FAHDroid - Folding@Home Statistics on the go *(not yet migrated)*
+FAHDroid - Folding@Home Statistics on the go *(coming soon)*
 
 ## Libraries
 

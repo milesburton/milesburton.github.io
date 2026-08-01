@@ -28,66 +28,66 @@ So without further ado, here's the new build breakdown.
 
 You'll have to excuse the dodgy iPhone shots. It was a last second thought to capture the build, but alas here we are. Could be interesting!
 
-* *[image pending migration: 120px-Phoenix_Build_-_Preparing_components.jpg]*
+* *[image: 120px-Phoenix_Build_-_Preparing_components.jpg]*
 
 Pulling the components ready for the build
-* *[image pending migration: 81px-Phoenix_Build_-_Ready_to_place_the_CPU.jpeg]*
+* *[image: 81px-Phoenix_Build_-_Ready_to_place_the_CPU.jpeg]*
 
 Checking the orientation of the CPU before install
-* *[image pending migration: 99px-Phoenix_Build_-_CPU_Inplace.jpeg]*
+* *[image: 99px-Phoenix_Build_-_CPU_Inplace.jpeg]*
 
 CPU snug in the LGA1700 socket
-* *[image pending migration: 90px-Phoenix_Build_-_Fitted_read_HSF_backing_plate.jpeg]*
+* *[image: 90px-Phoenix_Build_-_Fitted_read_HSF_backing_plate.jpeg]*
 
 Fitted HSF back bracket
-* *[image pending migration: 102px-Phoenix_Build_-_Samsung_980_Pro_2TB_fitted_to_board.jpeg]*
+* *[image: 102px-Phoenix_Build_-_Samsung_980_Pro_2TB_fitted_to_board.jpeg]*
 
 Samsung 980 Pro partially fitted into M2 socket
-* *[image pending migration: 120px-Phoenix_Build_-_WD_Black_2TB_ready_for_heat_sink.jpeg]*
+* *[image: 120px-Phoenix_Build_-_WD_Black_2TB_ready_for_heat_sink.jpeg]*
 
 WD Black ready for install
-* *[image pending migration: 120px-Phoenix_Build_-_WD_Black_2TB_fitted_with_heat_sink.jpeg]*
+* *[image: 120px-Phoenix_Build_-_WD_Black_2TB_fitted_with_heat_sink.jpeg]*
 
 WD Black with the heat sink installed
-* *[image pending migration: 98px-Phoenix_Build_-_Case_ready_for_motherboard_to_be_installed.jpeg]*
+* *[image: 98px-Phoenix_Build_-_Case_ready_for_motherboard_to_be_installed.jpeg]*
 
 Case ready for motherboard to be installed
-* *[image pending migration: 89px-Phoenix_Build_-_Motherboard_installed_into_case.jpeg]*
+* *[image: 89px-Phoenix_Build_-_Motherboard_installed_into_case.jpeg]*
 
 Phoenix Build - Motherboard installed into case
-* *[image pending migration: 86px-Phoenix_Build_-_Graphics_card_installed.jpeg]*
+* *[image: 86px-Phoenix_Build_-_Graphics_card_installed.jpeg]*
 
 nVidia 2080TI fitted
-* *[image pending migration: 90px-Phoenix_Build_-_Fitted_AIO_water_cooling_loop_to_the_CPU.jpeg]*
+* *[image: 90px-Phoenix_Build_-_Fitted_AIO_water_cooling_loop_to_the_CPU.jpeg]*
 
 AIO Watercooling fitted to CPU bracket
-* *[image pending migration: 94px-Phoenix_Build_-_Hooking_up_all_wires_pure_spaghetti.jpeg]*
+* *[image: 94px-Phoenix_Build_-_Hooking_up_all_wires_pure_spaghetti.jpeg]*
 
 Spaghetti junction. First fit of all the electrics
-* *[image pending migration: 120px-Phoenix_Build_-_Added_SATA_SSD.jpeg]*
+* *[image: 120px-Phoenix_Build_-_Added_SATA_SSD.jpeg]*
 
 Trial placement of SATA SSD on the opposite side of the case
-* *[image pending migration: 120px-Phoenix_Build_-_First_attempt_at_cable_routing.jpeg]*
+* *[image: 120px-Phoenix_Build_-_First_attempt_at_cable_routing.jpeg]*
 
 First cut rerouting cabling. Not great, but a vast improvement
-* *[image pending migration: 120px-Phoenix_Build_-_First_attempt_at_cable_routing_view_2.jpeg]*
+* *[image: 120px-Phoenix_Build_-_First_attempt_at_cable_routing_view_2.jpeg]*
 
 First cut rerouting cabling. Not great, but a vast improvement. (Another angle)
-* *[image pending migration: 90px-Phoenix_Build_-_Rearrangement_of_SSD_and_cooling_loop_power.jpeg]*
+* *[image: 90px-Phoenix_Build_-_Rearrangement_of_SSD_and_cooling_loop_power.jpeg]*
 
 Moved SSD so the AIO watercooling power can share the same power line to clean up some of the cabling
-* *[image pending migration: 108px-Phoenix_Build_-_Completed_Build_iso_shot.jpeg]*
+* *[image: 108px-Phoenix_Build_-_Completed_Build_iso_shot.jpeg]*
 
 Build finished.
-* *[image pending migration: 112px-Phoenix_Build_-_Completed_Build_open_side.jpeg]*
+* *[image: 112px-Phoenix_Build_-_Completed_Build_open_side.jpeg]*
 
 Build finished.
-* *[image pending migration: 83px-Phoenix_Build_-_Completed_Rear.jpeg]*
+* *[image: 83px-Phoenix_Build_-_Completed_Rear.jpeg]*
 
 Build finished. Rear shot
-* *[image pending migration: 120px-Phoenix_Build_-_Completed_First_run.jpeg]*
+* *[image: 120px-Phoenix_Build_-_Completed_First_run.jpeg]*
 
 First run and no blue smoke
-* *[image pending migration: 120px-Phoenix_Build_-_Up_and_running%2C_final_shot.jpeg]*
+* *[image: 120px-Phoenix_Build_-_Up_and_running%2C_final_shot.jpeg]*
 
 Final shot from the build. May do a bit more finessing but we're up and running

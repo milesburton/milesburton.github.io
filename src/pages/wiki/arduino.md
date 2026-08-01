@@ -26,23 +26,23 @@ I wont go into to much detail as you can read all about it on [Arduino.cc](http:
 
 You can code in a mixture of ASM and C++ to produce some really impressive stuff. I've seen everything from 3D Scanners, "Smart-Lighting" to games consoles built from these processors. Imagine a little robot powered by a Wii Nunchuck! All possible and all VERY easy!
 
-*[image pending migration: Milesburton logo.png]*
+*[image: Milesburton logo.png]*
 
 ## Libraries
 
 [Arduino RF Kit Library - Get your Arduino talking over the air](/wiki/arduino_rf_kit_library_get_your_arduino_talking_over_the_air/)
 
-Arduino and the Sure 2416 Information Display *(not yet migrated)*
+Arduino and the Sure 2416 Information Display *(coming soon)*
 
-Dallas Temperature Control Library *(not yet migrated)*
+Dallas Temperature Control Library *(coming soon)*
 
-HyperCom Packet Library *(not yet migrated)* - A reliable packet based half-duplex Arduino networking library focussed on easy-of-use and extensibility
+HyperCom Packet Library *(coming soon)* - A reliable packet based half-duplex Arduino networking library focussed on easy-of-use and extensibility
 
-LCD Smartie Powered By Arduino Liquid Crystal library *(not yet migrated)*
+LCD Smartie Powered By Arduino Liquid Crystal library *(coming soon)*
 
-URM37 Ultrasonic Distance Measurement Library *(not yet migrated)*
+URM37 Ultrasonic Distance Measurement Library *(coming soon)*
 
-Gameboy Printer with Arduino *(not yet migrated)*
+Gameboy Printer with Arduino *(coming soon)*
 
 ## Hardware
 
@@ -54,39 +54,39 @@ Mnet:Hardware - With support from a few friends (MnetCS) and my very helpful gir
 
 ## Software
 
-Transport for London API and the LCD Smartie *(not yet migrated)*
+Transport for London API and the LCD Smartie *(coming soon)*
 
-Homebrew LCD Powered By WiShield *(not yet migrated)*
+Homebrew LCD Powered By WiShield *(coming soon)*
 
-USD LCD Display (HD44780) Running on Linux via Arduino *(not yet migrated)*
+USD LCD Display (HD44780) Running on Linux via Arduino *(coming soon)*
 
 ## 'Quick and Dirty' Examples
 
 [Arduino Range Detector](/wiki/arduino_range_detector/) - URM37 and the [Arduino Homebrew LCD Shield](/wiki/arduino_homebrew_lcd_shield/) combined for instant feedback!
 
-LCD Shield Goes Wireless 433Mhz *(not yet migrated)* - A quick prototype to see how feasible it would be to make a wireless LCD
+LCD Shield Goes Wireless 433Mhz *(coming soon)* - A quick prototype to see how feasible it would be to make a wireless LCD
 
-RainbowDuino Via Serial *(not yet migrated)* - Prototyping the RainbowDuino over UART/TTL
+RainbowDuino Via Serial *(coming soon)* - Prototyping the RainbowDuino over UART/TTL
 
 ## General Media 'Fun and Games'
 
-Rainbowduino Media *(not yet migrated)*
+Rainbowduino Media *(coming soon)*
 
 [Arduino Webserver powered by WiShield with sprinkles - BlinkM](/wiki/arduino_webserver_powered_by_wishield_with_sprinkles_blinkm/)
 
-Pachube Experiments *(not yet migrated)*
+Pachube Experiments *(coming soon)*
 
 ## Short-Reviews
 
 [Arduino Clone - Romeo Robotics Board](/wiki/arduino_clone_romeo_robotics_board/)
 
-URM37 Ultrasonic Sensor Review *(not yet migrated)*
+URM37 Ultrasonic Sensor Review *(coming soon)*
 
-Sharp GP2D12 Infrared Sensor Review *(not yet migrated)*
+Sharp GP2D12 Infrared Sensor Review *(coming soon)*
 
 ## STM8 Discovery kit
 
-*[image pending migration: Stm8s-discovery-debugging.jpg]*
+*[image: Stm8s-discovery-debugging.jpg]*
 
 [Getting Started with the STM8 Discovery Kit](http://benryves.com/tutorials/stm8s-discovery/)
 
@@ -104,7 +104,7 @@ Sharp GP2D12 Infrared Sensor Review *(not yet migrated)*
 
 ## Cheat Sheets
 
-Tip31 Transistor *(not yet migrated)*
+Tip31 Transistor *(coming soon)*
 
 ## Useful links
 

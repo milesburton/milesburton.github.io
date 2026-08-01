@@ -64,11 +64,11 @@ System.out.println(persistedConfig.getMyBoolean());
 
 ## Example within NZBAir
 
-*[image pending migration: PreferenceLauncherActivity.png]* The Preference Launcher is used as an entry point into the various types of configuration.
+*[image: PreferenceLauncherActivity.png]* The Preference Launcher is used as an entry point into the various types of configuration.
 
-*[image pending migration: PreferenceListActivity.png]* The Preference List Activity manages each provider 'config' object. You can add/remove/edit each item in the list. The concrete class (that which implements the Preference List Activity) defines what actions are taken in response to user events (such as adding a new config or deleting).
+*[image: PreferenceListActivity.png]* The Preference List Activity manages each provider 'config' object. You can add/remove/edit each item in the list. The concrete class (that which implements the Preference List Activity) defines what actions are taken in response to user events (such as adding a new config or deleting).
 
-*[image pending migration: ConfigActivity.png]* The ACM, based on the hints you provider in your configuration object will build a view which can be used to configure an object. NZBAir uses this widely, in this example it is used to configure the general settings.
+*[image: ConfigActivity.png]* The ACM, based on the hints you provider in your configuration object will build a view which can be used to configure an object. NZBAir uses this widely, in this example it is used to configure the general settings.
 
 ## ACM Component Breakdown
 
