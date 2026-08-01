@@ -37,6 +37,13 @@
 	const resultsList = document.getElementById('search-results') as HTMLUListElement;
 	const emptyState = document.getElementById('search-empty') as HTMLParagraphElement;
 
+	// The overlay is authored next to the sidebar trigger for convenience, but a
+	// `position: fixed` element nested inside a `position: sticky` ancestor can end
+	// up painted below unrelated `position: relative` siblings elsewhere on the page
+	// in some browsers. Move it to be a direct child of <body> so it always escapes
+	// every ancestor's stacking/containing-block context.
+	document.body.appendChild(overlay);
+
 	async function ensureIndex() {
 		if (index) return index;
 		const res = await fetch('/search-index.json');
@@ -244,6 +251,8 @@
 		margin: 0;
 		padding: 0.5rem;
 		overflow-y: auto;
+		flex: 1;
+		min-height: 0;
 	}
 
 	.search-results li a {
