@@ -44,7 +44,7 @@ featuredImage: "/blog-media/2023/11/img_9354.jpg"
 
 
 
-<p class="wp-block-paragraph">The name &#8216;ultra-rapid&#8217; certainly lives up to its billing. Post-shopping, I returned to a fully charged car in what felt like a blink of an eye. During this brief wait, I had the pleasure of engaging with a cordial Welsh gentleman, curious about my EV — a testament to the camaraderie within the EV community.</p>
+<p class="wp-block-paragraph">The name &#8216;ultra-rapid&#8217; certainly lives up to its billing. Post-shopping, I returned to a fully charged car in what felt like a blink of an eye. During this brief wait, I had the pleasure of engaging with a cordial Welsh gentleman, curious about my EV, a testament to the camaraderie within the EV community.</p>
 
 
 
@@ -52,7 +52,7 @@ featuredImage: "/blog-media/2023/11/img_9354.jpg"
 
 
 
-<p class="wp-block-paragraph">However, excellence comes at a price. At 75 pence per kilowatt-hour, the cost of convenience steeply parallels that of fueling an internal combustion engine vehicle — a far stretch from the economical £10 it would cost to charge at home. It&#8217;s an area ripe for competitive adjustment.</p>
+<p class="wp-block-paragraph">However, excellence comes at a price. At 75 pence per kilowatt-hour, the cost of convenience steeply parallels that of fueling an internal combustion engine vehicle, a far stretch from the economical £10 it would cost to charge at home. It&#8217;s an area ripe for competitive adjustment.</p>
 
 
 

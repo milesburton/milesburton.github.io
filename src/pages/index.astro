@@ -20,7 +20,7 @@ const featured = [
 		imageAlt: 'Veta trading terminal showing a live market ladder, orders, and positions panels',
 		kicker: 'Finance · In progress',
 		title: 'Veta Trading Platform',
-		description: 'A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data — built to help people learn market dynamics without risking capital.',
+		description: 'A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data, built to help people learn market dynamics without risking capital.',
 		tags: ['TypeScript', 'Trading', 'WIP'],
 	},
 	{
@@ -91,8 +91,20 @@ const more = [
 							))}
 						</ul>
 						<div class="featured-links">
-							<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined}>
-								Source
+							<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined} class={project.external ? 'external' : undefined}>
+								GitHub
+								{project.external && (
+									<svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M7 17L17 7M9 7h8v8"
+										/>
+									</svg>
+								)}
 							</a>
 							{project.liveHref && (
 								<a href={project.liveHref} target="_blank" rel="noreferrer" class="featured-live-link">
@@ -231,6 +243,9 @@ const more = [
 	}
 
 	.featured-links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
 		font-size: 0.82rem;
 		font-weight: 600;
 		text-decoration: none;
@@ -239,6 +254,15 @@ const more = [
 
 	.featured-links a:hover {
 		color: var(--text);
+	}
+
+	.featured-links .external-icon {
+		flex: 0 0 auto;
+		opacity: 0.6;
+	}
+
+	.featured-links a:hover .external-icon {
+		opacity: 1;
 	}
 
 	.featured-live-link {

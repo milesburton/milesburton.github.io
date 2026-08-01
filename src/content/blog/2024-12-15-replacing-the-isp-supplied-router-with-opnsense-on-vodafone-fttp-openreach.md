@@ -4,11 +4,11 @@ date: 2024-12-15
 slug: "replacing-the-isp-supplied-router-with-opnsense-on-vodafone-fttp-openreach"
 categories: ["HOWTO"]
 tags: ["internet","networking","router","technology","wifi"]
-excerpt: "Many home lab enthusiasts and network power-users quickly find themselves outgrowing the capabilities and limitations of their ISP-supplied router. While some keep this device as a simple bridge to a more enterprise-grade solution—such as OPNsense or pfSense—this leaves unnecessa"
+excerpt: "Many home lab enthusiasts and network power-users quickly find themselves outgrowing the capabilities and limitations of their ISP-supplied router. While some keep this device as a simple bridge to a more enterprise-grade solution, such as OPNsense or pfSense, this leaves unnecessa"
 ---
 
 <div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top"><div class="wp-block-media-text__content">
-<p class="wp-block-paragraph">Many home lab enthusiasts and network power-users quickly find themselves outgrowing the capabilities and limitations of their ISP-supplied router. While some keep this device as a simple bridge to a more enterprise-grade solution—such as OPNsense or pfSense—this leaves unnecessary hardware consuming power and potentially adds another attack surface, should the ISP router be exploited.</p>
+<p class="wp-block-paragraph">Many home lab enthusiasts and network power-users quickly find themselves outgrowing the capabilities and limitations of their ISP-supplied router. While some keep this device as a simple bridge to a more enterprise-grade solution, such as OPNsense or pfSense, this leaves unnecessary hardware consuming power and potentially adds another attack surface, should the ISP router be exploited.</p>
 
 
 

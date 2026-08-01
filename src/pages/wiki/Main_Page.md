@@ -5,7 +5,7 @@ title: Wiki
 
 # Wiki
 
-This is where I keep organic thoughts, guides, and general write-ups. Some of it is old, some of it is niche — feel free to have a look around.
+This is where I keep organic thoughts, guides, and general write-ups. Some of it is old, some of it is niche, but feel free to have a look around.
 
 ## Articles
 
