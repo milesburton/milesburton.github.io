@@ -1,0 +1,245 @@
+{
+	"2023_development_machine_build": [
+		"homelab"
+	],
+	"2d_positioning_trilateration_in_javascript": [
+		"software"
+	],
+	"acer_aspire_one_d257_ram_upgrade_pictures": [
+		"embedded"
+	],
+	"adding_jsp_support_to_jetty_7_no_jsp_support": [
+		"software"
+	],
+	"agile_software_development": [
+		"software"
+	],
+	"android_building_a_listview_with_an_onclick_position": [
+		"software"
+	],
+	"android_configuration_manager": [
+		"software"
+	],
+	"android_development": [
+		"software"
+	],
+	"android_unit_testing_accessing_private_methods_and_members": [
+		"software"
+	],
+	"arduino": [
+		"embedded"
+	],
+	"arduino_all_wheel_drive_a4wd_robot_trials": [
+		"embedded"
+	],
+	"arduino_bargains_and_sourcing": [
+		"embedded"
+	],
+	"arduino_clone_romeo_robotics_board": [
+		"embedded"
+	],
+	"arduino_homebrew_lcd_shield": [
+		"embedded"
+	],
+	"arduino_range_detector": [
+		"embedded"
+	],
+	"arduino_rf_kit_library_get_your_arduino_talking_over_the_air": [
+		"embedded",
+		"radio"
+	],
+	"arduino_webserver_powered_by_wishield_with_sprinkles_blinkm": [
+		"embedded"
+	],
+	"bt_british_telecom": [],
+	"burst_net_review": [
+		"homelab"
+	],
+	"continuous_integration": [
+		"software"
+	],
+	"dallas_temperature_control_library": [
+		"embedded"
+	],
+	"dd_wrt_web_services": [
+		"homelab"
+	],
+	"eee_701_touchscreen_modification": [
+		"embedded"
+	],
+	"engineering": [],
+	"fahdroid_folding_home_statistics_on_the_go": [
+		"software"
+	],
+	"fixing_hyundai_i20_rear_washer": [],
+	"gameboy_printer_with_arduino": [
+		"embedded"
+	],
+	"geospark_research_and_implementation_of_a_prototype_wi_fi_positioning_system": [
+		"software",
+		"radio"
+	],
+	"gradle_authenticating_with_artifactory_repo": [
+		"software"
+	],
+	"graduate_job_hunting": [],
+	"hacking_the_pogoplug": [
+		"homelab",
+		"embedded"
+	],
+	"homebrew_lcd_powered_by_wishield": [
+		"embedded"
+	],
+	"ht1632_arduino_matrix_display_library_for_the_sure_2416_and_0832": [
+		"embedded"
+	],
+	"ht1632_matrix_display_green": [
+		"embedded"
+	],
+	"installing_esxi_on_lenovo_m80q_thinkcentre_gen3": [
+		"homelab"
+	],
+	"is_mini_itx_compatible_with_atx": [
+		"homelab"
+	],
+	"lcd_shield_goes_wireless_433mhz": [
+		"embedded",
+		"radio"
+	],
+	"lcd_smartie_powered_by_arduino_liquid_crystal_library": [
+		"embedded"
+	],
+	"london_railway_station_coordinates_sql": [
+		"software"
+	],
+	"london_tube_geocoding_web_service": [
+		"software"
+	],
+	"m0lha": [
+		"radio"
+	],
+	"mediawiki_recaptcha_fix": [
+		"software",
+		"homelab"
+	],
+	"mint12_classic_mode": [
+		"homelab"
+	],
+	"mint12_netboot_thinclient": [
+		"homelab"
+	],
+	"mmorpg": [],
+	"my_developer_reading_list": [
+		"software"
+	],
+	"my_kit": [
+		"homelab",
+		"embedded"
+	],
+	"nightingales_motorcycles_online_review": [],
+	"nzb_air_web_service_release_3": [
+		"software"
+	],
+	"nzbair_usenet_and_sabnzbd_mobile_for_android": [
+		"software"
+	],
+	"nzbairwebservice": [
+		"software"
+	],
+	"o2_joggler_hacks": [
+		"embedded",
+		"homelab"
+	],
+	"o2_joggler_hacks_booting_with_nfs": [
+		"embedded",
+		"homelab"
+	],
+	"o2_joggler_hacks_enabled_ssh": [
+		"embedded",
+		"homelab"
+	],
+	"o2_joggler_hacks_enabling_scp_server": [
+		"embedded",
+		"homelab"
+	],
+	"o2_joggler_hacks_quake_3": [
+		"embedded"
+	],
+	"online_regex_match_tool_build_up_a_new_string_based_on_matched_groups": [
+		"software"
+	],
+	"pachube_experiments": [
+		"embedded",
+		"homelab"
+	],
+	"pogoplug_pro_installing_tomcat_6": [
+		"homelab"
+	],
+	"postcode_geocoding_web_service": [
+		"software"
+	],
+	"rainbowduino_media": [
+		"embedded"
+	],
+	"rainbowduino_via_serial": [
+		"embedded"
+	],
+	"related_work_and_contact": [],
+	"restore_dd_wrt_nat_loopback": [
+		"homelab"
+	],
+	"rm_graduate_scheme_research_machines_thoughts_help": [],
+	"security_through_obscurity_is_it_really_that_bad": [
+		"software"
+	],
+	"sharp_gp2d12_infrared_sensor_review": [
+		"embedded"
+	],
+	"sky_box_rs232_connector": [
+		"embedded",
+		"homelab"
+	],
+	"smart_plugs_the_path_of_least_resistance": [
+		"homelab",
+		"energy"
+	],
+	"sure_2416_displaying_cpu_graph_via_arduino": [
+		"embedded"
+	],
+	"sure_2416_running_pong_via_arduino": [
+		"embedded"
+	],
+	"the_difference_between_a_qa_and_a_tester": [
+		"software"
+	],
+	"the_london_tube_routing_api": [
+		"software"
+	],
+	"thoughts": [],
+	"tip31_transistor": [
+		"embedded"
+	],
+	"toshiba_libretto_50ct": [
+		"embedded"
+	],
+	"transport_apis": [
+		"software"
+	],
+	"ubuntu_11_04_x64_fixing_the_radeon_slow_painting_bug": [
+		"homelab"
+	],
+	"urm37_ultrasonic_distance_measurement_library": [
+		"embedded"
+	],
+	"urm37_ultrasonic_sensor_review": [
+		"embedded"
+	],
+	"usd_lcd_display_hd44780_running_on_linux_via_arduino": [
+		"embedded"
+	],
+	"videoondemand": [],
+	"why_your_personal_projects_fail": [],
+	"xbox_classic_controller_driver_xbcd_for_64bit": [
+		"embedded"
+	]
+}

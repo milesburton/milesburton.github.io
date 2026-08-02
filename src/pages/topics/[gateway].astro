@@ -1,0 +1,274 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import wikiGateways from '../../data/wiki-gateways.json';
+import repoGateways from '../../data/repo-gateways.json';
+
+interface Repo {
+	name: string;
+	html_url: string;
+	description: string | null;
+	language: string | null;
+	stargazers_count: number;
+	pushed_at: string;
+	fork: boolean;
+	private: boolean;
+	archived: boolean;
+}
+
+const GATEWAYS: Record<string, { title: string; description: string }> = {
+	ai: {
+		title: 'AI and local computing',
+		description: 'Local models, self-hosted inference, and practical experiments with AI tooling.',
+	},
+	radio: {
+		title: 'Amateur radio and mesh networking',
+		description: 'Licensing, SDR, mesh nodes, and everything else under the M0LHA callsign.',
+	},
+	homelab: {
+		title: 'Homelab and infrastructure',
+		description: 'Servers, networking, virtualisation, and the infrastructure behind everything else here.',
+	},
+	embedded: {
+		title: 'Embedded systems and electronics',
+		description: 'Arduino, sensors, displays, and other hands-on hardware projects.',
+	},
+	software: {
+		title: 'Software engineering',
+		description: 'Coding practice, tooling, architecture, and the craft side of the job.',
+	},
+	energy: {
+		title: 'Energy and electric vehicles',
+		description: 'Solar, EVs, and the broader shift away from fossil fuels.',
+	},
+};
+
+const blogTagToGateways: Record<string, string[]> = {
+	AI: ['ai'],
+	Coding: ['software'],
+	DevOps: ['software', 'homelab'],
+	Databases: ['software'],
+	Career: ['software'],
+	'Home Lab': ['homelab'],
+	Networking: ['homelab'],
+	'Electric Vehicles': ['energy'],
+	Renewables: ['energy'],
+	'Amateur Radio': ['radio'],
+	'Retro & Gaming': ['embedded'],
+	Hardware: ['embedded'],
+	Security: ['software'],
+};
+
+export async function getStaticPaths() {
+	return Object.keys({
+		ai: 0,
+		radio: 0,
+		homelab: 0,
+		embedded: 0,
+		software: 0,
+		energy: 0,
+	}).map((gateway) => ({ params: { gateway } }));
+}
+
+const { gateway } = Astro.params;
+const info = GATEWAYS[gateway!];
+
+const wikiFiles = import.meta.glob('../wiki/*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>;
+
+function extractDate(raw: string): { iso: string; display: string } | null {
+	const match = raw.match(/<time datetime="([^"]+)">([^<]+)<\/time>/);
+	if (!match) return null;
+	return { iso: match[1], display: match[2] };
+}
+
+function titleFromFrontmatter(raw: string): string {
+	const match = raw.match(/^title:\s*(.+)$/m);
+	return match ? match[1].trim().replace(/^"(.*)"$/, '$1') : '';
+}
+
+const wikiTitleBySlug = new Map<string, string>();
+const wikiDateBySlug = new Map<string, { iso: string; display: string }>();
+for (const [path, raw] of Object.entries(wikiFiles)) {
+	const slugMatch = path.match(/\/([^/]+)\.md$/);
+	if (!slugMatch) continue;
+	wikiTitleBySlug.set(slugMatch[1], titleFromFrontmatter(raw));
+	const date = extractDate(raw);
+	if (date) wikiDateBySlug.set(slugMatch[1], date);
+}
+
+const wikiResults = Object.entries(wikiGateways as Record<string, string[]>)
+	.filter(([, gateways]) => gateways.includes(gateway!))
+	.map(([slug]) => ({
+		title: wikiTitleBySlug.get(slug) ?? slug,
+		href: `/wiki/${slug}/`,
+		date: wikiDateBySlug.get(slug)?.iso,
+	}));
+
+const allPosts = await getCollection('blog');
+const blogResults = allPosts
+	.filter((post) => post.data.tags.some((tag) => blogTagToGateways[tag]?.includes(gateway!)))
+	.map((post) => ({
+		title: post.data.title,
+		href: `/blog/${post.data.slug}/`,
+		date: post.data.date.toISOString(),
+	}))
+	.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+let repos: Repo[] = [];
+try {
+	const all: Repo[] = [];
+	for (let page = 1; page <= 10; page++) {
+		const res = await fetch(`https://api.github.com/users/milesburton/repos?per_page=100&type=owner&page=${page}`);
+		if (!res.ok) break;
+		const batch = (await res.json()) as Repo[];
+		all.push(...batch);
+		if (batch.length < 100) break;
+	}
+	repos = all.filter((r) => !r.fork && !r.private && !r.archived);
+} catch {
+	// build-time fetch failure — section renders empty rather than failing the build
+}
+
+const projectResults = repos
+	.filter((r) => (repoGateways as Record<string, string[]>)[r.name]?.includes(gateway!))
+	.map((r) => ({ title: r.name, href: r.html_url, description: r.description }));
+
+const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+<Layout title={info.title} description={info.description}>
+	<main class="shell">
+		<header class="page-header">
+			<p class="kicker">Topic</p>
+			<h1>{info.title}</h1>
+			<p class="intro">{info.description}</p>
+		</header>
+
+		{blogResults.length > 0 && (
+			<section class="group">
+				<h2 class="section-title">Blog ({blogResults.length})</h2>
+				<ul class="result-list">
+					{blogResults.map((item) => (
+						<li>
+							<a href={item.href}>{item.title}</a>
+							<time datetime={item.date}>{formatter.format(new Date(item.date))}</time>
+						</li>
+					))}
+				</ul>
+			</section>
+		)}
+
+		{wikiResults.length > 0 && (
+			<section class="group">
+				<h2 class="section-title">Wiki ({wikiResults.length})</h2>
+				<ul class="result-list">
+					{wikiResults.map((item) => (
+						<li>
+							<a href={item.href}>{item.title}</a>
+							{item.date && <time datetime={item.date}>{formatter.format(new Date(item.date))}</time>}
+						</li>
+					))}
+				</ul>
+			</section>
+		)}
+
+		{projectResults.length > 0 && (
+			<section class="group">
+				<h2 class="section-title">Projects ({projectResults.length})</h2>
+				<ul class="result-list">
+					{projectResults.map((item) => (
+						<li>
+							<a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+							{item.description && <span class="result-description">{item.description}</span>}
+						</li>
+					))}
+				</ul>
+			</section>
+		)}
+	</main>
+</Layout>
+
+<style>
+	.shell {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 4rem 2rem 5rem;
+	}
+
+	.page-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.kicker {
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		font-size: 0.78rem;
+		font-weight: 600;
+		margin: 0 0 0.75rem;
+	}
+
+	h1 {
+		font-size: clamp(1.9rem, 4vw, 2.6rem);
+		margin: 0;
+	}
+
+	.intro {
+		margin-top: 0.85rem;
+		max-width: 62ch;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.group {
+		margin-bottom: 2.5rem;
+	}
+
+	.section-title {
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-dim);
+		margin: 0 0 1rem;
+	}
+
+	.result-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.result-list li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.6rem;
+		border-bottom: 1px solid var(--border);
+		padding-bottom: 0.75rem;
+	}
+
+	.result-list a {
+		font-size: 0.95rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--text);
+	}
+
+	.result-list a:hover {
+		color: var(--accent-strong);
+	}
+
+	.result-list time {
+		font-size: 0.78rem;
+		color: var(--text-dim);
+	}
+
+	.result-description {
+		font-size: 0.85rem;
+		color: var(--text-muted);
+	}
+</style>

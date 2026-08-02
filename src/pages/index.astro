@@ -1,5 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const latestPosts = allPosts
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.slice(0, 3)
+	.map((post) => {
+		const wordCount = (post.body ?? '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
+		const readingMinutes = Math.max(1, Math.round(wordCount / 200));
+		return {
+			href: `/blog/${post.data.slug}/`,
+			title: post.data.title,
+			date: post.data.date,
+			excerpt: post.data.excerpt,
+			category: post.data.tags[0],
+			readingMinutes,
+		};
+	});
+
+const dateFormatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
 const featured = [
 	{
@@ -33,6 +53,15 @@ const featured = [
 		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
 		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
 	},
+];
+
+const topics = [
+	{ href: '/topics/ai/', title: 'AI & Local Compute' },
+	{ href: '/topics/radio/', title: 'Amateur Radio & Mesh' },
+	{ href: '/topics/homelab/', title: 'Homelab & Infrastructure' },
+	{ href: '/topics/embedded/', title: 'Embedded & Electronics' },
+	{ href: '/topics/software/', title: 'Software Engineering' },
+	{ href: '/topics/energy/', title: 'Energy & EVs' },
 ];
 
 const more = [
@@ -118,6 +147,40 @@ const more = [
 			</div>
 		</section>
 
+		<section class="latest">
+			<h2 class="section-title">Latest Writing</h2>
+			<ul class="latest-list">
+				{latestPosts.map((post) => (
+					<li class="latest-card">
+						<a href={post.href} class="latest-title">
+							{post.title}
+						</a>
+						<div class="latest-meta">
+							<time datetime={post.date.toISOString()}>{dateFormatter.format(post.date)}</time>
+							{post.category && (
+								<>
+									<span class="latest-sep">·</span>
+									<span class="latest-category">{post.category}</span>
+								</>
+							)}
+							<span class="latest-sep">·</span>
+							<span>{post.readingMinutes} min read</span>
+						</div>
+						{post.excerpt && <p class="latest-excerpt">{post.excerpt}</p>}
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="topics">
+			<h2 class="section-title">Browse by Topic</h2>
+			<div class="topic-grid">
+				{topics.map((topic) => (
+					<a href={topic.href} class="topic-chip">{topic.title}</a>
+				))}
+			</div>
+		</section>
+
 		<section class="more">
 			<h2 class="section-title">More</h2>
 			<div class="tiles">
@@ -181,6 +244,93 @@ const more = [
 
 	.featured {
 		margin-bottom: 3rem;
+	}
+
+	.latest {
+		margin-bottom: 3rem;
+	}
+
+	.latest-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+	}
+
+	.latest-card {
+		border-bottom: 1px solid var(--border);
+		padding-bottom: 1.1rem;
+	}
+
+	.latest-title {
+		display: block;
+		font-size: 1.05rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--text);
+		line-height: 1.4;
+	}
+
+	.latest-title:hover {
+		color: var(--accent-strong);
+	}
+
+	.latest-meta {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.3rem;
+		font-size: 0.78rem;
+		color: var(--text-dim);
+	}
+
+	.latest-sep {
+		opacity: 0.6;
+	}
+
+	.latest-category {
+		color: var(--accent-strong);
+		font-weight: 600;
+	}
+
+	.latest-excerpt {
+		margin: 0.5rem 0 0;
+		color: var(--text-muted);
+		font-size: 0.92rem;
+		line-height: 1.55;
+	}
+
+	.topics {
+		margin-bottom: 3rem;
+	}
+
+	.topic-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.topic-chip {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.55rem 1rem;
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		color: var(--text);
+		text-decoration: none;
+		font-size: 0.88rem;
+		font-weight: 600;
+		transition: border-color 130ms ease, background 130ms ease, color 130ms ease;
+	}
+
+	.topic-chip:hover {
+		border-color: var(--accent-strong);
+		color: var(--accent-strong);
+		background: var(--bg-raised);
 	}
 
 	.featured-grid {

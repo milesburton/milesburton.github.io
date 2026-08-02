@@ -1,0 +1,240 @@
+{
+	"Android-Configuration-Manager": [
+		"software"
+	],
+	"aprs-station-map": [
+		"radio"
+	],
+	"arduino-frequency-shift-keying-rtty": [
+		"embedded",
+		"radio"
+	],
+	"Arduino-Temperature-Control-Library": [
+		"embedded"
+	],
+	"astro-blog": [
+		"software"
+	],
+	"autonomy-crawler": [
+		"software"
+	],
+	"bitbucket-repositories-to-paths": [
+		"software"
+	],
+	"blagger": [
+		"software"
+	],
+	"canvas-kata": [
+		"software"
+	],
+	"chef-hosts": [
+		"homelab",
+		"software"
+	],
+	"CityMap-Kata": [
+		"software"
+	],
+	"cloudflare-dns-updater": [
+		"homelab",
+		"software"
+	],
+	"codesandbox-template-next.js": [
+		"software"
+	],
+	"collab-stack": [
+		"software"
+	],
+	"console-argument-processor": [
+		"software"
+	],
+	"console-boilerplate": [
+		"software"
+	],
+	"devcontainer-template": [
+		"software",
+		"homelab"
+	],
+	"easypal-toolkit": [
+		"radio",
+		"software"
+	],
+	"esp-oled-screensaver": [
+		"embedded",
+		"homelab"
+	],
+	"Exploring-warnings": [
+		"software"
+	],
+	"gaussian-blur-tool": [
+		"ai",
+		"software"
+	],
+	"git-commit-viz": [
+		"software"
+	],
+	"Grails-Jasmine-Spike": [
+		"software"
+	],
+	"grails-twitter-tdd-example": [
+		"software"
+	],
+	"graphql-template": [
+		"software"
+	],
+	"groovy-spring-hibernate-example": [
+		"software"
+	],
+	"grpc-todo-app": [
+		"software"
+	],
+	"hackedio-bindays": [
+		"software"
+	],
+	"HT1632": [
+		"embedded"
+	],
+	"http-imposter-example": [
+		"software"
+	],
+	"intent-driven-e2e": [
+		"software"
+	],
+	"interstate75": [
+		"embedded"
+	],
+	"jasmine-tdd-example": [
+		"software"
+	],
+	"jcr-query-tool": [
+		"software"
+	],
+	"jobgeneration": [
+		"software"
+	],
+	"json-merger": [
+		"software"
+	],
+	"kata": [
+		"software"
+	],
+	"Legend-of-the-green-dragon-2025": [
+		"software"
+	],
+	"meshcore-tile-generator": [
+		"radio"
+	],
+	"milesburton": [],
+	"mock-weather-api": [
+		"software"
+	],
+	"news-sentiment-reader": [
+		"ai",
+		"software"
+	],
+	"night-watch": [
+		"radio",
+		"homelab"
+	],
+	"nightwatch-dx": [
+		"radio",
+		"homelab"
+	],
+	"nzbair": [
+		"software"
+	],
+	"OpenWebSDR": [
+		"radio"
+	],
+	"phonegap-example": [
+		"software"
+	],
+	"piwrgb": [
+		"embedded"
+	],
+	"playground": [
+		"software"
+	],
+	"png-stego-toolkit": [
+		"software"
+	],
+	"react-coding-test": [
+		"software"
+	],
+	"reddit-ai-filter": [
+		"ai",
+		"software"
+	],
+	"RestClient": [
+		"software"
+	],
+	"RTSP-audio-analyser": [
+		"ai",
+		"homelab"
+	],
+	"rtsp-licence-plate-reader": [
+		"ai",
+		"homelab"
+	],
+	"simple-flow-game": [
+		"software"
+	],
+	"soladin-600": [
+		"energy",
+		"homelab"
+	],
+	"solax-hybrid-inverter-parser": [
+		"energy",
+		"homelab"
+	],
+	"sstv-toolkit": [
+		"radio",
+		"software"
+	],
+	"stats-api": [
+		"software"
+	],
+	"stats-web": [
+		"software"
+	],
+	"sudoku-trainer": [
+		"software"
+	],
+	"tdd-numbers-to-words": [
+		"software"
+	],
+	"teslacam": [
+		"energy",
+		"embedded"
+	],
+	"trains-java-tdd": [
+		"software"
+	],
+	"twitch-vod-downloader": [
+		"homelab",
+		"software"
+	],
+	"ultimate-bundle-demo": [
+		"software"
+	],
+	"vbulletin-forum-scraper": [
+		"software",
+		"homelab"
+	],
+	"veta-trading-platform": [
+		"software"
+	],
+	"victron-adapter": [
+		"energy",
+		"homelab"
+	],
+	"wemo": [
+		"homelab"
+	],
+	"youtube-ai-avatar": [
+		"ai"
+	],
+	"youtube-semantic-search": [
+		"ai",
+		"software"
+	]
+}
