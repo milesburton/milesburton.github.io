@@ -5,6 +5,8 @@ title: EEE 701 Touchscreen Modification
 
 # EEE 701 Touchscreen Modification
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-12-12T19:25:46Z">12 Dec 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

@@ -5,6 +5,8 @@ title: Mint12-Classic-Mode
 
 # Mint12-Classic-Mode
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-01-07T21:21:08Z">7 Jan 2012</time></p>
+
 ## Contents
 
 * [1 tl;dr; One time install script](#tldr-one-time-install-script)

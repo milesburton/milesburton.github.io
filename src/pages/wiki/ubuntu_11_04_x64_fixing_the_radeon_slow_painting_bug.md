@@ -5,6 +5,8 @@ title: Ubuntu 11.04 x64 - Fixing the Radeon slow painting bug
 
 # Ubuntu 11.04 x64 - Fixing the Radeon slow painting bug
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-08-29T12:13:01Z">29 Aug 2011</time></p>
+
 
 If you have a Radeon HD 6990 (Caymen derivative) and use Ubuntu 11.04 (or 10.04) you've probably noticed your interface is shockingly slow. This problem has been hounding me for ages but there is a 'fix'. It appears to be related to the proprietary driver not activating correctly.
 

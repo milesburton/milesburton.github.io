@@ -5,6 +5,8 @@ title: O2 Joggler Hacks - Enabling SCP Server
 
 # O2 Joggler Hacks - Enabling SCP Server
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-12-12T19:26:47Z">12 Dec 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

@@ -5,6 +5,8 @@ title: Is Mini-ITX compatible with ATX?
 
 # Is Mini-ITX compatible with ATX?
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-06-05T02:52:50Z">5 Jun 2009</time></p>
+
 
 Much to my dispair I've been trying to find the answer to this question for a while. Nothing on professor Google, Mr Ebuyer wasn't much help either. I'm not sure about anyone else but if someone thinks I'm paying £60+ for an ITX case they can take a long walk off a short bridge.
 

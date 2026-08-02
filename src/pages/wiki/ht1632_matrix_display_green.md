@@ -5,6 +5,8 @@ title: HT1632 Matrix Display - Green
 
 # HT1632 Matrix Display - Green
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-02-20T12:23:51Z">20 Feb 2011</time></p>
+
 
 The following is a patch for the [Matrix Display library](/wiki/ht1632_arduino_matrix_display_library_for_the_sure_2416_and_0832/). Many thanks to Iván Lalaguna Alcaine for providing the remapping.
 

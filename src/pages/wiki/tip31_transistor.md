@@ -5,6 +5,8 @@ title: Tip31 Transistor
 
 # Tip31 Transistor
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-11-14T18:10:19Z">14 Nov 2009</time></p>
+
 
 ## Introduction
 You've probably arrived here hunting for some information on these cheap but versatile transistors. They draw about 200mA and are designed to control a flow of high voltage from another source.

@@ -5,6 +5,8 @@ title: Arduino RF Kit Library - Get your Arduino talking over the air
 
 # Arduino RF Kit Library - Get your Arduino talking over the air
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-10-27T20:19:46Z">27 Oct 2009</time></p>
+
 
 **UPDATE:**
 I've recently released the HyperCom library which sits upon VirtualWire. Check out this HyperCom Packet Library

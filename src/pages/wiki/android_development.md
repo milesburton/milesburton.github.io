@@ -5,6 +5,8 @@ title: Android Development
 
 # Android Development
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-03-18T14:02:48Z">18 Mar 2012</time></p>
+
 ## Contents
 
 * [1 My Apps](#my-apps)

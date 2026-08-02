@@ -5,6 +5,8 @@ title: FAHDroid - Folding@Home Statistics on the go
 
 # FAHDroid - Folding@Home Statistics on the go
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-06-02T17:45:00Z">2 Jun 2011</time></p>
+
 ## Contents
 
 * [1 Folding@Home Statistics for Android](#foldinghome-statistics-for-android)

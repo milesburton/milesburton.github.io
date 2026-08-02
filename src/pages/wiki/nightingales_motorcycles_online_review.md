@@ -5,6 +5,8 @@ title: Nightingales Motorcycles Online Review
 
 # Nightingales Motorcycles Online Review
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-06-23T09:01:47Z">23 Jun 2010</time></p>
+
 ## Contents
 
 * [1 Background](#background)

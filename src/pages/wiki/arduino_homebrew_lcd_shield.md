@@ -5,6 +5,8 @@ title: Arduino Homebrew LCD Shield
 
 # Arduino Homebrew LCD Shield
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-10-07T12:11:45Z">7 Oct 2012</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

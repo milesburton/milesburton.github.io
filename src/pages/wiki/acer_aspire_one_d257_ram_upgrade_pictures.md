@@ -5,6 +5,8 @@ title: Acer Aspire One D257 Ram Upgrade - Pictures
 
 # Acer Aspire One D257 Ram Upgrade - Pictures
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-12-30T01:16:50Z">30 Dec 2012</time></p>
+
 ## Contents
 
 * [1 You'll need](#youll-need)

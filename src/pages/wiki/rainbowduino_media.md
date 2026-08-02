@@ -5,6 +5,8 @@ title: Rainbowduino Media
 
 # Rainbowduino Media
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-09-01T19:16:15Z">1 Sep 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

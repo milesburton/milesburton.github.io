@@ -5,6 +5,8 @@ title: DD-WRT Web-services
 
 # DD-WRT Web-services
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-03-04T14:29:08Z">4 Mar 2012</time></p>
+
 ## Contents
 
 * [1 Request](#request)

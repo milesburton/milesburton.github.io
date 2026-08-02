@@ -5,6 +5,8 @@ title: "GeoSpark: Research and Implementation of a Prototype Wi-Fi Positioning S
 
 # GeoSpark: Research and Implementation of a Prototype Wi-Fi Positioning System
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-10-16T20:54:42Z">16 Oct 2009</time></p>
+
 ## Contents
 
 * [1 Abstract](#abstract)

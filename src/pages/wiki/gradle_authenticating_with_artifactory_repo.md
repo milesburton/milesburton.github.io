@@ -5,6 +5,8 @@ title: Gradle Authenticating with Artifactory Repo
 
 # Gradle Authenticating with Artifactory Repo
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-01-14T21:30:57Z">14 Jan 2012</time></p>
+
 
 I've noticed the original method appears to be broken in Gradle 1.0m7. You can use the following instead:
 

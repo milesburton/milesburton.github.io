@@ -5,6 +5,8 @@ title: Pogoplug Pro - Installing Tomcat 6
 
 # Pogoplug Pro - Installing Tomcat 6
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-03-12T08:34:12Z">12 Mar 2012</time></p>
+
 ## Contents
 
 * [1 Prerequisites](#prerequisites)

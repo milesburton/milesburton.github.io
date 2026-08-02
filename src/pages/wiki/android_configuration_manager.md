@@ -5,6 +5,8 @@ title: Android Configuration Manager
 
 # Android Configuration Manager
 
+<p class="wiki-date">Earliest known revision <time datetime="2013-02-19T17:29:28Z">19 Feb 2013</time></p>
+
 ## Contents
 
 * [1 What is the Android Configuration Manager (ACM)?](#what-is-the-android-configuration-manager-acm)

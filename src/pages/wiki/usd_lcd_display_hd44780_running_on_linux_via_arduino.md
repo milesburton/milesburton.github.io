@@ -5,6 +5,8 @@ title: USD LCD Display (HD44780) Running on Linux via Arduino
 
 # USD LCD Display (HD44780) Running on Linux via Arduino
 
+<p class="wiki-date">Earliest known revision <time datetime="2013-05-02T07:26:57Z">2 May 2013</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

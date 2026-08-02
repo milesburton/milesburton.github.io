@@ -5,6 +5,8 @@ title: Arduino Webserver powered by WiShield with sprinkles - BlinkM
 
 # Arduino Webserver powered by WiShield with sprinkles - BlinkM
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-10-18T16:27:47Z">18 Oct 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

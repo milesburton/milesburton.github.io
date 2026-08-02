@@ -5,6 +5,8 @@ title: O2 Joggler Hacks - Enabled SSH
 
 # O2 Joggler Hacks - Enabled SSH
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-14T20:20:37Z">14 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

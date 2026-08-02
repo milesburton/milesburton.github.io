@@ -5,6 +5,8 @@ title: Fixing Hyundai i20 Rear washer
 
 # Fixing Hyundai i20 Rear washer
 
+<p class="wiki-date">Earliest known revision <time datetime="2024-05-26T15:56:51Z">26 May 2024</time></p>
+
 
 Very quick one. My 2014/15 Hyundai i20 rear washer just randomly stopped working some time ago. I just manged to get it working.
 

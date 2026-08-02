@@ -5,6 +5,8 @@ title: Arduino
 
 # Arduino
 
+<p class="wiki-date">Earliest known revision <time datetime="2014-03-09T05:45:57Z">9 Mar 2014</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

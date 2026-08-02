@@ -5,6 +5,8 @@ title: Installing ESXi on Lenovo M80Q ThinkCentre Gen3
 
 # Installing ESXi on Lenovo M80Q ThinkCentre Gen3
 
+<p class="wiki-date">Earliest known revision <time datetime="2023-10-29T15:17:51Z">29 Oct 2023</time></p>
+
 
 ![ThinkCentre M80q Gen 3](/wiki-media/ThinkCentre_M80q_Gen_3.png)
 DRAFT

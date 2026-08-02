@@ -5,6 +5,8 @@ title: Sure 2416 Displaying CPU Graph via Arduino
 
 # Sure 2416 Displaying CPU Graph via Arduino
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-03-22T17:16:12Z">22 Mar 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

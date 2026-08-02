@@ -5,6 +5,8 @@ title: Gameboy Printer with Arduino
 
 # Gameboy Printer with Arduino
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-10-30T21:06:58Z">30 Oct 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

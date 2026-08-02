@@ -5,6 +5,8 @@ title: O2 Joggler Hacks - Quake 3
 
 # O2 Joggler Hacks - Quake 3
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-07-10T23:25:54Z">10 Jul 2010</time></p>
+
 ## Contents
 
 * [1 Quake 3 on the O2 Joggler](#quake-3-on-the-o2-joggler)

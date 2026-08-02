@@ -5,6 +5,8 @@ title: Sharp GP2D12 Infrared Sensor Review
 
 # Sharp GP2D12 Infrared Sensor Review
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-09-14T17:54:00Z">14 Sep 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

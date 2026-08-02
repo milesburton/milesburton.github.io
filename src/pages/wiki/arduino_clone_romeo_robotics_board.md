@@ -5,6 +5,8 @@ title: Arduino Clone - Romeo Robotics Board
 
 # Arduino Clone - Romeo Robotics Board
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-01-29T20:12:02Z">29 Jan 2010</time></p>
+
 ## Contents
 
 * [1 What is the Romeo?](#what-is-the-romeo)

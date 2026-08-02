@@ -5,6 +5,8 @@ title: Graduate Job Hunting
 
 # Graduate Job Hunting
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-25T13:09:42Z">25 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

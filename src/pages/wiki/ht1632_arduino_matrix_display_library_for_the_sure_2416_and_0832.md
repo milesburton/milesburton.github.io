@@ -5,6 +5,8 @@ title: HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
 
 # HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-06-25T14:00:40Z">25 Jun 2012</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

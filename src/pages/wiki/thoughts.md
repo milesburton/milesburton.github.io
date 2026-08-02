@@ -5,6 +5,8 @@ title: Thoughts
 
 # Thoughts
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-01-22T15:36:27Z">22 Jan 2011</time></p>
+
 ## Contents
 
 * [1 Thoughts](#thoughts)

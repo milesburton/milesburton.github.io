@@ -5,6 +5,8 @@ title: Smart-Plugs - The Path of Least Resistance
 
 # Smart-Plugs - The Path of Least Resistance
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-11-28T11:29:04Z">28 Nov 2009</time></p>
+
 
 Smart Plugs are a fairly recently popularised technology. The premise is you can power down the devices you’re not using to avoid the global waste from “Vampire devices”.
 

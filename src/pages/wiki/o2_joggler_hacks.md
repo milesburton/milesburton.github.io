@@ -5,6 +5,8 @@ title: O2 Joggler Hacks
 
 # O2 Joggler Hacks
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-03-11T15:49:59Z">11 Mar 2012</time></p>
+
 ## Contents
 
 * [1 Whats the O2 Joggler?](#whats-the-o2-joggler)

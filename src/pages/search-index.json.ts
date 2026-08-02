@@ -24,6 +24,7 @@ function toExcerpt(markdown: string, length = 200): string {
 		.replace(/```[\s\S]*?```/g, ' ')
 		.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
 		.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+		.replace(/<[^>]+>/g, ' ')
 		.replace(/[#*_`>-]/g, ' ')
 		.replace(/\s+/g, ' ')
 		.trim();

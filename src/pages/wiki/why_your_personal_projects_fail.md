@@ -5,6 +5,8 @@ title: Why Your Personal Projects Fail
 
 # Why Your Personal Projects Fail
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-01-22T15:00:56Z">22 Jan 2011</time></p>
+
 ## Contents
 
 * [1 No, just no](#no-just-no)

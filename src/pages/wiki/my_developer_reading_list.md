@@ -5,6 +5,8 @@ title: My Developer Reading List
 
 # My Developer Reading List
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-02-02T12:14:11Z">2 Feb 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

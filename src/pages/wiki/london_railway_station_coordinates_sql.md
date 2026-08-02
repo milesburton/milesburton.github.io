@@ -5,6 +5,8 @@ title: London Railway Station Coordinates SQL
 
 # London Railway Station Coordinates SQL
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-04T16:50:26Z">4 Apr 2010</time></p>
+
 
 ## Introduction
 The following SQL code will create a station table that includes several fields that allow you to Geocode a London railway station to geographical coordinates. This was pulled from Microsoft SQL 2008.  The data was provided by [Wikipedia](http://en.wikipedia.org/wiki/List_of_London_railway_stations) (Thanks, great site)

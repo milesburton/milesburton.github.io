@@ -5,6 +5,8 @@ title: My Kit
 
 # My Kit
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-10-09T13:56:03Z">9 Oct 2010</time></p>
+
 
 ## My Kit
 Who doesn't like random pictures of geek pr0n? Here's a small selection of random crap as I deem it interesting

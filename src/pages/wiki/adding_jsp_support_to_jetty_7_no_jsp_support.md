@@ -5,6 +5,8 @@ title: Adding JSP support to Jetty 7 - NO JSP Support
 
 # Adding JSP support to Jetty 7 - NO JSP Support
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-05-06T15:56:34Z">6 May 2011</time></p>
+
 ## Contents
 
 * [1 Prerequisites](#prerequisites)

@@ -5,6 +5,8 @@ title: MMORPG
 
 # MMORPG
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-04-25T19:53:19Z">25 Apr 2012</time></p>
+
 ## Contents
 
 * [1 Thoughts on MMOPRG game](#thoughts-on-mmoprg-game)

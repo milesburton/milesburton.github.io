@@ -5,6 +5,8 @@ title: MediaWiki Recaptcha fix
 
 # MediaWiki Recaptcha fix
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-04-16T12:21:14Z">16 Apr 2011</time></p>
+
 ## Contents
 
 * [1 MediaWiki 1.16.x Recaptcha 1.7 Fix](#mediawiki-116x-recaptcha-17-fix)

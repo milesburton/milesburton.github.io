@@ -5,6 +5,8 @@ title: Toshiba Libretto 50CT
 
 # Toshiba Libretto 50CT
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-25T12:43:24Z">25 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

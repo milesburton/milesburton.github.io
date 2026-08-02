@@ -5,6 +5,8 @@ title: Pachube Experiments
 
 # Pachube Experiments
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-05T18:31:44Z">5 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

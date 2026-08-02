@@ -5,6 +5,8 @@ title: Arduino Range Detector
 
 # Arduino Range Detector
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-06-07T18:36:10Z">7 Jun 2009</time></p>
+
 
 This was a little experiment to combine my recent LCD shield and a previous project, the URM37 ultrasonic distance measurement IC. 
 

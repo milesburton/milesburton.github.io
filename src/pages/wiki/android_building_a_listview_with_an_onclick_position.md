@@ -5,6 +5,8 @@ title: Android - Building a ListView with an OnClick Position
 
 # Android - Building a ListView with an OnClick Position
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-10-19T16:59:34Z">19 Oct 2011</time></p>
+
 ## Contents
 
 * [1 The Problem](#the-problem)

@@ -5,6 +5,8 @@ title: Sky Box RS232 Connector
 
 # Sky Box RS232 Connector
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-10-14T07:55:04Z">14 Oct 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

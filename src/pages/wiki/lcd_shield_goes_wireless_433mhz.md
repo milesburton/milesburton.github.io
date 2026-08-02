@@ -5,6 +5,8 @@ title: LCD Shield Goes Wireless 433Mhz
 
 # LCD Shield Goes Wireless 433Mhz
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-06-15T03:14:55Z">15 Jun 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

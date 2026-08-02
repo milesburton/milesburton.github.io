@@ -5,6 +5,8 @@ title: Arduino Bargains and Sourcing
 
 # Arduino Bargains and Sourcing
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-11-08T21:39:45Z">8 Nov 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

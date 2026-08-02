@@ -5,6 +5,8 @@ title: Security Through Obscurity - Is it really that bad?
 
 # Security Through Obscurity - Is it really that bad?
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-05-02T23:59:24Z">2 May 2009</time></p>
+
 ## Contents
 
   * [1 Introductions](#introductions)

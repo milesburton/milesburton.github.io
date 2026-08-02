@@ -5,6 +5,8 @@ title: O2 Joggler Hacks - Booting with NFS
 
 # O2 Joggler Hacks - Booting with NFS
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-03-11T23:33:59Z">11 Mar 2012</time></p>
+
 ## Contents
 
 * [1 Prerequisites](#prerequisites)

@@ -5,6 +5,8 @@ title: 2D Positioning - Trilateration in JavaScript
 
 # 2D Positioning - Trilateration in JavaScript
 
+<p class="wiki-date">Earliest known revision <time datetime="2011-06-18T14:29:24Z">18 Jun 2011</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

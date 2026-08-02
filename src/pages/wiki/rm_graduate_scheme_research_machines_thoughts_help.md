@@ -5,6 +5,8 @@ title: RM Graduate Scheme - Research Machines Thoughts/Help
 
 # RM Graduate Scheme - Research Machines Thoughts/Help
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-25T13:09:11Z">25 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Graduate Software Developer/Internet Applications Developer](#graduate-software-developerinternet-applications-developer)

@@ -5,6 +5,8 @@ title: NZBAir - Usenet and SABnzbd mobile for Android
 
 # NZBAir - Usenet and SABnzbd mobile for Android
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-07-28T18:08:39Z">28 Jul 2012</time></p>
+
 ## Contents
 
 * [1 What is NZBAir?](#what-is-nzbair)

@@ -5,6 +5,8 @@ title: 2023 Development Machine Build
 
 # 2023 Development Machine Build
 
+<p class="wiki-date">Earliest known revision <time datetime="2023-01-07T00:51:56Z">7 Jan 2023</time></p>
+
 
 After something like 12 years of good service my Intel 3930k finally died on Christmas day 2022, somewhat fitting I thought. I'd intended to to replace the machine a year or two before but then the chip shortage and covid became a thing causing prices to go absolutely insane, and that's assuming you could even get *hold* of parts. Luckily I was able to gather some parts before the world went crazy, a case, PSU and AIO watercooling loop - sadly the rest had to wait a till 2023. 
 

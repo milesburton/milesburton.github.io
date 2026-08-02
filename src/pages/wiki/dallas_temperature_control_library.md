@@ -5,6 +5,8 @@ title: Dallas Temperature Control Library
 
 # Dallas Temperature Control Library
 
+<p class="wiki-date">Earliest known revision <time datetime="2014-03-18T12:56:46Z">18 Mar 2014</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

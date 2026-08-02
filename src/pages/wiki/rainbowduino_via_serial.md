@@ -5,6 +5,8 @@ title: RainbowDuino Via Serial
 
 # RainbowDuino Via Serial
 
+<p class="wiki-date">Earliest known revision <time datetime="2009-06-15T15:08:26Z">15 Jun 2009</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

@@ -5,6 +5,8 @@ title: LCD Smartie Powered By Arduino Liquid Crystal library
 
 # LCD Smartie Powered By Arduino Liquid Crystal library
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-25T13:05:58Z">25 Apr 2010</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)

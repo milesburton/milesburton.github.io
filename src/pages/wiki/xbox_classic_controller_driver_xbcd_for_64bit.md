@@ -5,6 +5,8 @@ title: Xbox Classic Controller Driver - XBCD for 64bit
 
 # Xbox Classic Controller Driver - XBCD for 64bit
 
+<p class="wiki-date">Earliest known revision <time datetime="2010-04-24T19:25:57Z">24 Apr 2010</time></p>
+
 
 ## Download
 This is just a mirror site as this dam driver is a nightmare to get.

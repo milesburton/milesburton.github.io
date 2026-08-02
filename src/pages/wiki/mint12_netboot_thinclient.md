@@ -5,6 +5,8 @@ title: Mint12-Netboot-Thinclient
 
 # Mint12-Netboot-Thinclient
 
+<p class="wiki-date">Earliest known revision <time datetime="2012-01-08T00:19:19Z">8 Jan 2012</time></p>
+
 ## Contents
 
 * [1 Introduction](#introduction)
