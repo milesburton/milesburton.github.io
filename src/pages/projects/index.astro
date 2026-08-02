@@ -4,6 +4,7 @@ import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
 import Carousel from '../../components/Carousel.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import PostCard from '../../components/PostCard.astro';
 import { fetchOwnedRepos } from '../../lib/github';
 import { formatMonthYear } from '../../lib/format';
 
@@ -89,103 +90,25 @@ const projectsSchema = {
 
 		<ul class="post-list">
 			{repos.map((project) => (
-				<li class="post-card">
-					{thumbnailFor(project.name) ? (
-						<img src={thumbnailFor(project.name)!} alt={`${project.name} repository preview`} loading="lazy" class="post-thumb" />
-					) : (
-						<span class="post-thumb post-thumb-placeholder">
-							<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-								<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
-								<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
-								<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</span>
+				<PostCard href={project.html_url} image={thumbnailFor(project.name)} title={project.name} external>
+					{liveLinks[project.name] && (
+						<a href={liveLinks[project.name]} target="_blank" rel="noreferrer" class="live-link" slot="title-extra">
+							Live site &rarr;
+						</a>
 					)}
-					<div class="post-body">
-						<div class="post-title-row">
-							<a href={project.html_url} target="_blank" rel="noreferrer" class="post-title">
-								{project.name}
-							</a>
-							{liveLinks[project.name] && (
-								<a href={liveLinks[project.name]} target="_blank" rel="noreferrer" class="live-link">
-									Live site &rarr;
-								</a>
-							)}
-						</div>
-						{project.description && <p class="post-excerpt">{project.description}</p>}
-						<ul class="post-tags">
-							{project.language && <li>{project.language}</li>}
-							{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
-							<li class="muted">Updated {formatMonthYear(project.pushed_at)}</li>
-						</ul>
-					</div>
-				</li>
+					{project.description && <p class="post-excerpt" slot="excerpt">{project.description}</p>}
+					<ul class="post-tags" slot="tags">
+						{project.language && <li>{project.language}</li>}
+						{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
+						<li class="muted">Updated {formatMonthYear(project.pushed_at)}</li>
+					</ul>
+				</PostCard>
 			))}
 		</ul>
 	</main>
 </Layout>
 
 <style>
-	.post-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 1.1rem;
-	}
-
-	.post-card {
-		display: flex;
-		gap: 1.1rem;
-		border-bottom: 1px solid var(--border);
-		padding-bottom: 1.1rem;
-	}
-
-	.post-thumb {
-		flex: 0 0 auto;
-		display: block;
-		width: 100px;
-		height: 72px;
-		object-fit: cover;
-		border-radius: 8px;
-		border: 1px solid var(--border);
-		background: var(--bg-raised);
-	}
-
-	.post-thumb-placeholder {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--text-dim);
-		border-style: dashed;
-	}
-
-	.post-body {
-		flex: 1;
-		min-width: 0;
-	}
-
-	.post-title-row {
-		display: flex;
-		align-items: baseline;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.post-title {
-		display: block;
-		font-size: 1.05rem;
-		font-weight: 600;
-		text-decoration: none;
-		color: var(--text);
-		line-height: 1.4;
-	}
-
-	.post-title:hover {
-		color: var(--accent-strong);
-	}
-
 	.live-link {
 		font-size: 0.82rem;
 		font-weight: 600;
