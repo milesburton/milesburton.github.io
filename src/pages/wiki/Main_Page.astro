@@ -1,0 +1,378 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const featured = [
+	{
+		image: '/wiki-media/ArduinoAWD_Loaded.JPG',
+		alt: 'Arduino-powered all-wheel-drive robot with an ultrasonic sensor mounted on a pan/tilt bracket',
+		title: 'Arduino All-Wheel-Drive (A4WD) Robot Trials',
+		href: '/wiki/arduino_all_wheel_drive_a4wd_robot_trials/',
+	},
+	{
+		image: '/wiki-media/Phoenix_Build_-_Completed_Build_iso_shot.jpeg',
+		alt: 'Completed 2023 development machine build in a tempered-glass PC case',
+		title: '2023 Development Machine Build',
+		href: '/wiki/2023_development_machine_build/',
+	},
+	{
+		image: '/wiki-media/2E0ERI_27-06-2016.jpg',
+		alt: 'Handing over an amateur radio licence certificate at a radio club',
+		title: 'M0LHA',
+		href: '/wiki/m0lha/',
+	},
+	{
+		image: '/wiki-media/D257_TOP.JPG',
+		alt: 'Acer Aspire One D257 netbook opened up for a RAM and hard disk upgrade',
+		title: 'Acer Aspire One D257 Ram Upgrade - Pictures',
+		href: '/wiki/acer_aspire_one_d257_ram_upgrade_pictures/',
+	},
+	{
+		image: '/wiki-media/TCL_Breakout1.JPG',
+		alt: 'Hand-soldered breakout board with resistors on stripboard',
+		title: 'Dallas Temperature Control Library',
+		href: '/wiki/dallas_temperature_control_library/',
+	},
+	{
+		image: '/wiki-media/ArduinoWirelessLCD_Prototype1.jpg',
+		alt: 'Prototype wireless LCD shield built on a breadboard',
+		title: 'LCD Shield Goes Wireless 433Mhz',
+		href: '/wiki/lcd_shield_goes_wireless_433mhz/',
+	},
+];
+
+const articles = [
+	{ title: '2023 Development Machine Build', href: '/wiki/2023_development_machine_build/' },
+	{ title: '2D Positioning - Trilateration in JavaScript', href: '/wiki/2d_positioning_trilateration_in_javascript/' },
+	{ title: 'Acer Aspire One D257 Ram Upgrade - Pictures', href: '/wiki/acer_aspire_one_d257_ram_upgrade_pictures/' },
+	{ title: 'Adding JSP support to Jetty 7 - NO JSP Support', href: '/wiki/adding_jsp_support_to_jetty_7_no_jsp_support/' },
+	{ title: 'Agile Software Development', href: '/wiki/agile_software_development/' },
+	{ title: 'Android - Building a ListView with an OnClick Position', href: '/wiki/android_building_a_listview_with_an_onclick_position/' },
+	{ title: 'Android Configuration Manager', href: '/wiki/android_configuration_manager/' },
+	{ title: 'Android Development', href: '/wiki/android_development/' },
+	{ title: 'Android Unit Testing - Accessing Private Methods and Members', href: '/wiki/android_unit_testing_accessing_private_methods_and_members/' },
+	{ title: 'Arduino', href: '/wiki/arduino/' },
+	{ title: 'Arduino All-Wheel-Drive (A4WD) Robot Trials', href: '/wiki/arduino_all_wheel_drive_a4wd_robot_trials/' },
+	{ title: 'Arduino Bargains and Sourcing', href: '/wiki/arduino_bargains_and_sourcing/' },
+	{ title: 'Arduino Clone - Romeo Robotics Board', href: '/wiki/arduino_clone_romeo_robotics_board/' },
+	{ title: 'Arduino Homebrew LCD Shield', href: '/wiki/arduino_homebrew_lcd_shield/' },
+	{ title: 'Arduino Range Detector', href: '/wiki/arduino_range_detector/' },
+	{ title: "Arduino RF Kit Library - Get your Arduino talking over the air", href: '/wiki/arduino_rf_kit_library_get_your_arduino_talking_over_the_air/' },
+	{ title: 'Arduino Webserver powered by WiShield with sprinkles - BlinkM', href: '/wiki/arduino_webserver_powered_by_wishield_with_sprinkles_blinkm/' },
+	{ title: 'BT - British Telecom', href: '/wiki/bt_british_telecom/' },
+	{ title: 'Burst.net Review', href: '/wiki/burst_net_review/' },
+	{ title: 'Continuous Integration', href: '/wiki/continuous_integration/' },
+	{ title: 'Dallas Temperature Control Library', href: '/wiki/dallas_temperature_control_library/' },
+	{ title: 'DD-WRT Web-services', href: '/wiki/dd_wrt_web_services/' },
+	{ title: 'EEE 701 Touchscreen Modification', href: '/wiki/eee_701_touchscreen_modification/' },
+	{ title: 'Engineering', href: '/wiki/engineering/' },
+	{ title: 'FAHDroid - Folding@Home Statistics on the go', href: '/wiki/fahdroid_folding_home_statistics_on_the_go/' },
+	{ title: 'Fixing Hyundai i20 Rear washer', href: '/wiki/fixing_hyundai_i20_rear_washer/' },
+	{ title: 'Gameboy Printer with Arduino', href: '/wiki/gameboy_printer_with_arduino/' },
+	{ title: 'GeoSpark: Research and Implementation of a Prototype Wi-Fi Positioning System', href: '/wiki/geospark_research_and_implementation_of_a_prototype_wi_fi_positioning_system/' },
+	{ title: 'Gradle Authenticating with Artifactory Repo', href: '/wiki/gradle_authenticating_with_artifactory_repo/' },
+	{ title: 'Graduate Job Hunting', href: '/wiki/graduate_job_hunting/' },
+	{ title: 'Hacking the Pogoplug', href: '/wiki/hacking_the_pogoplug/' },
+	{ title: 'Homebrew LCD Powered By WiShield', href: '/wiki/homebrew_lcd_powered_by_wishield/' },
+	{ title: 'HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832', href: '/wiki/ht1632_arduino_matrix_display_library_for_the_sure_2416_and_0832/' },
+	{ title: 'HT1632 Matrix Display - Green', href: '/wiki/ht1632_matrix_display_green/' },
+	{ title: 'Installing ESXi on Lenovo M80Q ThinkCentre Gen3', href: '/wiki/installing_esxi_on_lenovo_m80q_thinkcentre_gen3/' },
+	{ title: 'Is Mini-ITX compatible with ATX?', href: '/wiki/is_mini_itx_compatible_with_atx/' },
+	{ title: 'LCD Shield Goes Wireless 433Mhz', href: '/wiki/lcd_shield_goes_wireless_433mhz/' },
+	{ title: 'LCD Smartie Powered By Arduino Liquid Crystal library', href: '/wiki/lcd_smartie_powered_by_arduino_liquid_crystal_library/' },
+	{ title: 'London Railway Station Coordinates SQL', href: '/wiki/london_railway_station_coordinates_sql/' },
+	{ title: 'London Tube Geocoding web-service', href: '/wiki/london_tube_geocoding_web_service/' },
+	{ title: 'M0LHA', href: '/wiki/m0lha/' },
+	{ title: 'MediaWiki Recaptcha fix', href: '/wiki/mediawiki_recaptcha_fix/' },
+	{ title: 'Mint12-Classic-Mode', href: '/wiki/mint12_classic_mode/' },
+	{ title: 'Mint12-Netboot-Thinclient', href: '/wiki/mint12_netboot_thinclient/' },
+	{ title: 'MMORPG', href: '/wiki/mmorpg/' },
+	{ title: 'My Developer Reading List', href: '/wiki/my_developer_reading_list/' },
+	{ title: 'My Kit', href: '/wiki/my_kit/' },
+	{ title: 'Nightingales Motorcycles Online Review', href: '/wiki/nightingales_motorcycles_online_review/' },
+	{ title: 'NZB Air Web Service - Release 3', href: '/wiki/nzb_air_web_service_release_3/' },
+	{ title: 'NZBAir - Usenet and SABnzbd mobile for Android', href: '/wiki/nzbair_usenet_and_sabnzbd_mobile_for_android/' },
+	{ title: 'NZBAirWebService', href: '/wiki/nzbairwebservice/' },
+	{ title: 'O2 Joggler Hacks', href: '/wiki/o2_joggler_hacks/' },
+	{ title: 'O2 Joggler Hacks - Booting with NFS', href: '/wiki/o2_joggler_hacks_booting_with_nfs/' },
+	{ title: 'O2 Joggler Hacks - Enabled SSH', href: '/wiki/o2_joggler_hacks_enabled_ssh/' },
+	{ title: 'O2 Joggler Hacks - Enabling SCP Server', href: '/wiki/o2_joggler_hacks_enabling_scp_server/' },
+	{ title: 'O2 Joggler Hacks - Quake 3', href: '/wiki/o2_joggler_hacks_quake_3/' },
+	{ title: 'Online Regex Match Tool - Build up a new string based on matched groups', href: '/wiki/online_regex_match_tool_build_up_a_new_string_based_on_matched_groups/' },
+	{ title: 'Pachube Experiments', href: '/wiki/pachube_experiments/' },
+	{ title: 'Pogoplug Pro - Installing Tomcat 6', href: '/wiki/pogoplug_pro_installing_tomcat_6/' },
+	{ title: 'Postcode Geocoding web-service', href: '/wiki/postcode_geocoding_web_service/' },
+	{ title: 'Rainbowduino Media', href: '/wiki/rainbowduino_media/' },
+	{ title: 'RainbowDuino Via Serial', href: '/wiki/rainbowduino_via_serial/' },
+	{ title: 'Related Work and Contact', href: '/wiki/related_work_and_contact/' },
+	{ title: 'Restore DD-WRT NAT Loopback', href: '/wiki/restore_dd_wrt_nat_loopback/' },
+	{ title: 'RM Graduate Scheme - Research Machines Thoughts/Help', href: '/wiki/rm_graduate_scheme_research_machines_thoughts_help/' },
+	{ title: 'Security Through Obscurity - Is it really that bad?', href: '/wiki/security_through_obscurity_is_it_really_that_bad/' },
+	{ title: 'Sharp GP2D12 Infrared Sensor Review', href: '/wiki/sharp_gp2d12_infrared_sensor_review/' },
+	{ title: 'Sky Box RS232 Connector', href: '/wiki/sky_box_rs232_connector/' },
+	{ title: 'Smart-Plugs - The Path of Least Resistance', href: '/wiki/smart_plugs_the_path_of_least_resistance/' },
+	{ title: 'Sure 2416 Displaying CPU Graph via Arduino', href: '/wiki/sure_2416_displaying_cpu_graph_via_arduino/' },
+	{ title: 'Sure 2416 Running Pong via Arduino', href: '/wiki/sure_2416_running_pong_via_arduino/' },
+	{ title: 'The Difference Between a QA and a Tester', href: '/wiki/the_difference_between_a_qa_and_a_tester/' },
+	{ title: 'The London Tube Routing API', href: '/wiki/the_london_tube_routing_api/' },
+	{ title: 'Thoughts', href: '/wiki/thoughts/' },
+	{ title: 'Tip31 Transistor', href: '/wiki/tip31_transistor/' },
+	{ title: 'Toshiba Libretto 50CT', href: '/wiki/toshiba_libretto_50ct/' },
+	{ title: 'Transport APIs', href: '/wiki/transport_apis/' },
+	{ title: 'Ubuntu 11.04 x64 - Fixing the Radeon slow painting bug', href: '/wiki/ubuntu_11_04_x64_fixing_the_radeon_slow_painting_bug/' },
+	{ title: 'URM37 Ultrasonic Distance Measurement Library', href: '/wiki/urm37_ultrasonic_distance_measurement_library/' },
+	{ title: 'URM37 Ultrasonic Sensor Review', href: '/wiki/urm37_ultrasonic_sensor_review/' },
+	{ title: 'USD LCD Display (HD44780) Running on Linux via Arduino', href: '/wiki/usd_lcd_display_hd44780_running_on_linux_via_arduino/' },
+	{ title: 'VideoOnDemand', href: '/wiki/videoondemand/' },
+	{ title: 'Why Your Personal Projects Fail', href: '/wiki/why_your_personal_projects_fail/' },
+	{ title: 'Xbox Classic Controller Driver - XBCD for 64bit', href: '/wiki/xbox_classic_controller_driver_xbcd_for_64bit/' },
+];
+---
+
+<Layout title="Wiki" description="Miles Burton's personal wiki: organic thoughts, guides, and general write-ups.">
+	<main class="shell">
+		<h1>Wiki</h1>
+		<p class="intro">
+			This is where I keep organic thoughts, guides, and general write-ups. Some of it is old, some of it is
+			niche, but feel free to have a look around.
+		</p>
+
+		<div class="carousel" id="wiki-carousel">
+			<div class="carousel-track" id="carousel-track">
+				{featured.map((item) => (
+					<a href={item.href} class="carousel-slide">
+						<img src={item.image} alt={item.alt} loading="lazy" />
+						<span class="carousel-caption">{item.title}</span>
+					</a>
+				))}
+			</div>
+			<button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous image">
+				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+					<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Next image">
+				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+					<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="carousel-dots" id="carousel-dots">
+				{featured.map((_, i) => (
+					<button type="button" class="carousel-dot" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
+				))}
+			</div>
+		</div>
+
+		<h2 class="section-title">Articles</h2>
+		<ul class="article-list">
+			{articles.map((article) => (
+				<li><a href={article.href}>{article.title}</a></li>
+			))}
+		</ul>
+	</main>
+</Layout>
+
+<script>
+	const track = document.getElementById('carousel-track') as HTMLDivElement;
+	const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+	const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+	const dotsContainer = document.getElementById('carousel-dots') as HTMLDivElement;
+	const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.carousel-dot'));
+	const slideCount = track.children.length;
+	let index = 0;
+	let timer: ReturnType<typeof setInterval> | undefined;
+
+	function render() {
+		track.style.transform = `translateX(-${index * 100}%)`;
+		dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+	}
+
+	function goTo(i: number) {
+		index = (i + slideCount) % slideCount;
+		render();
+	}
+
+	function startAutoplay() {
+		stopAutoplay();
+		timer = setInterval(() => goTo(index + 1), 5000);
+	}
+
+	function stopAutoplay() {
+		if (timer) clearInterval(timer);
+	}
+
+	prevBtn.addEventListener('click', () => {
+		goTo(index - 1);
+		startAutoplay();
+	});
+	nextBtn.addEventListener('click', () => {
+		goTo(index + 1);
+		startAutoplay();
+	});
+	dots.forEach((dot, i) => {
+		dot.addEventListener('click', () => {
+			goTo(i);
+			startAutoplay();
+		});
+	});
+
+	const carousel = document.getElementById('wiki-carousel') as HTMLDivElement;
+	carousel.addEventListener('mouseenter', stopAutoplay);
+	carousel.addEventListener('mouseleave', startAutoplay);
+
+	render();
+	startAutoplay();
+</script>
+
+<style>
+	.shell {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 4rem 2rem 5rem;
+	}
+
+	h1 {
+		font-size: clamp(1.9rem, 4vw, 2.6rem);
+		margin: 0;
+	}
+
+	.intro {
+		margin-top: 0.85rem;
+		max-width: 65ch;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.carousel {
+		position: relative;
+		margin-top: 2rem;
+		border-radius: 14px;
+		overflow: hidden;
+		border: 1px solid var(--border-strong);
+		background: var(--bg-raised);
+	}
+
+	.carousel-track {
+		display: flex;
+		transition: transform 400ms ease;
+	}
+
+	.carousel-slide {
+		position: relative;
+		flex: 0 0 100%;
+		display: block;
+		aspect-ratio: 16 / 8;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2.5rem 1.5rem 1rem;
+		background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.carousel-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		cursor: pointer;
+		transition: background 120ms ease;
+	}
+
+	.carousel-nav:hover {
+		background: rgba(0, 0, 0, 0.65);
+	}
+
+	.carousel-prev {
+		left: 0.75rem;
+	}
+
+	.carousel-next {
+		right: 0.75rem;
+	}
+
+	.carousel-dots {
+		position: absolute;
+		bottom: 0.65rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.4rem;
+	}
+
+	.carousel-dot {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		border: none;
+		padding: 0;
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		transition: background 120ms ease, transform 120ms ease;
+	}
+
+	.carousel-dot.active {
+		background: #fff;
+		transform: scale(1.3);
+	}
+
+	.section-title {
+		margin-top: 3rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-dim);
+	}
+
+	.article-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		columns: 2;
+		column-gap: 2rem;
+	}
+
+	.article-list li {
+		break-inside: avoid;
+		margin-bottom: 0.6rem;
+	}
+
+	.article-list a {
+		color: var(--text);
+		text-decoration: none;
+		font-size: 0.92rem;
+	}
+
+	.article-list a:hover {
+		color: var(--accent-strong);
+	}
+
+	@media (max-width: 620px) {
+		.article-list {
+			columns: 1;
+		}
+	}
+</style>
