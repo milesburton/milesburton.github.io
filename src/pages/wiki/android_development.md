@@ -13,19 +13,15 @@ title: Android Development
 * [4 Snippets](#snippets)
 
 ## My Apps
+[NZBAir - Usenet and SABnzbd mobile for Android](/wiki/nzbair_usenet_and_sabnzbd_mobile_for_android/)
 
-NZBAir - Usenet and SABnzbd mobile for Android *(coming soon)*
-
-FAHDroid - Folding@Home Statistics on the go *(coming soon)*
+[FAHDroid - Folding@Home Statistics on the go](/wiki/fahdroid_folding_home_statistics_on_the_go/) 
 
 ## Libraries
-
-[Android Configuration Manager - Managing preferences without the boilerplate](/wiki/android_configuration_manager/)
+Android Configuration Manager - Managing preferences without the boilerplate
 
 ## Tutorials
-
 [Android - Building a ListView with an OnClick Position](/wiki/android_building_a_listview_with_an_onclick_position/) - If you are struggling to get the onClick method of a ListView to respond properly this work-around is for you.
 
 ## Snippets
-
 [Android Unit Testing - Accessing Private Methods and Members](/wiki/android_unit_testing_accessing_private_methods_and_members/)

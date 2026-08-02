@@ -15,7 +15,8 @@ function stripFrontmatter(raw: string): { title: string; body: string } {
 	if (!match) return { title: '', body: raw };
 	const [, frontmatter, body] = match;
 	const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
-	return { title: titleMatch ? titleMatch[1].trim() : '', body };
+	const title = titleMatch ? titleMatch[1].trim().replace(/^"(.*)"$/, '$1') : '';
+	return { title, body };
 }
 
 function toExcerpt(markdown: string, length = 200): string {
