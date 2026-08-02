@@ -9,12 +9,43 @@ function extractDate(raw: string): { iso: string; display: string } | null {
 	return { iso: match[1], display: match[2] };
 }
 
+function extractImage(raw: string): string | null {
+	const match = raw.match(/!\[[^\]]*\]\((\/wiki-media\/[^)]+)\)/);
+	return match?.[1] ?? null;
+}
+
+function extractDescription(raw: string): string | null {
+	const body = raw.replace(/^---\n[\s\S]*?\n---\n/, '');
+	const withoutHeading = body.replace(/^#\s+.+$/m, '');
+	const withoutDate = withoutHeading.replace(/<p class="wiki-date">.*?<\/p>/s, '');
+	const withoutToc = withoutDate.replace(/## Contents[\s\S]*?(?=\n##[^#]|\n[A-Za-z]|$)/, '');
+	const plain = withoutToc
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+		.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+		.replace(/^#+\s.*$/gm, ' ')
+		.replace(/[*_`]/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+	if (!plain) return null;
+	const sentenceMatch = plain.match(/^.{0,180}?[.!?](?=\s|$)/);
+	const snippet = sentenceMatch ? sentenceMatch[0] : plain.slice(0, 140).trim() + '…';
+	return snippet.trim();
+}
+
 const dateBySlug = new Map<string, { iso: string; display: string }>();
+const imageBySlug = new Map<string, string>();
+const descriptionBySlug = new Map<string, string>();
 for (const [path, raw] of Object.entries(wikiFiles)) {
 	const slugMatch = path.match(/\.\/(.+)\.md$/);
 	if (!slugMatch) continue;
+	const slug = slugMatch[1];
 	const date = extractDate(raw);
-	if (date) dateBySlug.set(slugMatch[1], date);
+	if (date) dateBySlug.set(slug, date);
+	const image = extractImage(raw);
+	if (image) imageBySlug.set(slug, image);
+	const description = extractDescription(raw);
+	if (description) descriptionBySlug.set(slug, description);
 }
 
 const featured = [
@@ -143,7 +174,12 @@ const articles = [
 	{ title: 'Xbox Classic Controller Driver - XBCD for 64bit', href: '/wiki/xbox_classic_controller_driver_xbcd_for_64bit/' },
 ].map((article) => {
 	const slug = article.href.replace(/^\/wiki\//, '').replace(/\/$/, '');
-	return { ...article, date: dateBySlug.get(slug) };
+	return {
+		...article,
+		date: dateBySlug.get(slug),
+		image: imageBySlug.get(slug),
+		description: descriptionBySlug.get(slug),
+	};
 });
 
 articles.sort((a, b) => {
@@ -192,10 +228,26 @@ articles.sort((a, b) => {
 		<ul class="post-list">
 			{articles.map((article) => (
 				<li class="post-card">
-					<a href={article.href} class="post-title">
-						{article.title}
+					<a href={article.href} class="post-thumb-link" tabindex="-1" aria-hidden="true">
+						{article.image ? (
+							<img src={article.image} alt="" class="post-thumb" loading="lazy" />
+						) : (
+							<span class="post-thumb post-thumb-placeholder">
+								<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+									<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+									<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+									<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</span>
+						)}
 					</a>
-					{article.date && <time datetime={article.date.iso}>{article.date.display}</time>}
+					<div class="post-body">
+						<a href={article.href} class="post-title">
+							{article.title}
+						</a>
+						{article.date && <time datetime={article.date.iso}>{article.date.display}</time>}
+						{article.description && <p class="post-excerpt">{article.description}</p>}
+					</div>
 				</li>
 			))}
 		</ul>
@@ -388,8 +440,37 @@ articles.sort((a, b) => {
 	}
 
 	.post-card {
+		display: flex;
+		gap: 1.1rem;
 		border-bottom: 1px solid var(--border);
 		padding-bottom: 1.1rem;
+	}
+
+	.post-thumb-link {
+		flex: 0 0 auto;
+	}
+
+	.post-thumb {
+		display: block;
+		width: 100px;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 1px solid var(--border);
+		background: var(--bg-raised);
+	}
+
+	.post-thumb-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-dim);
+		border-style: dashed;
+	}
+
+	.post-body {
+		flex: 1;
+		min-width: 0;
 	}
 
 	.post-title {
@@ -410,5 +491,19 @@ articles.sort((a, b) => {
 		margin-top: 0.3rem;
 		font-size: 0.78rem;
 		color: var(--text-dim);
+	}
+
+	.post-excerpt {
+		margin: 0.5rem 0 0;
+		color: var(--text-muted);
+		font-size: 0.92rem;
+		line-height: 1.55;
+	}
+
+	@media (max-width: 560px) {
+		.post-thumb {
+			width: 72px;
+			height: 72px;
+		}
 	}
 </style>
