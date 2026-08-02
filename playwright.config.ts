@@ -17,9 +17,13 @@ export default defineConfig({
 		trace: 'on-first-retry',
 	},
 	expect: {
-		// Small tolerance for anti-aliasing/font-rendering noise between runs,
-		// while still catching real layout/content regressions.
-		toHaveScreenshot: { maxDiffPixelRatio: 0.02 },
+		// Tolerance for anti-aliasing/font-rendering noise between runs (observed
+		// as a whole-page ~1-line text reflow shift, up to ~3-4% of pixels, on an
+		// otherwise-unchanged page -- not caught by retrying, so the threshold
+		// needs to absorb it). Real layout regressions (e.g. misaligned cards)
+		// tend to produce much larger diffs and still get caught; alignment.spec.ts
+		// covers the specific class of bug that first motivated the 2% threshold.
+		toHaveScreenshot: { maxDiffPixelRatio: 0.05 },
 	},
 	projects: [
 		{
