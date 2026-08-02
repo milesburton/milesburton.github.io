@@ -420,6 +420,14 @@ const currentPath = Astro.url.pathname;
 	.content-area tr:nth-child(even) td {
 		background: var(--row-stripe);
 	}
+
+	/* Shared page container. Pages set --shell-max-width/--shell-padding-top
+	   to vary width/spacing without restating margin/padding each time. */
+	.shell {
+		max-width: var(--shell-max-width, 780px);
+		margin: 0 auto;
+		padding: var(--shell-padding-top, 4rem) 2rem 5rem;
+	}
 </style>
 
 <style>

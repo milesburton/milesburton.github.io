@@ -1,17 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Carousel from '../../components/Carousel.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import { getCollection } from 'astro:content';
+import { formatDate } from '../../lib/format';
+import { getHeroImage } from '../../lib/posts';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-
-function heroImage(post: (typeof posts)[number]): string | undefined {
-	if (post.data.featuredImage) return post.data.featuredImage;
-	const match = post.body?.match(/<img[^>]+src="(\/blog-media\/[^"]+)"/);
-	return match?.[1];
-}
 
 const featured = [
 	{ slug: 'currents-of-change-a-first-hand-look-at-sainsburys-crayford-ev-charging-haven', image: '/blog-media/2023/11/img_9354.jpg', alt: 'A Tesla charging at a row of ultra-rapid EV chargers in a Sainsbury\'s car park' },
@@ -26,44 +22,24 @@ const featured = [
 		return post ? { ...item, title: post.data.title, href: `/blog/${post.data.slug}/` } : null;
 	})
 	.filter((item): item is NonNullable<typeof item> => item !== null);
+
+const carouselSlides = featured.map((item) => ({
+	href: item.href,
+	image: item.image,
+	alt: item.alt,
+	caption: item.title,
+}));
 ---
 
 <Layout title="Blog" description="Writing on infrastructure, embedded electronics, and networking by Miles Burton.">
 	<main class="shell">
-		<header class="page-header">
-			<p class="kicker">Writing</p>
-			<h1>Blog</h1>
-		</header>
+		<PageHeader kicker="Writing" title="Blog" />
 
-		<div class="carousel" id="blog-carousel">
-			<div class="carousel-track" id="carousel-track">
-				{featured.map((item) => (
-					<a href={item.href} class="carousel-slide">
-						<img src={item.image} alt={item.alt} loading="lazy" />
-						<span class="carousel-caption">{item.title}</span>
-					</a>
-				))}
-			</div>
-			<button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous image">
-				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-					<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</button>
-			<button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Next image">
-				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-					<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</button>
-			<div class="carousel-dots" id="carousel-dots">
-				{featured.map((_, i) => (
-					<button type="button" class="carousel-dot" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
-				))}
-			</div>
-		</div>
+		<Carousel id="blog-carousel" slides={carouselSlides} />
 
 		<ul class="post-list">
 			{posts.map((post) => {
-				const image = heroImage(post);
+				const image = getHeroImage(post);
 				return (
 					<li class="post-card">
 						<a href={`/blog/${post.data.slug}/`} class="post-thumb-link" tabindex="-1" aria-hidden="true">
@@ -83,7 +59,7 @@ const featured = [
 							<a href={`/blog/${post.data.slug}/`} class="post-title">
 								{post.data.title}
 							</a>
-							<time datetime={post.data.date.toISOString()}>{formatter.format(post.data.date)}</time>
+							<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
 							{post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
 							{post.data.tags.length > 0 && (
 								<ul class="post-tags">
@@ -100,185 +76,7 @@ const featured = [
 	</main>
 </Layout>
 
-<script>
-	const track = document.getElementById('carousel-track') as HTMLDivElement;
-	const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
-	const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
-	const dotsContainer = document.getElementById('carousel-dots') as HTMLDivElement;
-	const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.carousel-dot'));
-	const slideCount = track.children.length;
-	let index = 0;
-	let timer: ReturnType<typeof setInterval> | undefined;
-
-	function render() {
-		track.style.transform = `translateX(-${index * 100}%)`;
-		dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-	}
-
-	function goTo(i: number) {
-		index = (i + slideCount) % slideCount;
-		render();
-	}
-
-	function startAutoplay() {
-		stopAutoplay();
-		timer = setInterval(() => goTo(index + 1), 5000);
-	}
-
-	function stopAutoplay() {
-		if (timer) clearInterval(timer);
-	}
-
-	prevBtn.addEventListener('click', () => {
-		goTo(index - 1);
-		startAutoplay();
-	});
-	nextBtn.addEventListener('click', () => {
-		goTo(index + 1);
-		startAutoplay();
-	});
-	dots.forEach((dot, i) => {
-		dot.addEventListener('click', () => {
-			goTo(i);
-			startAutoplay();
-		});
-	});
-
-	const carousel = document.getElementById('blog-carousel') as HTMLDivElement;
-	carousel.addEventListener('mouseenter', stopAutoplay);
-	carousel.addEventListener('mouseleave', startAutoplay);
-
-	render();
-	startAutoplay();
-</script>
-
 <style>
-	.shell {
-		max-width: 780px;
-		margin: 0 auto;
-		padding: 4rem 2rem 5rem;
-	}
-
-	.page-header {
-		margin-bottom: 2.5rem;
-	}
-
-	.kicker {
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--accent-strong);
-		font-size: 0.78rem;
-		font-weight: 600;
-		margin: 0 0 0.75rem;
-	}
-
-	h1 {
-		font-size: clamp(1.9rem, 4vw, 2.6rem);
-		margin: 0;
-	}
-
-	.intro {
-		margin-top: 0.85rem;
-		max-width: 60ch;
-		color: var(--text-muted);
-		line-height: 1.6;
-	}
-
-	.carousel {
-		position: relative;
-		margin-bottom: 2.5rem;
-		border-radius: 14px;
-		overflow: hidden;
-		border: 1px solid var(--border-strong);
-		background: var(--bg-raised);
-	}
-
-	.carousel-track {
-		display: flex;
-		transition: transform 400ms ease;
-	}
-
-	.carousel-slide {
-		position: relative;
-		flex: 0 0 100%;
-		display: block;
-		aspect-ratio: 16 / 8;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.carousel-slide img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-	}
-
-	.carousel-caption {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		padding: 2.5rem 1.5rem 1rem;
-		background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
-		color: #fff;
-		font-size: 1rem;
-		font-weight: 600;
-	}
-
-	.carousel-nav {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		border-radius: 50%;
-		border: none;
-		background: rgba(0, 0, 0, 0.45);
-		color: #fff;
-		cursor: pointer;
-		transition: background 120ms ease;
-	}
-
-	.carousel-nav:hover {
-		background: rgba(0, 0, 0, 0.65);
-	}
-
-	.carousel-prev {
-		left: 0.75rem;
-	}
-
-	.carousel-next {
-		right: 0.75rem;
-	}
-
-	.carousel-dots {
-		position: absolute;
-		bottom: 0.65rem;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		gap: 0.4rem;
-	}
-
-	.carousel-dot {
-		width: 0.5rem;
-		height: 0.5rem;
-		border-radius: 50%;
-		border: none;
-		padding: 0;
-		background: rgba(255, 255, 255, 0.5);
-		cursor: pointer;
-		transition: background 120ms ease, transform 120ms ease;
-	}
-
-	.carousel-dot.active {
-		background: #fff;
-		transform: scale(1.3);
-	}
 
 	.post-list {
 		list-style: none;

@@ -2,6 +2,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
+import Carousel from '../../components/Carousel.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { fetchOwnedRepos } from '../../lib/github';
+import { formatMonthYear } from '../../lib/format';
 
 // Thumbnails are pre-fetched from GitHub's OpenGraph card service and
 // committed to public/project-media/ via scripts/fetch-project-thumbnails.mjs
@@ -15,52 +19,18 @@ function thumbnailFor(name: string): string | null {
 	return name in thumbnailManifest ? `/project-media/${name}.jpg` : null;
 }
 
-// Authenticating (when a token is available) raises the REST API limit from
-// 60/hour to 5000/hour, avoiding an empty repo list on a rate-limited build.
-const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
-const githubAuthHeaders = githubToken ? { Authorization: `Bearer ${githubToken}` } : {};
-
-interface Repo {
-	name: string;
-	html_url: string;
-	description: string | null;
-	language: string | null;
-	stargazers_count: number;
-	pushed_at: string;
-	fork: boolean;
-	private: boolean;
-	archived: boolean;
-}
-
 // Manual overrides for repos with a live deployment separate from GitHub's
 // `homepage` field (which is unset or points at decommissioned properties).
 const liveLinks: Record<string, string> = {
 	'veta-trading-platform': 'https://veta.mnetcs.com/',
 };
 
-let repos: Repo[] = [];
-try {
-	const all: Repo[] = [];
-	for (let page = 1; page <= 10; page++) {
-		const res = await fetch(`https://api.github.com/users/milesburton/repos?per_page=100&type=owner&page=${page}`, {
-			headers: githubAuthHeaders,
-		});
-		if (!res.ok) break;
-		const batch = (await res.json()) as Repo[];
-		all.push(...batch);
-		if (batch.length < 100) break;
-	}
-	repos = all.filter((r) => !r.fork && !r.private && !r.archived);
-} catch {
-	// build-time fetch failure — page renders with an empty list rather than failing the build
-}
+const repos = await fetchOwnedRepos('milesburton');
 
 repos.sort((a, b) => {
 	if (b.stargazers_count !== a.stargazers_count) return b.stargazers_count - a.stargazers_count;
 	return new Date(b.pushed_at).valueOf() - new Date(a.pushed_at).valueOf();
 });
-
-const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
 
 // Hand-picked flagship repos for the carousel. Uses GitHub's OpenGraph card
 // image service, which rate-limits hard (~100 req/window) — fine for this
@@ -78,6 +48,14 @@ const featured = featuredNames
 		};
 	})
 	.filter((item): item is NonNullable<typeof item> => item !== null);
+
+const carouselSlides = featured.map((item) => ({
+	href: item.href,
+	image: item.image,
+	alt: `${item.name} repository preview`,
+	caption: item.name,
+	external: true,
+}));
 
 const projectsSchema = {
 	'@context': 'https://schema.org',
@@ -99,43 +77,15 @@ const projectsSchema = {
 
 <Layout title="Projects" description="Open-source projects and libraries by Miles Burton." structuredData={projectsSchema}>
 	<main class="shell">
-		<header class="page-header">
-			<p class="kicker">Engineering</p>
-			<h1>Projects</h1>
-			<p class="intro">
+		<PageHeader kicker="Engineering" title="Projects">
+			<Fragment slot="intro">
 				{repos.length > 0 ? `All ${repos.length} public repositories` : 'Public repositories'}, pulled
 				directly from <a href="https://github.com/milesburton" target="_blank" rel="noreferrer">GitHub</a>,
 				sorted by stars, then most recently active.
-			</p>
-		</header>
+			</Fragment>
+		</PageHeader>
 
-		{featured.length > 0 && (
-			<div class="carousel" id="projects-carousel">
-				<div class="carousel-track" id="carousel-track">
-					{featured.map((item) => (
-						<a href={item.href} target="_blank" rel="noreferrer" class="carousel-slide">
-							<img src={item.image} alt={`${item.name} repository preview`} loading="lazy" />
-							<span class="carousel-caption">{item.name}</span>
-						</a>
-					))}
-				</div>
-				<button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous image">
-					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-						<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</button>
-				<button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Next image">
-					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-						<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</button>
-				<div class="carousel-dots" id="carousel-dots">
-					{featured.map((_, i) => (
-						<button type="button" class="carousel-dot" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
-					))}
-				</div>
-			</div>
-		)}
+		<Carousel id="projects-carousel" slides={carouselSlides} />
 
 		<ul class="post-list">
 			{repos.map((project) => (
@@ -166,7 +116,7 @@ const projectsSchema = {
 						<ul class="post-tags">
 							{project.language && <li>{project.language}</li>}
 							{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
-							<li class="muted">Updated {formatter.format(new Date(project.pushed_at))}</li>
+							<li class="muted">Updated {formatMonthYear(project.pushed_at)}</li>
 						</ul>
 					</div>
 				</li>
@@ -175,197 +125,7 @@ const projectsSchema = {
 	</main>
 </Layout>
 
-<script>
-	const track = document.getElementById('carousel-track') as HTMLDivElement | null;
-	if (track) {
-		const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
-		const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
-		const dotsContainer = document.getElementById('carousel-dots') as HTMLDivElement;
-		const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.carousel-dot'));
-		const slideCount = track.children.length;
-		let index = 0;
-		let timer: ReturnType<typeof setInterval> | undefined;
-
-		function render() {
-			track!.style.transform = `translateX(-${index * 100}%)`;
-			dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-		}
-
-		function goTo(i: number) {
-			index = (i + slideCount) % slideCount;
-			render();
-		}
-
-		function startAutoplay() {
-			stopAutoplay();
-			timer = setInterval(() => goTo(index + 1), 5000);
-		}
-
-		function stopAutoplay() {
-			if (timer) clearInterval(timer);
-		}
-
-		prevBtn.addEventListener('click', () => {
-			goTo(index - 1);
-			startAutoplay();
-		});
-		nextBtn.addEventListener('click', () => {
-			goTo(index + 1);
-			startAutoplay();
-		});
-		dots.forEach((dot, i) => {
-			dot.addEventListener('click', () => {
-				goTo(i);
-				startAutoplay();
-			});
-		});
-
-		const carousel = document.getElementById('projects-carousel') as HTMLDivElement;
-		carousel.addEventListener('mouseenter', stopAutoplay);
-		carousel.addEventListener('mouseleave', startAutoplay);
-
-		render();
-		startAutoplay();
-	}
-</script>
-
 <style>
-	.shell {
-		max-width: 780px;
-		margin: 0 auto;
-		padding: 4rem 2rem 5rem;
-	}
-
-	.page-header {
-		margin-bottom: 2.5rem;
-	}
-
-	.kicker {
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--accent-strong);
-		font-size: 0.78rem;
-		font-weight: 600;
-		margin: 0 0 0.75rem;
-	}
-
-	h1 {
-		font-size: clamp(1.9rem, 4vw, 2.6rem);
-		margin: 0;
-	}
-
-	.intro {
-		margin-top: 0.85rem;
-		max-width: 60ch;
-		color: var(--text-muted);
-		line-height: 1.6;
-	}
-
-	.intro a {
-		color: var(--accent-strong);
-		text-decoration: none;
-	}
-
-	.intro a:hover {
-		text-decoration: underline;
-	}
-
-	.carousel {
-		position: relative;
-		margin-bottom: 2.5rem;
-		border-radius: 14px;
-		overflow: hidden;
-		border: 1px solid var(--border-strong);
-		background: var(--bg-raised);
-	}
-
-	.carousel-track {
-		display: flex;
-		transition: transform 400ms ease;
-	}
-
-	.carousel-slide {
-		position: relative;
-		flex: 0 0 100%;
-		display: block;
-		aspect-ratio: 16 / 8;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.carousel-slide img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-	}
-
-	.carousel-caption {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		padding: 2.5rem 1.5rem 1rem;
-		background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
-		color: #fff;
-		font-size: 1rem;
-		font-weight: 600;
-	}
-
-	.carousel-nav {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		border-radius: 50%;
-		border: none;
-		background: rgba(0, 0, 0, 0.45);
-		color: #fff;
-		cursor: pointer;
-		transition: background 120ms ease;
-	}
-
-	.carousel-nav:hover {
-		background: rgba(0, 0, 0, 0.65);
-	}
-
-	.carousel-prev {
-		left: 0.75rem;
-	}
-
-	.carousel-next {
-		right: 0.75rem;
-	}
-
-	.carousel-dots {
-		position: absolute;
-		bottom: 0.65rem;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		gap: 0.4rem;
-	}
-
-	.carousel-dot {
-		width: 0.5rem;
-		height: 0.5rem;
-		border-radius: 50%;
-		border: none;
-		padding: 0;
-		background: rgba(255, 255, 255, 0.5);
-		cursor: pointer;
-		transition: background 120ms ease, transform 120ms ease;
-	}
-
-	.carousel-dot.active {
-		background: #fff;
-		transform: scale(1.3);
-	}
-
 	.post-list {
 		list-style: none;
 		margin: 0;

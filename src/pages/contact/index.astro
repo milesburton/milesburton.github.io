@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 
 const links = [
 	{ label: 'GitHub', value: 'github.com/milesburton', href: 'https://github.com/milesburton' },
@@ -16,13 +17,11 @@ const emailDomain = 'gmail.com';
 
 <Layout title="Contact" description="Get in touch with Miles Burton.">
 	<main class="shell">
-		<header class="page-header">
-			<p class="kicker">Contact</p>
-			<h1>Get in touch</h1>
-			<p class="intro">
+		<PageHeader kicker="Contact" title="Get in touch">
+			<Fragment slot="intro">
 				Happy to hear from you about engineering work, collaboration, or anything on this site.
-			</p>
-		</header>
+			</Fragment>
+		</PageHeader>
 
 		<ul class="link-list">
 			<li>
@@ -51,35 +50,8 @@ const emailDomain = 'gmail.com';
 </script>
 
 <style>
-	.shell {
-		max-width: 720px;
-		margin: 0 auto;
-		padding: 4rem 2rem 5rem;
-	}
-
-	.page-header {
-		margin-bottom: 2.5rem;
-	}
-
-	.kicker {
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--accent-strong);
-		font-size: 0.78rem;
-		font-weight: 600;
-		margin: 0 0 0.75rem;
-	}
-
-	h1 {
-		font-size: clamp(1.9rem, 4vw, 2.6rem);
-		margin: 0;
-	}
-
-	.intro {
-		margin-top: 0.85rem;
-		max-width: 60ch;
-		color: var(--text-muted);
-		line-height: 1.6;
+	main.shell {
+		--shell-max-width: 720px;
 	}
 
 	.link-list {
