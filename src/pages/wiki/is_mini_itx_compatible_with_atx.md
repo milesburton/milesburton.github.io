@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Is Mini-ITX compatible with ATX?
+date: 2009-06-05T02:52:50Z
 ---
 
 # Is Mini-ITX compatible with ATX?

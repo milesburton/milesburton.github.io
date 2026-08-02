@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: O2 Joggler Hacks - Quake 3
+date: 2010-07-10T23:25:54Z
 ---
 
 # O2 Joggler Hacks - Quake 3

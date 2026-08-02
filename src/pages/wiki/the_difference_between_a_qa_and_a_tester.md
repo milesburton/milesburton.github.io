@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: The Difference Between a QA and a Tester
+date: 2011-01-22T15:21:23Z
 ---
 
 # The Difference Between a QA and a Tester

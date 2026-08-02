@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: NZBAir - Usenet and SABnzbd mobile for Android
+date: 2012-07-28T18:08:39Z
 ---
 
 # NZBAir - Usenet and SABnzbd mobile for Android

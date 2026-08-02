@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: My Kit
+date: 2010-10-09T13:56:03Z
 ---
 
 # My Kit

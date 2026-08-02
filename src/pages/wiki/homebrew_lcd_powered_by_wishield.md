@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Homebrew LCD Powered By WiShield
+date: 2009-11-15T15:46:56Z
 ---
 
 # Homebrew LCD Powered By WiShield

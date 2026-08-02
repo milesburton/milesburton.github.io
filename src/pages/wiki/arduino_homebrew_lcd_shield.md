@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino Homebrew LCD Shield
+date: 2012-10-07T12:11:45Z
 ---
 
 # Arduino Homebrew LCD Shield

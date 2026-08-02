@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Sure 2416 Running Pong via Arduino
+date: 2010-03-23T23:06:37Z
 ---
 
 # Sure 2416 Running Pong via Arduino

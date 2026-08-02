@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Restore DD-WRT NAT Loopback
+date: 2011-01-28T20:48:40Z
 ---
 
 # Restore DD-WRT NAT Loopback

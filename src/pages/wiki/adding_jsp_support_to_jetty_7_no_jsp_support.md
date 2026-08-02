@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Adding JSP support to Jetty 7 - NO JSP Support
+date: 2011-05-06T15:56:34Z
 ---
 
 # Adding JSP support to Jetty 7 - NO JSP Support

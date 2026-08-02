@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: "GeoSpark: Research and Implementation of a Prototype Wi-Fi Positioning System"
+date: 2009-10-16T20:54:42Z
 ---
 
 # GeoSpark: Research and Implementation of a Prototype Wi-Fi Positioning System

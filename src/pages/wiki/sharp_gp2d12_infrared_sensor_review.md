@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Sharp GP2D12 Infrared Sensor Review
+date: 2009-09-14T17:54:00Z
 ---
 
 # Sharp GP2D12 Infrared Sensor Review

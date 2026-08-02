@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Toshiba Libretto 50CT
+date: 2010-04-25T12:43:24Z
 ---
 
 # Toshiba Libretto 50CT

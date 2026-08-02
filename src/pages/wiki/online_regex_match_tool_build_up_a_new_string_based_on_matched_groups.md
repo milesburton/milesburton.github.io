@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Online Regex Match Tool - Build up a new string based on matched groups
+date: 2011-01-14T22:22:17Z
 ---
 
 # Online Regex Match Tool - Build up a new string based on matched groups

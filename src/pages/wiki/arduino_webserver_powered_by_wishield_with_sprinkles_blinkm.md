@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino Webserver powered by WiShield with sprinkles - BlinkM
+date: 2009-10-18T16:27:47Z
 ---
 
 # Arduino Webserver powered by WiShield with sprinkles - BlinkM

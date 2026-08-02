@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: LCD Shield Goes Wireless 433Mhz
+date: 2009-06-15T03:14:55Z
 ---
 
 # LCD Shield Goes Wireless 433Mhz

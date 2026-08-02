@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Android Configuration Manager
+date: 2013-02-19T17:29:28Z
 ---
 
 # Android Configuration Manager

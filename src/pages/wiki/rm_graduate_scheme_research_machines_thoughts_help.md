@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: RM Graduate Scheme - Research Machines Thoughts/Help
+date: 2010-04-25T13:09:11Z
 ---
 
 # RM Graduate Scheme - Research Machines Thoughts/Help

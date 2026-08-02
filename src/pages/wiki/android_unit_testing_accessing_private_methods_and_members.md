@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Android Unit Testing - Accessing Private Methods and Members
+date: 2011-01-29T14:01:50Z
 ---
 
 # Android Unit Testing - Accessing Private Methods and Members

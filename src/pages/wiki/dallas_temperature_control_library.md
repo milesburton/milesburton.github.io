@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Dallas Temperature Control Library
+date: 2014-03-18T12:56:46Z
 ---
 
 # Dallas Temperature Control Library

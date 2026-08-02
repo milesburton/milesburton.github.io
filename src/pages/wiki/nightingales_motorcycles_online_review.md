@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Nightingales Motorcycles Online Review
+date: 2010-06-23T09:01:47Z
 ---
 
 # Nightingales Motorcycles Online Review

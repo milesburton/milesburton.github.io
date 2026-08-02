@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Smart-Plugs - The Path of Least Resistance
+date: 2009-11-28T11:29:04Z
 ---
 
 # Smart-Plugs - The Path of Least Resistance

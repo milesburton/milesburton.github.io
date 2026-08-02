@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino
+date: 2014-03-09T05:45:57Z
 ---
 
 # Arduino

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Gradle Authenticating with Artifactory Repo
+date: 2012-01-14T21:30:57Z
 ---
 
 # Gradle Authenticating with Artifactory Repo

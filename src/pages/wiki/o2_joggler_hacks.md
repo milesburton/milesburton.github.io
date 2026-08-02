@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: O2 Joggler Hacks
+date: 2012-03-11T15:49:59Z
 ---
 
 # O2 Joggler Hacks

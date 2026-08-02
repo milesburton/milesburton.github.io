@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Agile Software Development
+date: 2010-04-19T14:45:24Z
 ---
 
 # Agile Software Development

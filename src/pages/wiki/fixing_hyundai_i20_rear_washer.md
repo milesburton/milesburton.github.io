@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Fixing Hyundai i20 Rear washer
+date: 2024-05-26T15:56:51Z
 ---
 
 # Fixing Hyundai i20 Rear washer

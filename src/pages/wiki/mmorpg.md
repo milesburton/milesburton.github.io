@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: MMORPG
+date: 2012-04-25T19:53:19Z
 ---
 
 # MMORPG

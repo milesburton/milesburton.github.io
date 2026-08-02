@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino Clone - Romeo Robotics Board
+date: 2010-01-29T20:12:02Z
 ---
 
 # Arduino Clone - Romeo Robotics Board

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832
+date: 2012-06-25T14:00:40Z
 ---
 
 # HT1632 Arduino "Matrix Display" Library for the Sure 2416 and 0832

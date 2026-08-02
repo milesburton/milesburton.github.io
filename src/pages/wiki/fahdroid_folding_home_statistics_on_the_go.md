@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: FAHDroid - Folding@Home Statistics on the go
+date: 2011-06-02T17:45:00Z
 ---
 
 # FAHDroid - Folding@Home Statistics on the go

@@ -3,6 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
+
+function heroImage(post: (typeof allPosts)[number]): string | undefined {
+	if (post.data.featuredImage) return post.data.featuredImage;
+	const match = post.body?.match(/<img[^>]+src="(\/blog-media\/[^"]+)"/);
+	return match?.[1];
+}
+
 const latestPosts = allPosts
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 	.slice(0, 3)
@@ -16,6 +23,7 @@ const latestPosts = allPosts
 			excerpt: post.data.excerpt,
 			category: post.data.tags[0],
 			readingMinutes,
+			image: heroImage(post),
 		};
 	});
 
@@ -52,6 +60,24 @@ const featured = [
 		title: 'TeslaCam',
 		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
 		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
+	},
+];
+
+const videos = [
+	{
+		id: 'iIxMoZ9kPPo',
+		kicker: 'Building Systems · Radio',
+		title: 'Baofeng UV-5R receiving SSTV image with android phone',
+	},
+	{
+		id: 'pMbwPwEmuzA',
+		kicker: 'Building Systems · Hardware',
+		title: 'Upgrading the Lenovo ThinkCentre M80q Gen 3',
+	},
+	{
+		id: 'Swy85Oqn3RY',
+		kicker: 'Running Infrastructure',
+		title: 'Jonsbo N3 Ryzen ITX NAS build',
 	},
 ];
 
@@ -152,24 +178,66 @@ const more = [
 			<ul class="latest-list">
 				{latestPosts.map((post) => (
 					<li class="latest-card">
-						<a href={post.href} class="latest-title">
-							{post.title}
-						</a>
-						<div class="latest-meta">
-							<time datetime={post.date.toISOString()}>{dateFormatter.format(post.date)}</time>
-							{post.category && (
-								<>
-									<span class="latest-sep">·</span>
-									<span class="latest-category">{post.category}</span>
-								</>
+						<a href={post.href} class="latest-thumb-link" tabindex="-1" aria-hidden="true">
+							{post.image ? (
+								<img src={post.image} alt="" class="latest-thumb" loading="lazy" />
+							) : (
+								<span class="latest-thumb latest-thumb-placeholder">
+									<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+										<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+										<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+										<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</span>
 							)}
-							<span class="latest-sep">·</span>
-							<span>{post.readingMinutes} min read</span>
+						</a>
+						<div class="latest-body">
+							<a href={post.href} class="latest-title">
+								{post.title}
+							</a>
+							<div class="latest-meta">
+								<time datetime={post.date.toISOString()}>{dateFormatter.format(post.date)}</time>
+								{post.category && (
+									<>
+										<span class="latest-sep">·</span>
+										<span class="latest-category">{post.category}</span>
+									</>
+								)}
+								<span class="latest-sep">·</span>
+								<span>{post.readingMinutes} min read</span>
+							</div>
+							{post.excerpt && <p class="latest-excerpt">{post.excerpt}</p>}
 						</div>
-						{post.excerpt && <p class="latest-excerpt">{post.excerpt}</p>}
 					</li>
 				))}
 			</ul>
+		</section>
+
+		<section class="videos">
+			<h2 class="section-title">Selected Videos</h2>
+			<div class="video-grid">
+				{videos.map((video) => (
+					<div class="video-card">
+						<button
+							type="button"
+							class="video-thumb"
+							data-video-id={video.id}
+							aria-label={`Play video: ${video.title}`}
+						>
+							<img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
+							<span class="play-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" width="20" height="20">
+									<path fill="currentColor" d="M8 5v14l11-7z" />
+								</svg>
+							</span>
+						</button>
+						<p class="video-kicker">{video.kicker}</p>
+						<h3>
+							<a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer">{video.title}</a>
+						</h3>
+					</div>
+				))}
+			</div>
 		</section>
 
 		<section class="topics">
@@ -197,9 +265,26 @@ const more = [
 	</main>
 </Layout>
 
+<script>
+	document.querySelectorAll<HTMLButtonElement>('.video-thumb[data-video-id]').forEach((thumb) => {
+		thumb.addEventListener('click', () => {
+			const id = thumb.dataset.videoId;
+			if (!id) return;
+			const iframe = document.createElement('iframe');
+			iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+			iframe.title = thumb.getAttribute('aria-label') ?? 'YouTube video player';
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+			iframe.allowFullscreen = true;
+			iframe.loading = 'lazy';
+			iframe.className = 'video-embed';
+			thumb.replaceWith(iframe);
+		});
+	});
+</script>
+
 <style>
 	.shell {
-		max-width: 1000px;
+		max-width: 1280px;
 		margin: 0 auto;
 		padding: 4rem 2rem 5rem;
 	}
@@ -226,7 +311,7 @@ const more = [
 
 	.intro {
 		margin-top: 1rem;
-		max-width: 58ch;
+		max-width: 75ch;
 		color: var(--text-muted);
 		font-size: 1.08rem;
 		line-height: 1.6;
@@ -246,6 +331,100 @@ const more = [
 		margin-bottom: 3rem;
 	}
 
+	.videos {
+		margin-bottom: 3rem;
+	}
+
+	.video-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+
+	.video-card {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.video-thumb {
+		display: block;
+		width: 100%;
+		position: relative;
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid var(--border);
+		background: var(--bg-raised);
+		aspect-ratio: 16 / 9;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.video-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 200ms ease;
+	}
+
+	.video-thumb:hover img {
+		transform: scale(1.04);
+	}
+
+	.video-embed {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border-radius: 10px;
+		border: 1px solid var(--border);
+	}
+
+	.play-icon {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		width: 2.75rem;
+		height: 2.75rem;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0.55);
+		color: #fff;
+		transition: background 130ms ease;
+	}
+
+	.video-thumb:hover .play-icon {
+		background: var(--accent-strong);
+	}
+
+	.video-kicker {
+		margin: 0.65rem 0 0.3rem;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+	}
+
+	.video-card h3 {
+		margin: 0;
+		font-size: 0.92rem;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	.video-card h3 a {
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.video-card h3 a:hover {
+		color: var(--accent-strong);
+	}
+
 	.latest {
 		margin-bottom: 3rem;
 	}
@@ -260,8 +439,36 @@ const more = [
 	}
 
 	.latest-card {
+		display: flex;
+		gap: 1.1rem;
 		border-bottom: 1px solid var(--border);
 		padding-bottom: 1.1rem;
+	}
+
+	.latest-thumb-link {
+		flex: 0 0 auto;
+	}
+
+	.latest-thumb {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 1px solid var(--border);
+		background: var(--bg-raised);
+	}
+
+	.latest-thumb-placeholder {
+		color: var(--text-dim);
+		border-style: dashed;
+	}
+
+	.latest-body {
+		flex: 1;
+		min-width: 0;
 	}
 
 	.latest-title {
@@ -380,7 +587,6 @@ const more = [
 	}
 
 	.featured-links {
-		margin-top: auto;
 		padding-top: 1rem;
 		display: flex;
 		align-items: center;
@@ -443,7 +649,7 @@ const more = [
 
 	.tags {
 		list-style: none;
-		margin: 0;
+		margin: auto 0 0;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
@@ -520,8 +726,22 @@ const more = [
 		color: var(--accent-strong);
 	}
 
+	@media (max-width: 1080px) {
+		.featured-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.video-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
 	@media (max-width: 760px) {
 		.featured-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.video-grid {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -529,6 +749,11 @@ const more = [
 	@media (max-width: 620px) {
 		.tiles {
 			grid-template-columns: 1fr;
+		}
+
+		.latest-thumb {
+			width: 72px;
+			height: 72px;
 		}
 
 		.shell {

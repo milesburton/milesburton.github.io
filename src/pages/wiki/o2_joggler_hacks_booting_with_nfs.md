@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: O2 Joggler Hacks - Booting with NFS
+date: 2012-03-11T23:33:59Z
 ---
 
 # O2 Joggler Hacks - Booting with NFS

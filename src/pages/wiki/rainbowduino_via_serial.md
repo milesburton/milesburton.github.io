@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: RainbowDuino Via Serial
+date: 2009-06-15T15:08:26Z
 ---
 
 # RainbowDuino Via Serial

@@ -5,12 +5,64 @@ import SiteSearch from '../components/SiteSearch.astro';
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
+	type?: 'website' | 'article';
+	structuredData?: Record<string, unknown> | Record<string, unknown>[];
+	date?: string;
+	frontmatter?: { title?: string; date?: string };
 }
 
+const props = Astro.props;
 const {
-	title = 'Miles Burton',
+	title = props.frontmatter?.title ?? 'Miles Burton',
 	description = 'Software engineer working on trading systems, infrastructure, and embedded projects.',
-} = Astro.props;
+	image,
+	type = 'website',
+	structuredData,
+	date = props.frontmatter?.date,
+} = props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = image ? new URL(image, Astro.site).toString() : undefined;
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Miles Burton',
+	url: 'https://milesburton.com/',
+	sameAs: [
+		'https://github.com/milesburton',
+		'https://www.linkedin.com/in/milesburton/',
+		'https://www.youtube.com/@M0LHA',
+	],
+};
+
+// Plain-markdown pages (wiki articles) pass `date` via `layout:` frontmatter
+// rather than an explicit structuredData prop -- build the Article schema
+// here so every article gets one without hand-authoring 80+ script blocks.
+const wikiArticleSchema =
+	date && currentIsWikiArticle(canonicalURL.pathname)
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'Article',
+				headline: title,
+				datePublished: date,
+				dateModified: date,
+				author: { '@type': 'Person', name: 'Miles Burton', url: 'https://milesburton.com/' },
+				description,
+				url: canonicalURL.toString(),
+			}
+		: null;
+
+function currentIsWikiArticle(pathname: string): boolean {
+	return pathname.startsWith('/wiki/') && pathname !== '/wiki/Main_Page/';
+}
+
+const schemaBlocks = [
+	personSchema,
+	...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : []),
+	...(wikiArticleSchema ? [wikiArticleSchema] : []),
+];
 
 const nav = [
 	{ href: '/', label: 'Home' },
@@ -33,6 +85,23 @@ const currentPath = Astro.url.pathname;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | milesburton.com</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" type="application/rss+xml" title="Miles Burton" href="/rss.xml" />
+
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={title === 'Miles Burton' ? title : `${title} | milesburton.com`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:site_name" content="Miles Burton" />
+		{ogImageURL && <meta property="og:image" content={ogImageURL} />}
+
+		<meta name="twitter:card" content={ogImageURL ? 'summary_large_image' : 'summary'} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{ogImageURL && <meta name="twitter:image" content={ogImageURL} />}
+
+		{schemaBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
+
 		<script is:inline>
 			(function () {
 				var stored = localStorage.getItem('theme');

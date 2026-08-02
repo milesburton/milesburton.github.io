@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Xbox Classic Controller Driver - XBCD for 64bit
+date: 2010-04-24T19:25:57Z
 ---
 
 # Xbox Classic Controller Driver - XBCD for 64bit

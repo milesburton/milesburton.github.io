@@ -57,9 +57,26 @@ const featured = featuredNames
 		};
 	})
 	.filter((item): item is NonNullable<typeof item> => item !== null);
+
+const projectsSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'ItemList',
+	itemListElement: repos.map((repo, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		item: {
+			'@type': 'SoftwareSourceCode',
+			name: repo.name,
+			description: repo.description ?? undefined,
+			codeRepository: repo.html_url,
+			programmingLanguage: repo.language ?? undefined,
+			url: repo.html_url,
+		},
+	})),
+};
 ---
 
-<Layout title="GitHub Projects" description="Open-source projects and libraries by Miles Burton.">
+<Layout title="Projects" description="Open-source projects and libraries by Miles Burton." structuredData={projectsSchema}>
 	<main class="shell">
 		<header class="page-header">
 			<p class="kicker">Engineering</p>

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Sky Box RS232 Connector
+date: 2010-10-14T07:55:04Z
 ---
 
 # Sky Box RS232 Connector

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Hacking the Pogoplug
+date: 2012-03-10T12:30:46Z
 ---
 
 # Hacking the Pogoplug

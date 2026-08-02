@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Android - Building a ListView with an OnClick Position
+date: 2011-10-19T16:59:34Z
 ---
 
 # Android - Building a ListView with an OnClick Position

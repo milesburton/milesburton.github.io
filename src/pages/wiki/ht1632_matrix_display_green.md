@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: HT1632 Matrix Display - Green
+date: 2011-02-20T12:23:51Z
 ---
 
 # HT1632 Matrix Display - Green

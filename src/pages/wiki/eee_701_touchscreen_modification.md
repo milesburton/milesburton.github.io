@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: EEE 701 Touchscreen Modification
+date: 2010-12-12T19:25:46Z
 ---
 
 # EEE 701 Touchscreen Modification

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: O2 Joggler Hacks - Enabling SCP Server
+date: 2010-12-12T19:26:47Z
 ---
 
 # O2 Joggler Hacks - Enabling SCP Server

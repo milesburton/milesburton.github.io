@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Ubuntu 11.04 x64 - Fixing the Radeon slow painting bug
+date: 2011-08-29T12:13:01Z
 ---
 
 # Ubuntu 11.04 x64 - Fixing the Radeon slow painting bug

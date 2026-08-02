@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino RF Kit Library - Get your Arduino talking over the air
+date: 2009-10-27T20:19:46Z
 ---
 
 # Arduino RF Kit Library - Get your Arduino talking over the air

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Thoughts
+date: 2011-01-22T15:36:27Z
 ---
 
 # Thoughts

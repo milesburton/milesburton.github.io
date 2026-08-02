@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: 2D Positioning - Trilateration in JavaScript
+date: 2011-06-18T14:29:24Z
 ---
 
 # 2D Positioning - Trilateration in JavaScript

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino Range Detector
+date: 2009-06-07T18:36:10Z
 ---
 
 # Arduino Range Detector

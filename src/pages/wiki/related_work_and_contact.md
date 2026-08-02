@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Related Work and Contact
+date: 2011-04-16T10:57:23Z
 ---
 
 # Related Work and Contact

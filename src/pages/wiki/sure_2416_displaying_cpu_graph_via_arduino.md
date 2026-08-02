@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Sure 2416 Displaying CPU Graph via Arduino
+date: 2010-03-22T17:16:12Z
 ---
 
 # Sure 2416 Displaying CPU Graph via Arduino

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Continuous Integration
+date: 2013-02-19T18:08:45Z
 ---
 
 # Continuous Integration

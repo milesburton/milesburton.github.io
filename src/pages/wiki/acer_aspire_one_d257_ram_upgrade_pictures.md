@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Acer Aspire One D257 Ram Upgrade - Pictures
+date: 2012-12-30T01:16:50Z
 ---
 
 # Acer Aspire One D257 Ram Upgrade - Pictures

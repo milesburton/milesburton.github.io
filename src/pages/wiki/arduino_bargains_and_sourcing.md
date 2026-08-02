@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino Bargains and Sourcing
+date: 2009-11-08T21:39:45Z
 ---
 
 # Arduino Bargains and Sourcing

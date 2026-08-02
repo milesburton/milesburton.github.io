@@ -14,9 +14,24 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const heroImage = post.data.featuredImage ?? post.body?.match(/<img[^>]+src="(\/blog-media\/[^"]+)"/)?.[1];
+
+const articleSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: post.data.title,
+	datePublished: post.data.date.toISOString(),
+	dateModified: post.data.date.toISOString(),
+	author: { '@type': 'Person', name: 'Miles Burton', url: 'https://milesburton.com/' },
+	description: post.data.excerpt,
+	url: `https://milesburton.com/blog/${post.data.slug}/`,
+	...(heroImage ? { image: `https://milesburton.com${heroImage}` } : {}),
+	keywords: post.data.tags.join(', '),
+};
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt}>
+<Layout title={post.data.title} description={post.data.excerpt} type="article" image={heroImage} structuredData={articleSchema}>
 	<main class="shell">
 		<article>
 			<header class="post-header">

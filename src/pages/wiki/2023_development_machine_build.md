@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: 2023 Development Machine Build
+date: 2023-01-07T00:51:56Z
 ---
 
 # 2023 Development Machine Build

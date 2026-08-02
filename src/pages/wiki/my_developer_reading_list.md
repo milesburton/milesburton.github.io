@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: My Developer Reading List
+date: 2010-02-02T12:14:11Z
 ---
 
 # My Developer Reading List

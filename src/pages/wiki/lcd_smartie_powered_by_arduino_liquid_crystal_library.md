@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: LCD Smartie Powered By Arduino Liquid Crystal library
+date: 2010-04-25T13:05:58Z
 ---
 
 # LCD Smartie Powered By Arduino Liquid Crystal library

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Installing ESXi on Lenovo M80Q ThinkCentre Gen3
+date: 2023-10-29T15:17:51Z
 ---
 
 # Installing ESXi on Lenovo M80Q ThinkCentre Gen3

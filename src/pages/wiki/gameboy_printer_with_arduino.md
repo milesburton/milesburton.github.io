@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Gameboy Printer with Arduino
+date: 2010-10-30T21:06:58Z
 ---
 
 # Gameboy Printer with Arduino

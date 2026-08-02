@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Arduino All-Wheel-Drive (A4WD) Robot Trials
+date: 2009-11-08T19:15:19Z
 ---
 
 # Arduino All-Wheel-Drive (A4WD) Robot Trials

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: USD LCD Display (HD44780) Running on Linux via Arduino
+date: 2013-05-02T07:26:57Z
 ---
 
 # USD LCD Display (HD44780) Running on Linux via Arduino

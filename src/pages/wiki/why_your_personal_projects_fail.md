@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Why Your Personal Projects Fail
+date: 2011-01-22T15:00:56Z
 ---
 
 # Why Your Personal Projects Fail

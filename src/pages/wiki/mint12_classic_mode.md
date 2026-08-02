@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Mint12-Classic-Mode
+date: 2012-01-07T21:21:08Z
 ---
 
 # Mint12-Classic-Mode

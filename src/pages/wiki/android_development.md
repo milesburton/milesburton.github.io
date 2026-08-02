@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Android Development
+date: 2012-03-18T14:02:48Z
 ---
 
 # Android Development

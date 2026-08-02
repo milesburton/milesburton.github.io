@@ -1,4 +1,5 @@
 // @ts-check
+import sitemap from '@astrojs/sitemap';
 import { execSync } from 'node:child_process';
 import { defineConfig } from 'astro/config';
 
@@ -16,6 +17,7 @@ const commitDate = safeGit('git log -1 --format=%cI');
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://milesburton.com',
+	integrations: [sitemap()],
 	vite: {
 		define: {
 			__BUILD_COMMIT__: JSON.stringify(commitHash),

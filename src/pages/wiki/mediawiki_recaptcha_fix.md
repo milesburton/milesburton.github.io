@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: MediaWiki Recaptcha fix
+date: 2011-04-16T12:21:14Z
 ---
 
 # MediaWiki Recaptcha fix

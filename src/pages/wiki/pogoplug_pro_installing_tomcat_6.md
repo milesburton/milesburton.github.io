@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Pogoplug Pro - Installing Tomcat 6
+date: 2012-03-12T08:34:12Z
 ---
 
 # Pogoplug Pro - Installing Tomcat 6

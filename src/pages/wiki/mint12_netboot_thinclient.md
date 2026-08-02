@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Mint12-Netboot-Thinclient
+date: 2012-01-08T00:19:19Z
 ---
 
 # Mint12-Netboot-Thinclient

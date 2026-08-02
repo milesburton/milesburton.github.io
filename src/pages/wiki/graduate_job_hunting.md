@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Graduate Job Hunting
+date: 2010-04-25T13:09:42Z
 ---
 
 # Graduate Job Hunting

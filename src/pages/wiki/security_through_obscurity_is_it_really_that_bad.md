@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Security Through Obscurity - Is it really that bad?
+date: 2009-05-02T23:59:24Z
 ---
 
 # Security Through Obscurity - Is it really that bad?

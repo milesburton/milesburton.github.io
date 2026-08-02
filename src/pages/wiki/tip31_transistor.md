@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: Tip31 Transistor
+date: 2009-11-14T18:10:19Z
 ---
 
 # Tip31 Transistor

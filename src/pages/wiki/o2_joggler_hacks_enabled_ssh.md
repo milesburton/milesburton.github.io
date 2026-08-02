@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 title: O2 Joggler Hacks - Enabled SSH
+date: 2010-04-14T20:20:37Z
 ---
 
 # O2 Joggler Hacks - Enabled SSH
