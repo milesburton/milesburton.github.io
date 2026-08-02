@@ -2,10 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 
 const links = [
-	{ label: 'Email', value: 'miles.burton@gmail.com', href: 'mailto:miles.burton@gmail.com' },
 	{ label: 'GitHub', value: 'github.com/milesburton', href: 'https://github.com/milesburton' },
 	{ label: 'LinkedIn', value: 'linkedin.com/in/milesburton', href: 'https://www.linkedin.com/in/milesburton/' },
 ];
+
+// Split so the address never appears intact in the page source or JS bundle —
+// reassembled client-side on load, which defeats the vast majority of email
+// harvesters (they scan static HTML/JS text, not executed DOM output).
+const emailUser = 'miles.burton';
+const emailDomain = 'gmail.com';
 ---
 
 <Layout title="Contact" description="Get in touch with Miles Burton.">
@@ -19,6 +24,12 @@ const links = [
 		</header>
 
 		<ul class="link-list">
+			<li>
+				<span class="label">Email</span>
+				<a id="email-link" href="#" data-user={emailUser} data-domain={emailDomain} rel="nofollow">
+					<noscript>Enable JavaScript to view, or reach me on GitHub/LinkedIn instead</noscript>
+				</a>
+			</li>
 			{links.map((link) => (
 				<li>
 					<span class="label">{link.label}</span>
@@ -28,6 +39,15 @@ const links = [
 		</ul>
 	</main>
 </Layout>
+
+<script>
+	const link = document.getElementById('email-link');
+	if (link) {
+		const address = `${link.dataset.user}@${link.dataset.domain}`;
+		link.href = `mailto:${address}`;
+		link.textContent = address;
+	}
+</script>
 
 <style>
 	.shell {
