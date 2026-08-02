@@ -34,6 +34,14 @@ const currentPath = Astro.url.pathname;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | milesburton.com</title>
 		<meta name="description" content={description} />
+		<script is:inline>
+			(function () {
+				var stored = localStorage.getItem('theme');
+				if (stored === 'light' || stored === 'dark') {
+					document.documentElement.setAttribute('data-theme', stored);
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<div class="page">
@@ -84,7 +92,8 @@ const currentPath = Astro.url.pathname;
 </html>
 
 <style is:global>
-	:root {
+	:root,
+	:root[data-theme='dark'] {
 		--bg: #05070d;
 		--bg-raised: #0b1120;
 		--bg-card: #0f172a;
@@ -93,9 +102,70 @@ const currentPath = Astro.url.pathname;
 		--text: #e2e8f0;
 		--text-muted: #94a3b8;
 		--text-dim: #64748b;
+		--text-body: #cbd5e1;
 		--accent: #38bdf8;
 		--accent-strong: #7dd3fc;
+		--row-stripe: rgba(148, 163, 184, 0.04);
+		--nav-active-bg: rgba(56, 189, 248, 0.1);
+		--overlay-backdrop: rgba(2, 6, 15, 0.7);
+		--overlay-shadow: rgba(0, 0, 0, 0.5);
+		--card-gradient-top: rgba(56, 189, 248, 0.07);
+		--card-gradient-top-hover: rgba(56, 189, 248, 0.12);
+		--card-gradient-bottom: rgba(15, 23, 42, 0.4);
+		--card-gradient-bottom-hover: rgba(15, 23, 42, 0.5);
+		--highlight-bg: rgba(56, 189, 248, 0.25);
+		color-scheme: dark;
 		font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+	}
+
+	:root[data-theme='light'] {
+		--bg: #f8fafc;
+		--bg-raised: #eef2f7;
+		--bg-card: #ffffff;
+		--border: rgba(15, 23, 42, 0.1);
+		--border-strong: rgba(15, 23, 42, 0.18);
+		--text: #0f172a;
+		--text-muted: #475569;
+		--text-dim: #64748b;
+		--text-body: #334155;
+		--accent: #0284c7;
+		--accent-strong: #0369a1;
+		--row-stripe: rgba(15, 23, 42, 0.025);
+		--nav-active-bg: rgba(2, 132, 199, 0.1);
+		--overlay-backdrop: rgba(15, 23, 42, 0.35);
+		--overlay-shadow: rgba(15, 23, 42, 0.25);
+		--card-gradient-top: rgba(2, 132, 199, 0.06);
+		--card-gradient-top-hover: rgba(2, 132, 199, 0.1);
+		--card-gradient-bottom: rgba(255, 255, 255, 0.6);
+		--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
+		--highlight-bg: rgba(2, 132, 199, 0.2);
+		color-scheme: light;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root:not([data-theme]) {
+			--bg: #f8fafc;
+			--bg-raised: #eef2f7;
+			--bg-card: #ffffff;
+			--border: rgba(15, 23, 42, 0.1);
+			--border-strong: rgba(15, 23, 42, 0.18);
+			--text: #0f172a;
+			--text-muted: #475569;
+			--text-dim: #64748b;
+			--text-body: #334155;
+			--accent: #0284c7;
+			--accent-strong: #0369a1;
+			--row-stripe: rgba(15, 23, 42, 0.025);
+			--nav-active-bg: rgba(2, 132, 199, 0.1);
+			--overlay-backdrop: rgba(15, 23, 42, 0.35);
+			--overlay-shadow: rgba(15, 23, 42, 0.25);
+			--card-gradient-top: rgba(2, 132, 199, 0.06);
+			--card-gradient-top-hover: rgba(2, 132, 199, 0.1);
+			--card-gradient-bottom: rgba(255, 255, 255, 0.6);
+			--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
+			--highlight-bg: rgba(2, 132, 199, 0.2);
+			color-scheme: light;
+		}
 	}
 
 	* {
@@ -149,7 +219,7 @@ const currentPath = Astro.url.pathname;
 
 	.content-area p {
 		margin: 0 0 1.1rem;
-		color: #cbd5e1;
+		color: var(--text-body);
 		line-height: 1.65;
 	}
 
@@ -181,7 +251,7 @@ const currentPath = Astro.url.pathname;
 	.content-area ol {
 		margin: 0 0 1.1rem;
 		padding-left: 1.4rem;
-		color: #cbd5e1;
+		color: var(--text-body);
 	}
 
 	.content-area li {
@@ -243,7 +313,7 @@ const currentPath = Astro.url.pathname;
 	}
 
 	.content-area tr:nth-child(even) td {
-		background: rgba(148, 163, 184, 0.04);
+		background: var(--row-stripe);
 	}
 </style>
 
@@ -320,7 +390,7 @@ const currentPath = Astro.url.pathname;
 	}
 
 	nav a[aria-current='page'] {
-		background: rgba(56, 189, 248, 0.1);
+		background: var(--nav-active-bg);
 		color: var(--accent-strong);
 	}
 

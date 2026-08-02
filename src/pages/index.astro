@@ -199,7 +199,7 @@ const more = [
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-		background: linear-gradient(180deg, rgba(56, 189, 248, 0.07), rgba(15, 23, 42, 0.4));
+		background: linear-gradient(180deg, var(--card-gradient-top), var(--card-gradient-bottom));
 		border: 1px solid var(--border-strong);
 		border-radius: 14px;
 		color: inherit;
@@ -231,7 +231,7 @@ const more = [
 
 	.featured-card:hover {
 		border-color: var(--accent-strong);
-		background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.5));
+		background: linear-gradient(180deg, var(--card-gradient-top-hover), var(--card-gradient-bottom-hover));
 	}
 
 	.featured-links {

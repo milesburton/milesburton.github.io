@@ -200,7 +200,7 @@
 	.search-overlay {
 		position: fixed;
 		inset: 0;
-		background: rgba(2, 6, 15, 0.7);
+		background: var(--overlay-backdrop);
 		backdrop-filter: blur(2px);
 		display: flex;
 		align-items: flex-start;
@@ -215,7 +215,7 @@
 		background: var(--bg-card);
 		border: 1px solid var(--border-strong);
 		border-radius: 12px;
-		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 20px 60px var(--overlay-shadow);
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
@@ -297,7 +297,7 @@
 
 	.search-results mark,
 	.result-excerpt mark {
-		background: rgba(56, 189, 248, 0.25);
+		background: var(--highlight-bg);
 		color: var(--accent-strong);
 		border-radius: 2px;
 	}
