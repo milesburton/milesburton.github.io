@@ -76,6 +76,11 @@ const commitUrl = commit !== 'unknown' ? `https://github.com/milesburton/milesbu
 
 <style>
 	.site-footer {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
 		width: 100%;
 		border-top: 1px solid var(--border);
 		background: var(--bg-raised);
@@ -84,12 +89,14 @@ const commitUrl = commit !== 'unknown' ? `https://github.com/milesburton/milesbu
 	.site-footer-inner {
 		max-width: 1280px;
 		margin: 0 auto;
-		padding: 1rem 1.25rem;
+		padding: 0.65rem 1.25rem;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.5rem;
 		font-size: 0.76rem;
 		color: var(--text-dim);
+		min-height: var(--footer-height, 48px);
 	}
 
 	.sep {

@@ -168,6 +168,16 @@ const currentPath = Astro.url.pathname;
 		}
 	}
 
+	:root {
+		--footer-height: 48px;
+	}
+
+	@media (max-width: 620px) {
+		:root {
+			--footer-height: 76px;
+		}
+	}
+
 	* {
 		box-sizing: border-box;
 	}
@@ -330,6 +340,7 @@ const currentPath = Astro.url.pathname;
 		width: 100%;
 		max-width: 1280px;
 		margin: 0 auto;
+		padding-bottom: var(--footer-height);
 	}
 
 	.sidebar {
@@ -341,7 +352,7 @@ const currentPath = Astro.url.pathname;
 		position: sticky;
 		top: 0;
 		align-self: flex-start;
-		max-height: 100vh;
+		max-height: calc(100vh - var(--footer-height));
 	}
 
 	.brand {
