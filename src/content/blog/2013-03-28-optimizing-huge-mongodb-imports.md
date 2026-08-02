@@ -3,7 +3,7 @@ title: "Optimizing ‘huge’ MongoDB imports"
 date: 2013-03-28
 slug: "optimizing-huge-mongodb-imports"
 categories: ["HOWTO"]
-tags: []
+tags: ["Databases", "Coding"]
 excerpt: "MongoDB is great for churning through a ton of files and importing into a collection and it never hurts to give it a little helping hand. In my earlier posts I mentioned working with 3-10 million tiny 1-2k JSON objects. Even with GNUParallel it isn’t overly efficient to let loose"
 ---
 <p>MongoDB is great for churning through a ton of files and importing into a collection and it never hurts to give it a little helping hand.</p>

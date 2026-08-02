@@ -3,7 +3,7 @@ title: "Today’s Kata: Title Capitalization"
 date: 2013-04-01
 slug: "todays-kata-title-capitalization"
 categories: ["Craftsmanship"]
-tags: ["Kata"]
+tags: ["Coding"]
 excerpt: "Title Capitialization Many writers are often confused by the different methods of capitalizing titles. There are several forms of capitalization rules, but one of the most popular is called “title case” or “up style.” Implement a function that will take a title in the form of a s"
 ---
 <blockquote>

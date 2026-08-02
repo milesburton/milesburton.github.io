@@ -3,7 +3,7 @@ title: "Nearly rear-ended avoiding emergency services in the Tesla Model S"
 date: 2018-06-20
 slug: "nearly-rear-ended-avoiding-emergency-services-in-the-tesla-model-s"
 categories: ["Thoughts"]
-tags: []
+tags: ["Electric Vehicles", "Life"]
 excerpt: "Earlier today I was driving towards Peace Haven on the South coast. In a usually quiet unexciting 40MPH road, two very unfortunate cars had a head on collision. I’m not privy with the details, however, with no first responders on site it appears everyone was fine and multiple goo"
 ---
 <p>Earlier today I was driving towards Peace Haven on the South coast. In a usually quiet unexciting 40MPH road, two very unfortunate cars had a head on collision. I&#8217;m not privy with the details, however, with no first responders on site it appears everyone was fine and multiple good Samaritans had offered help.</p>

@@ -3,7 +3,7 @@ title: "Electric Vehicles, Addressing fear, uncertainty and doubt – Part Five"
 date: 2019-01-20
 slug: "addressing-fear-uncertainty-and-doubt-part-five"
 categories: ["Electric Vehicles","Renewables","Tesla"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "(This article was originally written for a local publication) If everyone drove EVs, we’d need to build 9 more power-stations! My uncle, a retired Royal Dragoon who are well known for engineering, surprised me with this comment. He along with many others have been subtly fed half"
 ---
 <p><em>(This article was originally written for a local publication)</em></p>

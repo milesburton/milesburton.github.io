@@ -3,7 +3,7 @@ title: "Approaching the Foundation Licence – Amatuer Radio"
 date: 2016-05-30
 slug: "approaching-the-foundation-licence-amatuer-radio"
 categories: ["Amateur Radio","Thoughts"]
-tags: []
+tags: ["Amateur Radio"]
 excerpt: "When I first began the trail to Amatuer Radio it all felt rather daunting. Gagantuan antennas, radios with more buttons that a 747 and a price list even Bill Gates would balk at&#8230; So where do you begin? Remember one fact: Amateur radio needent be complex, nor expensive. The "
 ---
 <p>When I first began the trail to Amatuer Radio it all felt rather daunting. Gagantuan antennas, radios with more buttons that a 747 and a price list even Bill Gates would balk at&#8230;</p>

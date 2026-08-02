@@ -3,7 +3,7 @@ title: "Building Your Own 24/7 Retro Gaming Kiosk with the Raspberry Pi"
 date: 2025-01-07
 slug: "building-your-own-24-7-retro-gaming-kiosk-with-the-raspberry-pi"
 categories: ["HOWTO"]
-tags: ["docker","gaming","Linux","Raspberry Pi","technology"]
+tags: ["Retro & Gaming", "Hardware"]
 excerpt: "Want to bring some retro gaming magic to your desk? Check out what we’re building: Pretty cool, right? This compact arcade cabinet automatically cycles through classic games, creating a mesmerising display that’s perfect for any workspace. If you’ve seen my previous work on Tiny "
 featuredImage: "/blog-media/2025/01/img_1339.jpg"
 ---

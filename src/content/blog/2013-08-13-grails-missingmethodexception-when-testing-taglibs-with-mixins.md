@@ -3,7 +3,7 @@ title: "Grails: MissingMethodException when testing taglibs with Mixins"
 date: 2013-08-13
 slug: "grails-missingmethodexception-when-testing-taglibs-with-mixins"
 categories: ["Grails In the Enterprise"]
-tags: []
+tags: ["Coding"]
 excerpt: "Here’s a gotcha that I’ve come across today. If you take advantage of test helpers of a mixin format you may come see this issue: The reason behind this error is the metaClass (which is how Groovy mixes in other classes) is cleared after each test. The @Mixin annotation only work"
 ---
 <p>Here&#8217;s a gotcha that I&#8217;ve come across today. If you take advantage of test helpers of a mixin format you may come see this issue:</p>

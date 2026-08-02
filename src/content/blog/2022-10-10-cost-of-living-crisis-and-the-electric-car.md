@@ -3,7 +3,7 @@ title: "Cost of living crisis and the Electric Car"
 date: 2022-10-10
 slug: "cost-of-living-crisis-and-the-electric-car"
 categories: ["Thoughts"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "Britain, unlike most of Europe, gets the majority of our electricity from natural gas fueled power stations. This for the electric car owner presents a problem. Unless you’ve been hiding under a rock the cost of this fuel has been impacted by the ongoing crisis in Ukraine and opp"
 ---
 

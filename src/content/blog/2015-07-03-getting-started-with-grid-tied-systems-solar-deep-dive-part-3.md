@@ -3,7 +3,7 @@ title: "Getting started with Grid-Tied systems – Solar Deep Dive Part 3"
 date: 2015-07-03
 slug: "getting-started-with-grid-tied-systems-solar-deep-dive-part-3"
 categories: ["Renewables","Thoughts"]
-tags: []
+tags: ["Renewables"]
 excerpt: "Grid-Tied systems have an awful lot of potential, and frankly I’m surprised they aren’t more popular. While the FIT may have dropped recently the payback period is still quite good. I suspect one of the key reasons is the over regulation of the MCS scheme and subsequent market re"
 ---
 <p>Grid-Tied systems have an awful lot of potential, and frankly I&#8217;m surprised they aren&#8217;t more popular. While the FIT may have <a href="https://www.ofgem.gov.uk/environmental-programmes/feed-tariff-fit-scheme/tariff-tables" target="_blank" rel="noopener">dropped recently</a> the payback period is still quite good. I suspect one of the key reasons is the over regulation of the MCS scheme and subsequent market reaction to it; In short GT installations are relatively expensive because of the ‘few’ qualified engineers who can actually carry out the work.</p>

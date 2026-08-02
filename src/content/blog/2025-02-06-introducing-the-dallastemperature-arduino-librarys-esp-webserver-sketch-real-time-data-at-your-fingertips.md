@@ -3,7 +3,7 @@ title: "Introducing the DallasTemperature Arduino Library’s ESP-WebServer Sket
 date: 2025-02-06
 slug: "introducing-the-dallastemperature-arduino-librarys-esp-webserver-sketch-real-time-data-at-your-fingertips"
 categories: ["Thoughts"]
-tags: ["Arduino","electronics","esp32","hardware","IOT"]
+tags: ["Hardware", "Coding"]
 excerpt: "After advancing the DallasTemperature Arduino library to its latest milestone, I’ve introduced a new example tailored for the ESP platform. This enhancement features a straightforward web-accessible dashboard that displays historical temperature data and incorporates a REST endpo"
 ---
 

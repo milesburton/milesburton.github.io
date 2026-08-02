@@ -3,7 +3,7 @@ title: "Going Off-Grid – Solar Deep Dive Part 4"
 date: 2015-07-03
 slug: "going-off-grid-solar-deep-dive-part-4"
 categories: ["Renewables","Thoughts"]
-tags: []
+tags: ["Renewables"]
 excerpt: "Off-Grid set-ups can genuinely feel liberating. You are able to generate and store your own power for use at any time of the day and aren’t dependant on the reliability of the National Grid – only the weather! This means you could – in theory – set-up a tent in the middle of a fi"
 ---
 <p>Off-Grid set-ups can genuinely feel liberating. You are able to generate and store your own power for use at any time of the day and aren&#8217;t dependant on the reliability of the National Grid – only the weather! This means you could – in theory – set-up a tent in the middle of a field and retain the luxuries that electricity bring, tin-foil hats optional.</p>

@@ -3,7 +3,7 @@ title: "Upgrading the Amstrad Mega PC"
 date: 2019-01-20
 slug: "upgrading-the-amstrad-mega-pc"
 categories: ["Thoughts"]
-tags: []
+tags: ["Retro & Gaming", "Hardware"]
 excerpt: "At the height of the 16Bit era Sega had turned the ever-loved MegaDrive into a modern day Cerberus.  There wasn’t a console, mobile, or add-on they didn’t consider. While the gamers of the early nighties were tearing their hair out – and no doubt their wallets. Thankfully several"
 ---
 <p>At the height of the 16Bit era Sega had turned the ever-loved MegaDrive into a modern day Cerberus.  There wasn&#8217;t a console, mobile, or add-on they didn&#8217;t consider.</p>

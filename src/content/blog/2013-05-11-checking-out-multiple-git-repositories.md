@@ -3,7 +3,7 @@ title: "Checking out multiple git repositories"
 date: 2013-05-11
 slug: "checking-out-multiple-git-repositories"
 categories: ["HOWTO"]
-tags: ["git"]
+tags: ["Coding", "DevOps"]
 excerpt: "Here’s a good one liner: mkdir -p checkout cd checkout find ../repositories/ -maxdepth 1 -type d -print | xargs -I {} git clone {} checkout/{}"
 ---
 <p>Here&#8217;s a good one liner:</p>

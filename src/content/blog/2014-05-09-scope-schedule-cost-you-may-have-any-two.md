@@ -3,7 +3,7 @@ title: "Scope, Schedule & Cost – You may have any two"
 date: 2014-05-09
 slug: "scope-schedule-cost-you-may-have-any-two"
 categories: ["Rambling"]
-tags: []
+tags: ["Career"]
 excerpt: "Just recently I’ve been branching out on my reading material, widening my technical scope to everything from NLP, Consulting to Project Management. I suppose it’s to be expected but it still takes me by surprise that an entirely different field, for example Health can have such s"
 ---
 <p>Just recently I&#8217;ve been branching out on my reading material, widening my technical scope to everything from NLP, Consulting to Project Management. I suppose it&#8217;s to be expected but it still takes me by surprise that an entirely different field, for example Health can have such stark overlaps with IT.</p>

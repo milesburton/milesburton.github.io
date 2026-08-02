@@ -3,7 +3,7 @@ title: "MongoDB Hits 2.4"
 date: 2013-03-19
 slug: "mongodb-hits-2-4"
 categories: ["Devops","Interesting Links"]
-tags: ["MongoDB"]
+tags: ["Databases"]
 excerpt: "MongoDB Hits 2.4 Looks like 2.4 has just hit the wire and it has some very interesting features! New Features Hash-based Sharding Capped Arrays Text Search (Beta) Geospatial Enhancements Faster Counts Working Set Analyzer V8 JavaScript engine Security"
 ---
 <p><a title="MongoDB Hits 2.4" href="http://docs.mongodb.org/manual/release-notes/2.4/">MongoDB Hits 2.4</a></p>

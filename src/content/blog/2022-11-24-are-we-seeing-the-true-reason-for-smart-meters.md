@@ -3,7 +3,7 @@ title: "Are we seeing the true reason for smart meters?"
 date: 2022-11-24
 slug: "are-we-seeing-the-true-reason-for-smart-meters"
 categories: ["Thoughts"]
-tags: []
+tags: ["Renewables", "Life"]
 excerpt: "It’ll be no surprise to anyone that energy prices across the board have gone through the roof, along with just about everything else much to the enrichment of the oil and gas producers who are now reporting record profits. Following the age-old play book, rather than focus on the"
 ---
 

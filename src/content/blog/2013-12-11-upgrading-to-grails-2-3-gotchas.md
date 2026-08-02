@@ -3,7 +3,7 @@ title: "Upgrading to Grails 2.3 – Gotchas"
 date: 2013-12-11
 slug: "upgrading-to-grails-2-3-gotchas"
 categories: ["Thoughts"]
-tags: []
+tags: ["Coding"]
 excerpt: "When you’re working with maturing frameworks it usually pays to keep the most solid, and often latest point release on hand (unless you use Firefox; My thoughts are with you). Grails 2.3 is no exception, and surprisingly, despite being a point release the upgrade has a few gotcha"
 ---
 <p>When you&#8217;re working with maturing frameworks it usually pays to keep the most solid, and often latest point release on hand (unless you use Firefox; My thoughts are with you). Grails 2.3 is no exception, and surprisingly, despite being a point release the upgrade has a few gotchas that&#8217;ll have you wishing you&#8217;d read the README.</p>

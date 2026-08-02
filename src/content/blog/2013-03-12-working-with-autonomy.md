@@ -3,7 +3,7 @@ title: "Pulling all IDs from Autonomy IDOL"
 date: 2013-03-12
 slug: "working-with-autonomy"
 categories: ["HOWTO"]
-tags: ["Autonomy"]
+tags: ["Coding", "Databases"]
 excerpt: "Here are WGSN we work with Adobe CQ 5. Our database is a modest 8tb which makes running queries against the [suspect] JCR implementation quite slow. Recently we rolled out Autonomy so we can perform complex searches against our data without impacting CQ. One of these recent quest"
 ---
 <p>Here are WGSN we work with <a class="zem_slink" title="Adobe Systems" href="http://www.adobe.com/" target="_blank" rel="homepage" rel="nofollow">Adobe</a> CQ 5. Our database is a modest 8tb which makes running queries against the [suspect] JCR implementation quite slow. Recently we rolled out Autonomy so we can perform complex searches against our data without impacting CQ. One of these recent questions was, how can I fetch all CQ paths without walking the tree? Well lets perform a little &#8216;hack&#8217; against Autonomy.</p>

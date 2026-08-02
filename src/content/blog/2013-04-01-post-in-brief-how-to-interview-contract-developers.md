@@ -3,7 +3,7 @@ title: "Post in brief: How to Interview developers"
 date: 2013-04-01
 slug: "post-in-brief-how-to-interview-contract-developers"
 categories: ["Craftsmanship","Thoughts"]
-tags: ["interviews"]
+tags: ["Career"]
 excerpt: "Finding great developers can often feel like the search for the holy grail. Each developer is an individual and they are their own strengths and weaknesses. Some developers relish the idea of an abstract question which they can hammer till completion whilst others are pragmatic a"
 ---
 <p>Finding great developers can often feel like the search for the holy grail. Each developer is an individual and they are their own strengths and weaknesses. Some developers relish the idea of an abstract question which they can hammer till completion whilst others are pragmatic and want to see the AC and drill their way to the solution.</p>

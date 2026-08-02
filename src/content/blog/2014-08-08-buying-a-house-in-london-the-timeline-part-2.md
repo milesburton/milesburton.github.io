@@ -3,7 +3,7 @@ title: "Buying a house in London – The Timeline (Part 2)"
 date: 2014-08-08
 slug: "buying-a-house-in-london-the-timeline-part-2"
 categories: ["Life","Thoughts"]
-tags: []
+tags: ["Life"]
 excerpt: "After my first very high level post I thought it would be worth digging into the real aspects of a property you should be looking at. Roof, is there a felt underlay? Can you see sunlight? Garage, any examples of leakage? Subsidence? Electrics – Properly grounded? How old is the b"
 ---
 <p>After my first very high level post I thought it would be worth digging into the real aspects of a property you should be looking at.</p>

@@ -3,7 +3,7 @@ title: "Understanding your power requirements – Solar Deep Dive Part 2"
 date: 2015-07-03
 slug: "understanding-your-power-requirements-solar-deep-dive-part-2"
 categories: ["Renewables","Thoughts"]
-tags: []
+tags: ["Renewables"]
 excerpt: "Before you consider either project it’s best to find out what your base load actually is. If you’re not familiar with base load (BL) it essentially means the power usage which is always drawn from your power supply. In your home, something like a fridge will draw a continuous amo"
 ---
 <p>Before you consider either project it’s best to find out what your base load actually is. If you’re not familiar with base load (BL) it essentially means the power usage which is always drawn from your power supply. In your home, something like a fridge will draw a continuous amount of power which would contribute to your BL. In the UK the average base load is roughly 250-300 watts. If you intend to supplement your home power, products such as <a href="https://engage.efergy.com/" target="_blank" rel="noopener">Efergy’s Engage</a> can be particularly useful as it can clamp around your incoming supply.</p>

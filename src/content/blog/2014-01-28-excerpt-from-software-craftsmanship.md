@@ -3,7 +3,7 @@ title: "Excerpt from “Software Craftsmanship”"
 date: 2014-01-28
 slug: "excerpt-from-software-craftsmanship"
 categories: ["Craftsmanship"]
-tags: []
+tags: ["Career"]
 excerpt: "Here’s a great quote from “Software Craftsmanship“. Sandro picked up on this common cliché constantly included in countless books when discussing Agile. Agile coaches and consultancy companies like to sell to uninformed clients. The Toyota Dream. But firstly, building cars is tot"
 ---
 <p>Here&#8217;s a great quote from &#8220;<em>Software Craftsmanship</em>&#8220;. Sandro picked up on this common cliché constantly included in countless books when discussing Agile.</p>

@@ -3,7 +3,7 @@ title: "Address-Point, PAF and importing large datasets into CouchDB"
 date: 2014-03-30
 slug: "address-point-paf-and-importing-large-datasets-into-couchdb"
 categories: ["HOWTO","Thoughts"]
-tags: []
+tags: ["Databases", "Coding", "Life"]
 excerpt: "Recently I’ve been going through the rather painful process of buying a house. During my search I was amazed there was so little easily accessible information on Council Tax Bands, neighbours property values etc. Everything which was available was unconnected, sparse and time con"
 ---
 <p>Recently I&#8217;ve been going through the rather painful process of buying a house. During my search I was amazed there was so little easily accessible information on Council Tax Bands, neighbours property values etc. Everything which was available was unconnected, sparse and time consuming to combine.</p>

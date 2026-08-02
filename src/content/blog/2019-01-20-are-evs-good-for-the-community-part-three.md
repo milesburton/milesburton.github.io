@@ -3,7 +3,7 @@ title: "Are EV’s good for the community? – Part Three"
 date: 2019-01-20
 slug: "are-evs-good-for-the-community-part-three"
 categories: ["Thoughts"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "(This article was originally written for a local publication) So why do we want to bring EVs to Bexley? We could arguable start with our failing high-street & town centre. There is a direct correlation between the installation of rapid chargers and the rise of footfall in the are"
 ---
 <p><em>(This article was originally written for a local publication)</em></p>

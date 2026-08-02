@@ -3,7 +3,7 @@ title: "&#8230;.And the sparks are flying. “Standups are Poisonous”&#8230;"
 date: 2013-03-31
 slug: "and-the-sparks-are-flying-standups-are-poisonous"
 categories: ["Interesting Links","Rambling"]
-tags: []
+tags: ["Career"]
 excerpt: "Hackernews has been fired up this evening by an interesting post which was quickly rebuffed by an equally passionate VP, so why pray tell am I posting? I feel they’ve both somewhat missed the point. Stand-ups are great when everyone takes a good dose of reality. Hackernews tends "
 ---
 <p>Hackernews has been fired up this evening by an<a href="https://news.ycombinator.com/item?id=5465023"> interesting post</a> which was quickly rebuffed by an equally <a href="http://www.darianshimy.com/blog/2013/03/30/standups-are-not-poisonous/">passionate</a> VP, so why pray tell am I posting? I feel they&#8217;ve both somewhat missed the point.</p>

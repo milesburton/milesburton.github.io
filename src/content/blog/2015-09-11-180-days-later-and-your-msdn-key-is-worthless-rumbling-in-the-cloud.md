@@ -3,7 +3,7 @@ title: "180 days later and your MSDN key is worthless – Rumbling in the cloud"
 date: 2015-09-11
 slug: "180-days-later-and-your-msdn-key-is-worthless-rumbling-in-the-cloud"
 categories: ["Thoughts"]
-tags: []
+tags: ["Life"]
 excerpt: "Five or six years ago I was in the perfect position to pick up an several copies of Visual Studio with MSDN. I gave a couple to my friend, and I decided to pack away the remaining pair for a rainy day. Just recently I was asked to migrate several desktop applications to the web. "
 ---
 <p>Five or six years ago I was in the perfect position to pick up an several copies of Visual Studio with MSDN. I gave a couple to my friend, and I decided to pack away the remaining pair for a rainy day.</p>

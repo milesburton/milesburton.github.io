@@ -3,7 +3,7 @@ title: "Elevator Kata – Mind bending pairing exercise"
 date: 2013-03-28
 slug: "elevator-kata-mind-bending-pairing-exercise"
 categories: ["Craftsmanship"]
-tags: ["Clean code","Kata","London Software Craftsmanship","Skills Matter"]
+tags: ["Coding", "Career"]
 excerpt: "Fresh from last nights London Software Craftmanship (codemanship) meet up I thought I’d share an excellent coding Kata which really gets you thinking. an elevator responds to calls containing a source floor and direction an elevator delivers passengers to requested floors elevato"
 ---
 <p>Fresh from last nights London Software Craftmanship (codemanship) meet up I thought I&#8217;d share an excellent coding Kata which really gets you thinking.</p>

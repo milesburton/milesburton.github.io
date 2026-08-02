@@ -3,7 +3,7 @@ title: "Media and the EV – Part Two"
 date: 2019-01-20
 slug: "media-and-the-ev-part-two"
 categories: ["Electric Vehicles","Renewables","Tesla"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "(This article was originally written for a local publication) The media have performed an excellent job casting the electric vehicle as nothing more than an inconvenience yet this couldn’t be further from the truth, modern EVs are almost indistinguishable from normal cars bar sev"
 ---
 <p><em>(This article was originally written for a local publication)</em></p>

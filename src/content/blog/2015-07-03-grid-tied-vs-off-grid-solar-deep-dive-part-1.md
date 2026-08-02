@@ -3,7 +3,7 @@ title: "Grid Tied Vs. Off Grid – Solar Deep Dive Part 1"
 date: 2015-07-03
 slug: "grid-tied-vs-off-grid-solar-deep-dive-part-1"
 categories: ["Renewables","Thoughts"]
-tags: []
+tags: ["Renewables"]
 excerpt: "Solar is gaining increasing momentum across the world and, even with the weather, Great Britain. As it becomes increasingly accessible, owing to the ever falling cost per kilowatt hour it is now viable to setup surprisingly powerful arrays for a few hundred pounds. A little backg"
 ---
 <p>Solar is gaining increasing momentum across the world and, even with the weather, Great Britain. As it becomes increasingly accessible, owing to the ever falling cost per kilowatt hour it is now viable to setup surprisingly powerful arrays for a few hundred pounds.</p>

@@ -3,7 +3,7 @@ title: "Ghosts in the machine? A very peculiar encounter with Google’s Gemini 
 date: 2025-02-05
 slug: "ghosts-in-the-machine-a-very-peculiar-encounter-with-googles-gemini-ai-llm"
 categories: ["Rambling","Thoughts"]
-tags: ["ai","chatgpt","gemini","google","technology"]
+tags: ["AI"]
 excerpt: "Earlier this week, I set off on a seemingly straightforward project: building a website scraper for the soon-to-be-defunct Hexus forum using Google’s AI Studio and its new Gemini 2.0 LLM. What began as a routine coding session quickly spiraled into an uncanny exchange. Here’s the"
 featuredImage: "/blog-media/2025/02/dallc2b7e-2025-02-05-09.21.01-a-balanced-depiction-of-ghosts-in-the-machinee28094a-group-of-glowing-digital-ghosts-haunting-the-inside-of-a-futuristic-computer.-the-ghosts-have-subtle.webp"
 ---

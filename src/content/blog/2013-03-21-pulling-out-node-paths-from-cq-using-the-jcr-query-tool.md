@@ -3,7 +3,7 @@ title: "Pulling out node paths from CQ using the jcr-query-tool"
 date: 2013-03-21
 slug: "pulling-out-node-paths-from-cq-using-the-jcr-query-tool"
 categories: ["HOWTO"]
-tags: ["Adobe CQ","CQ5.3","CQ5.5","JCR","RMI"]
+tags: ["Coding", "Databases"]
 excerpt: "Here’s another little tool I’ve been spiking. The idea is simple, query the JCR (CQ5.3 or  CQ5.5), pull a bunch of content out in a reliable manner. Unfortunately the inbuilt queryBuilder servlet is very slow and generally unreliable (try exporting data for a week then have it ex"
 ---
 <p>Here&#8217;s another little tool I&#8217;ve been spiking. The idea is simple, query the JCR (CQ5.3 or  CQ5.5), pull a bunch of content out in a reliable manner. Unfortunately the inbuilt queryBuilder servlet is very slow and generally unreliable (try exporting data for a week then have it explode).</p>

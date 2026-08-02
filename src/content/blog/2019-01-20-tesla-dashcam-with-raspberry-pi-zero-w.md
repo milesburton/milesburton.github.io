@@ -3,7 +3,7 @@ title: "Tesla Dashcam with Raspberry Pi Zero W"
 date: 2019-01-20
 slug: "tesla-dashcam-with-raspberry-pi-zero-w"
 categories: ["Renewables","Tesla"]
-tags: ["Raspberry Pi","Tesla"]
+tags: ["Electric Vehicles", "Hardware"]
 excerpt: "As of late 2018 Tesla released V9 which among a number of improvements included dash cam functionality. This works by placing a suitably sized USB drive in one of the available USB ports at the front of the vehicle (Model S). One drawback of this system, not uncommon in dash cams"
 featuredImage: "/blog-media/2019/01/unnamed.jpg"
 ---

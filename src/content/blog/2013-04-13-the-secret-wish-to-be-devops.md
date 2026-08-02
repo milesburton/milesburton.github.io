@@ -3,7 +3,7 @@ title: "Automatic VM provisioning with Chef and ESXi – “The secret wish to b
 date: 2013-04-13
 slug: "the-secret-wish-to-be-devops"
 categories: ["Devops","HOWTO"]
-tags: ["Chef","Devops","ESXi","SecretlyLovesOps"]
+tags: ["DevOps"]
 excerpt: "Good evening all, Developers are always in a never ending battle with Ops. We’re desperate to get our software out and they want to make sure we wont screw anything up. It’s a match made in hell. Just a few years ago ‘The Cloud’ was the answer. We’ve have an entire platform that "
 ---
 <p>Good evening all,</p>

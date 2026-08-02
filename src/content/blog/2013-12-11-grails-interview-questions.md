@@ -3,7 +3,7 @@ title: "Grails Interview Questions"
 date: 2013-12-11
 slug: "grails-interview-questions"
 categories: ["Thoughts"]
-tags: []
+tags: ["Coding", "Career"]
 excerpt: "Grails is a real pleasure after working with Java for many years. Although lots of development shops have started introducing Groovy and/or Grails into they development stack there isn’t reall much in the way of guidance of what to learn and how a hypothetical interview may progr"
 ---
 <p>Grails is a real pleasure after working with Java for many years. Although lots of development shops have started introducing Groovy and/or Grails into they development stack there isn&#8217;t reall much in the way of guidance of what to learn and how a hypothetical interview may progress. I&#8217;m not entirely sure what a Senior Developer or Technical Lead is these days however I&#8217;ve always tried to do my best to hire the best people for the business. Below is a bunch of questions I&#8217;ve aggregated from my personal experience and a few that I thought were knowing (consider it a pop quiz!)</p>

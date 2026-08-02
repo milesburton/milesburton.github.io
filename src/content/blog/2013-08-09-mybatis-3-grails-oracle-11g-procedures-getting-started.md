@@ -3,7 +3,7 @@ title: "MyBatis 3, Grails & Oracle 11g Procedures – Getting started&#8230;"
 date: 2013-08-09
 slug: "mybatis-3-grails-oracle-11g-procedures-getting-started"
 categories: ["Grails In the Enterprise","HOWTO","Oracle"]
-tags: []
+tags: ["Coding", "Databases"]
 excerpt: "Introduction tl;dr: MyBatis is a maintainable approach for integrating Oracle Stored Procedures and complex SQL queries using CQRS with Grails In the enterprise the days of huge monolithic Java apps are coming to a much needed close. The market is demanding ever shorter developme"
 ---
 <h2>Introduction</h2>

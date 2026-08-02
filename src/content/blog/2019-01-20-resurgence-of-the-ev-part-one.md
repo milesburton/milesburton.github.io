@@ -3,7 +3,7 @@ title: "Resurgence of the EV – Part One"
 date: 2019-01-20
 slug: "resurgence-of-the-ev-part-one"
 categories: ["Electric Vehicles","Renewables","Tesla"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "(This article was originally written for a local publication) Electric Vehicles are a genuinely controversial and equally fascinating topic, over the last twenty years there has been countless headlines, everything from Top Gear staging an apparent Tesla Roadster supercar breakdo"
 ---
 <p><em>(This article was originally written for a local publication)</em></p>

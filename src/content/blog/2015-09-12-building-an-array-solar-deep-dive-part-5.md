@@ -3,7 +3,7 @@ title: "Building an array – Solar Deep Dive Part 5"
 date: 2015-09-12
 slug: "building-an-array-solar-deep-dive-part-5"
 categories: ["Renewables","Thoughts"]
-tags: []
+tags: ["Renewables"]
 excerpt: "The Winter solstice maybe baring down, yet what a great opportunity to give you a run-down on my build and how the darker days will impact your yield. My first foray into solar started with a humble 120W/12V panel, coupled with a rather dodgy PWM charge controller. With any new h"
 ---
 <p>The Winter solstice maybe baring down, yet what a great opportunity to give you a run-down on my build and how the darker days will impact your yield.</p>

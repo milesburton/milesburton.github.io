@@ -3,7 +3,7 @@ title: "Tiny Arcade: 24/7 Attract Mode mod"
 date: 2019-02-01
 slug: "tiny-arcade-24-7-attract-mode-mod"
 categories: ["Ardunio","HOWTO","Thoughts"]
-tags: ["ESP8266","Retro"]
+tags: ["Retro & Gaming", "Hardware"]
 excerpt: "Tiny Arcades are an impressive demonstration of modern miniaturisation. Whether it’s Frogger, Pacman, Space Invaders or Dig Dug you cannot help but be enamoured by it’s small frame. With a height no more than 90cms, these arcades faithfully replicate fully controllable classics f"
 ---
 

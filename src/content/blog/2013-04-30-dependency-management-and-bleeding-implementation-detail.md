@@ -3,7 +3,7 @@ title: "Dependency Management and bleeding implementation detail"
 date: 2013-04-30
 slug: "dependency-management-and-bleeding-implementation-detail"
 categories: ["Craftsmanship","Thoughts"]
-tags: ["Grab","Grapes","Maven"]
+tags: ["Coding"]
 excerpt: "Back in the old days managing dependencies whether DLLs, .SO or JARs has always been painful. Since the introduction of dependency management tools like Maven we took a major step forward and yet it has always left me feeling a little uneasy. When I fire up a mature project I’m o"
 ---
 <p>Back in the old days managing dependencies whether DLLs, .SO or JARs has always been painful. Since the introduction of dependency management tools like Maven we took a major step forward and yet it has always left me feeling a little uneasy.</p>

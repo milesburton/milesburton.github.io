@@ -3,7 +3,7 @@ title: "Managing Java Web App deployments with Chef & Tomcat 7"
 date: 2013-08-02
 slug: "chef-managing-java-web-app-deployments-with-chef-tomcat-7"
 categories: ["HOWTO"]
-tags: ["Automated Deployment","Chef","Tomcat 7"]
+tags: ["DevOps", "Coding"]
 excerpt: "Automating deployments still seems to be a sore point for those of us not using ‘Cloud’ vendors. Whilst JRebel are valiantly trying to improve the situation with tools like LiveRebel it still leaves a worrying majority of devops writing custom tools. Most production Java-Wap arch"
 ---
 <p>Automating deployments still seems to be a sore point for those of us not using &#8216;Cloud&#8217; vendors. Whilst JRebel are valiantly trying to improve the situation with tools like <a href="https://www.google.co.uk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CDIQFjAA&amp;url=http%3A%2F%2Fzeroturnaround.com%2Fsoftware%2Fliverebel%2F&amp;ei=rZb7Ub2SD4GJ0AX_3YCACw&amp;usg=AFQjCNGRJ63D5mTU76O61TTnASyClGu17w&amp;sig2=t02xXfmtfbV-rPum_u1vbg&amp;bvm=bv.50165853,d.d2k">LiveRebel</a> it still leaves a worrying majority of devops writing custom tools.</p>

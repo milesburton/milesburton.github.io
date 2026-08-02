@@ -3,7 +3,7 @@ title: "Converting a Libretto 50CT to ‘solid state’"
 date: 2014-03-30
 slug: "converting-a-libretto-50ct-to-solid-state"
 categories: ["#ThereIFixedIt","HOWTO","Thoughts"]
-tags: []
+tags: ["Hardware"]
 excerpt: "The Toshiba Libretto broke entirely new ground. The brand, ‘Netbook’ was nothing more than a fantasy for Psion. After producing some of the best PDAs they were never able to capture the X86 market. Back in the early 90’s laptops were huge lumbering machines, a slave to the city t"
 ---
 <p>The Toshiba Libretto broke entirely new ground. The brand, &#8216;Netbook&#8217; was nothing more than a fantasy for Psion. After producing some of the best PDAs they were never able to capture the X86 market. Back in the early 90&#8217;s laptops were huge lumbering machines, a slave to the city trader. With Windows 95 just around the corner a new comer, Toshiba, had arrived. The unthinkable became reality , they had converted the very best of the X86 world into an entirely uncompromised, hand-held format.  The Libretto 20 was born.</p>

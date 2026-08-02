@@ -3,7 +3,7 @@ title: "eBay Phishing Attack in the Wild"
 date: 2017-01-07
 slug: "ebay-phishing-attack-in-the-wild"
 categories: ["Thoughts"]
-tags: []
+tags: ["Security", "Life"]
 excerpt: "This is one of those odd occasions where I’m both impressed and furious at the same time. Now 2016 is thankfully behind us I felt it was time for a bit of a clear out. Some bits and bobs went on freecycle, other more valuable equipment went on eBay. Yesterday I received a rather "
 ---
 <p>This is one of those odd occasions where I&#8217;m both impressed and furious at the same time. Now 2016 is thankfully behind us I felt it was time for a bit of a clear out. Some bits and bobs went on <a href="http://freecycle.org">freecycle</a>, other more valuable equipment went on eBay.</p>

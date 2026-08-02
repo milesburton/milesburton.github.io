@@ -3,7 +3,7 @@ title: "Can a mystery AliExpress server be any good? Intel N100/16Gig/1TSSD/6x i
 date: 2024-07-06
 slug: "can-a-mystery-aliexpress-server-be-any-good-intel-n100-16gig-1tssd-6x-i226-2-5g"
 categories: ["Reviews"]
-tags: []
+tags: ["Home Lab", "Hardware"]
 excerpt: "When you think of low-power, budget-friendly setups for routers, mini desktops, media centres, and various projects, the Raspberry Pi often comes to mind. Its barebones form factor and minimal power consumption are appealing. However, Raspberry PIs have become hard to find, expen"
 ---
 

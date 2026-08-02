@@ -3,7 +3,7 @@ title: "Improving EV Charging Infrastructure  – Part Four"
 date: 2019-01-20
 slug: "improving-ev-charging-infrastructure-part-five"
 categories: ["Electric Vehicles","Renewables","Tesla"]
-tags: []
+tags: ["Electric Vehicles"]
 excerpt: "(This article was originally written for a local publication) First and foremost the location and types of charger, Ecotricity hit the nail on the head with their balance of Rapid and Fast chargers – a charger than can put 100+ miles per hour vs. 22. The key is to place a specifi"
 ---
 <p><em>(This article was originally written for a local publication)</em></p>

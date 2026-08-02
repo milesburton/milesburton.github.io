@@ -3,7 +3,7 @@ title: "Handy tool of the day"
 date: 2013-03-18
 slug: "handy-tool-of-the-day"
 categories: ["Interesting Links"]
-tags: ["GNU Parallel"]
+tags: ["Coding"]
 excerpt: "As you’ve probably noticed I’m working on a ton of big data queries at the moment and a lot of it requires munging of millions of tiny files. Thankfully I have some very powerful servers to hand (32 cores, 192gig ram etc) so it stands to reason I farm as much of this work out [&h"
 ---
 <p>As you&#8217;ve probably noticed I&#8217;m working on a ton of big data queries at the moment and a lot of it requires munging of millions of tiny files.</p>

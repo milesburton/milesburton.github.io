@@ -3,7 +3,7 @@ title: "“Comment what the code cannot say”"
 date: 2013-05-16
 slug: "comment-what-the-code-cannot-say"
 categories: ["Rambling"]
-tags: []
+tags: ["Coding"]
 excerpt: "Here’s a great explanation from “97 things every developer should know” Comments should say something code does not and cannot say. A comment explaining what a piece of code should already say is an invitation to change code structure or coding conventions so the code speaks for "
 ---
 <p>Here&#8217;s a great explanation from &#8220;97 things every developer should know&#8221;</p>

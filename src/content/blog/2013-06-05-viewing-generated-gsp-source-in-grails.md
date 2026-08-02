@@ -3,7 +3,7 @@ title: "Viewing generated GSP source in Grails"
 date: 2013-06-05
 slug: "viewing-generated-gsp-source-in-grails"
 categories: ["Uncategorized"]
-tags: ["Grails"]
+tags: ["Coding"]
 excerpt: "Adding showSource=true to your query string will produce the compiled GSP code. Quite useful for tracing down errors thrown at a particular line number (I’m looking at your IE) Check out the docs here: (waiting to be merged into master) https://github.com/grails/grails-doc/commit"
 ---
 <p>Adding <em>showSource=true</em> to your query string will produce the compiled GSP code. Quite useful for tracing down errors thrown at a particular line number (I&#8217;m looking at your IE)</p>

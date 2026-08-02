@@ -3,7 +3,7 @@ title: "Groovy Interview Questions pt.1"
 date: 2013-04-01
 slug: "groovy-interview-questions"
 categories: ["Craftsmanship"]
-tags: ["Groovy","Interview questions"]
+tags: ["Coding", "Career"]
 excerpt: "The idea of ‘Kata’ or ‘Dojo’ is really important. Even if you have zero interest finding a new job it always pays dividends to think, if I hired someone what would I expect them to know? If you’ve haven’t spotted I’m a big fan of Groovy. You’re right, I’d have jumped on the Scala"
 ---
 <p>The idea of &#8216;Kata&#8217; or &#8216;Dojo&#8217; is really important. Even if you have zero interest finding a new job it always pays dividends to think, if I hired someone what would I expect them to know?</p>

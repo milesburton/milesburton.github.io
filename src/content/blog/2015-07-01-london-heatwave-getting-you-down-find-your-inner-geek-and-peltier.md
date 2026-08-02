@@ -3,7 +3,7 @@ title: "London Heatwave getting you down? Find your inner geek and Peltier!"
 date: 2015-07-01
 slug: "london-heatwave-getting-you-down-find-your-inner-geek-and-peltier"
 categories: ["#ThereIFixedIt","Thoughts"]
-tags: []
+tags: ["Hardware", "Life"]
 excerpt: "London is experiencing a rather unusual heatwave. Today the mercuary has tipped 36.7 Celsius.  I hadn’t intended to blog about this today (working on an interesting, if long renewable piece) however! Coincidentally enough I took apart a nice dehumidifier to get hold of a rather u"
 ---
 <p>London is experiencing a rather unusual heatwave. Today the mercuary has tipped <a href="http://www.bbc.co.uk/news/uk-england-33324881">36.7 Celsius. </a> I hadn&#8217;t intended to blog about this today (working on an interesting, if long renewable piece) however!</p>

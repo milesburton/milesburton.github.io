@@ -3,7 +3,7 @@ title: "Buying a house in London – The Timeline (Part 1)"
 date: 2014-05-24
 slug: "buying-a-house-in-london-the-timeline-part-1"
 categories: ["Life","Thoughts"]
-tags: []
+tags: ["Life"]
 excerpt: "Like hundreds of thousands of “twenty-somethings” all over the UK I’ve always wanted to own a home. Yes yes, those who know me are used to seeing me move all over the place this my guilty goal. Owning a home, even if you rent it still means you’ve got your own little homested 😉 "
 ---
 <p>Like hundreds of thousands of &#8220;twenty-somethings&#8221; all over the UK I&#8217;ve always wanted to own a home. Yes yes, those who know me are used to seeing me move all over the place this my guilty goal. Owning a home, even if you rent it still means you&#8217;ve got your own little homested 😉</p>

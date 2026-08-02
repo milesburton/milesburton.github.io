@@ -3,7 +3,7 @@ title: "“Jack-of-all-trades but master of none”"
 date: 2013-05-13
 slug: "excellent-extract-from-the-passionate-programmer"
 categories: ["Craftsmanship","Rambling"]
-tags: []
+tags: ["Career"]
 excerpt: "This is an excellent extract from the Passionate Programmer. As a full stack developer I think he really hits the nail on the head: The label “jack-of-all-trades but master of none” is normally meant to be derogatory, implying that the labelee lacks the focus to really dive into "
 ---
 <p>This is an excellent extract from the <i>Passionate Programmer</i>. As a full stack developer I think he really hits the nail on the head:</p>

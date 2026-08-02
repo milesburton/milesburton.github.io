@@ -3,7 +3,7 @@ title: "Software Craftsman – Reading list (2013/04)"
 date: 2013-04-23
 slug: "software-craftsman-reading-list-201304"
 categories: ["Craftsmanship","Interesting Links","Thoughts"]
-tags: ["Books","Recommended Reading"]
+tags: ["Career"]
 excerpt: "It’s a little bit overdue since I updated my recommended reading list so here we go. This is a mixture of books that I would highly recommend you read. There’s something suitable for everyone. If you have any recommendations for me please leave a comment! REST/Web-services Rest A"
 ---
 <p>It&#8217;s a little bit overdue since I updated my recommended reading list so here we go. This is a mixture of books that I would highly recommend you read. There&#8217;s something suitable for everyone. If you have any recommendations for me please leave a comment!</p>

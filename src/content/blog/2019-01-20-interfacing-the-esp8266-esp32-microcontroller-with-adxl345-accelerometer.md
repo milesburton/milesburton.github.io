@@ -3,7 +3,7 @@ title: "Interfacing the ESP8266/ESP32 Microcontroller with ADXL345 Accelerometer
 date: 2019-01-20
 slug: "interfacing-the-esp8266-esp32-microcontroller-with-adxl345-accelerometer"
 categories: ["Thoughts"]
-tags: ["ADXL345","Arduino","ESP8266","IOT"]
+tags: ["Hardware", "Coding"]
 excerpt: "Information around the ADXL345 Accelerometer is rather sparse online so I wanted to make a quick blog post for those of you who are wanting to have a play with this very cool IC. In short the ADXL345 is an ultra low cost accelerometer which can be used to measure, err, accelerati"
 ---
 <p>Information around the ADXL345 Accelerometer is rather sparse online so I wanted to make a quick blog post for those of you who are wanting to have a play with this very cool IC.</p>

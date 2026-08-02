@@ -3,7 +3,7 @@ title: "MongoDB bulk loading via command line"
 date: 2013-03-18
 slug: "mongodb-bulk-loading-via-command-line"
 categories: ["HOWTO"]
-tags: ["Adobe CQ","MongoDB"]
+tags: ["Databases", "Coding"]
 excerpt: "Here’s a really useful command that I use to bulk load JSON documents into Mongo.  find . -iname “*.json” | xargs –verbose -i mongoimport -u USERNAME –password PASSWORD –db DATABASE –journal –collection COLLECTION –file {} I need to crunch 3.5 million image metadata files so I’ll"
 ---
 <p>Here&#8217;s a really useful command that I use to bulk load JSON documents into Mongo. </p>

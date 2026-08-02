@@ -3,7 +3,7 @@ title: "Replacing the ISP-Supplied Router with OPNsense on Vodafone FTTP (OpenRe
 date: 2024-12-15
 slug: "replacing-the-isp-supplied-router-with-opnsense-on-vodafone-fttp-openreach"
 categories: ["HOWTO"]
-tags: ["internet","networking","router","technology","wifi"]
+tags: ["Networking", "Home Lab"]
 excerpt: "Many home lab enthusiasts and network power-users quickly find themselves outgrowing the capabilities and limitations of their ISP-supplied router. While some keep this device as a simple bridge to a more enterprise-grade solution, such as OPNsense or pfSense, this leaves unnecessa"
 ---
 

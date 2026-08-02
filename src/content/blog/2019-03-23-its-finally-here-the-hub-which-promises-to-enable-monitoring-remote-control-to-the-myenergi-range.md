@@ -3,7 +3,7 @@ title: "It’s finally here, the Hub which promises to enable monitoring & remot
 date: 2019-03-23
 slug: "its-finally-here-the-hub-which-promises-to-enable-monitoring-remote-control-to-the-myenergi-range"
 categories: ["Electric Vehicles","HOWTO","Renewables","Tesla"]
-tags: ["myEnergi"]
+tags: ["Electric Vehicles", "Renewables", "Hardware"]
 excerpt: "Arriving unexpectedly early, after it was only officially released yesterday here we sit with the myEnergi Hub – one of the first to be in consumer hands. Putting aside a trip to Brighton I decided to tear-down the new Hub to see what makes it tick. Given the components used I wo"
 featuredImage: "/blog-media/2019/03/2019-03-23-13.08.44.jpg"
 ---

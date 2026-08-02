@@ -3,7 +3,7 @@ title: "Geek in Motion – videos from around the web"
 date: 2013-04-23
 slug: "interesting-and-nerdie-videos"
 categories: ["Interesting Links"]
-tags: []
+tags: ["Career"]
 excerpt: "http://www.youtube.com/watch?feature=player_embedded&v=CjaC8Pq9-V0 &#8211; Revolution OS http://www.youtube.com/watch?v=PUf1d-GuK0Q &#8211; Secret History of hacking http://www.youtube.com/watch?feature=player_embedded&v=Z7_Ju-ymCbw &#8211; Hacks (1997) http://www.youtube.com/wat"
 ---
 <ul>

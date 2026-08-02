@@ -3,7 +3,7 @@ title: "Fun with Architecture"
 date: 2013-04-01
 slug: "fun-with-architecture"
 categories: ["Craftsmanship","Rambling"]
-tags: ["Architecture"]
+tags: ["Coding"]
 excerpt: "I find most if not all software engineering begins with a couple of guys sketching on a whiteboard or a nice A3 pad. Here’s a couple of diagrams I wrote for NowTV during the planning/prototype phase. Interesting eh?     [Ninja edit] Always take pictures of any diagrams you do&#82"
 ---
 <p>I find most if not all software engineering begins with a couple of guys sketching on a whiteboard or a nice A3 pad. Here&#8217;s a couple of diagrams I wrote for <a href="http://www.nowtv.com">NowTV </a>during the planning/prototype phase. Interesting eh?</p>
