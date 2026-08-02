@@ -45,21 +45,52 @@ npm run dev
 
 ## Adding content
 
-No CMS, no database — new posts and articles are Markdown files committed straight to this repo. A few scripts remove the boilerplate:
+No CMS, no database — deliberately, so the site stays fully static and doesn't need a server to host or maintain (see [Why this migration](#why-this-migration)). New posts and articles are just Markdown files committed to this repo. Three scripts remove the boilerplate.
+
+### New blog post
 
 ```bash
-# New blog post -> src/content/blog/YYYY-MM-DD-slug.md
 npm run new-post -- "Post Title" "Tag1,Tag2"
-
-# New wiki article -> src/pages/wiki/slug.md (shows up on /wiki/ automatically)
-npm run new-wiki -- "Article Title"
-
-# Resize/compress an image and get the markdown snippet to paste
-npm run add-image -- /path/to/photo.jpg my-post-slug   # blog
-npm run add-image -- /path/to/photo.jpg wiki           # wiki
 ```
 
-Each generated file includes a quick-reference comment block covering the Markdown syntax for images, quotes, code blocks, and tables — delete it once you're done. The wiki index derives its article list, dates, thumbnails, and short descriptions directly from each article's file, so a new wiki page needs no separate registration step.
+Creates `src/content/blog/YYYY-MM-DD-slug.md` with frontmatter pre-filled (title, today's date, a slug derived from the title, and your tags). Tags should come from the fixed taxonomy used across the site so filtering/gateway pages keep working:
+
+`AI, Amateur Radio, Career, Coding, Databases, DevOps, Electric Vehicles, Hardware, Home Lab, Life, Networking, News, Renewables, Retro & Gaming, Security`
+
+Passing a tag outside this list prints a warning but doesn't block creation — add the tag to `KNOWN_TAGS` in [scripts/new-post.mjs](scripts/new-post.mjs) first if it's a genuinely new topic, rather than letting the taxonomy drift silently.
+
+### New wiki article
+
+```bash
+npm run new-wiki -- "Article Title"
+```
+
+Creates `src/pages/wiki/slug.md`. Nothing else needs updating — `src/pages/wiki/Main_Page.astro` derives its article list, dates, thumbnails, and short descriptions straight from each file's content at build time.
+
+If the new page is a **hub/section page** (a page whose job is mainly to link out to other pages, like `engineering.md` or `arduino.md`), add its slug to the `SECTION_SLUGS` set near the top of `Main_Page.astro` so it gets the "Section" badge instead of being presented as a direct article.
+
+### Adding an image
+
+```bash
+npm run add-image -- /path/to/photo.jpg my-post-slug   # blog: writes to public/blog-media/YYYY/MM/
+npm run add-image -- /path/to/photo.jpg wiki           # wiki: writes to public/wiki-media/
+```
+
+Auto-rotates, resizes (max 1600px wide, never upscales), and compresses the image, then prints the exact Markdown snippet to paste and, for blog posts, a `featuredImage:` frontmatter suggestion to use as the post's card thumbnail/OG image.
+
+### Markdown reference
+
+Each generated file includes an HTML-comment quick-reference block covering bold/italic/code, links, blockquotes, lists, code fences, and tables — delete it once you're done writing. There's no LaTeX/rich editor support by design; if you need something Markdown can't express, it's usually a sign the content wants a code block or a plain image rather than custom layout.
+
+### Before pushing
+
+```bash
+npm run dev              # preview locally at http://localhost:4321
+npm test                 # run the Playwright suite (structural + visual + alignment checks)
+npm run test:update-snapshots   # only if a visual change is intentional — review the diff first
+```
+
+`npm test` builds the site and checks every page template for console errors, broken links/images, and layout regressions (e.g. cards misaligning), and pixel-diffs key pages against committed baselines in `e2e/visual.spec.ts-snapshots/`. The same suite runs in CI on every push and pull request (see [.github/workflows/test.yml](.github/workflows/test.yml)) and will flag a failing check — with the pixel diffs attached as a downloadable artifact — if something regresses visually.
 
 ## Licence
 
