@@ -43,6 +43,24 @@ npm install
 npm run dev
 ```
 
+## Adding content
+
+No CMS, no database — new posts and articles are Markdown files committed straight to this repo. A few scripts remove the boilerplate:
+
+```bash
+# New blog post -> src/content/blog/YYYY-MM-DD-slug.md
+npm run new-post -- "Post Title" "Tag1,Tag2"
+
+# New wiki article -> src/pages/wiki/slug.md (shows up on /wiki/ automatically)
+npm run new-wiki -- "Article Title"
+
+# Resize/compress an image and get the markdown snippet to paste
+npm run add-image -- /path/to/photo.jpg my-post-slug   # blog
+npm run add-image -- /path/to/photo.jpg wiki           # wiki
+```
+
+Each generated file includes a quick-reference comment block covering the Markdown syntax for images, quotes, code blocks, and tables — delete it once you're done. The wiki index derives its article list, dates, thumbnails, and short descriptions directly from each article's file, so a new wiki page needs no separate registration step.
+
 ## Licence
 
 This project is licensed under the GNU General Public License v3.0.

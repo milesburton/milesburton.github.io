@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "new-post": "node scripts/new-post.mjs",
+    "new-wiki": "node scripts/new-wiki.mjs",
+    "add-image": "node scripts/add-image.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@types/node": "^26.1.2",
     "node-fetch": "^3.3.2",
+    "sharp": "^0.35.3",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   }
