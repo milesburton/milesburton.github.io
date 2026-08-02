@@ -40,9 +40,26 @@ repos.sort((a, b) => {
 });
 
 const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
+
+// Hand-picked flagship repos for the carousel. Uses GitHub's OpenGraph card
+// image service, which rate-limits hard (~100 req/window) — fine for this
+// small, rarely-reloaded set, but NOT used for the full list below.
+const featuredNames = ['Arduino-Temperature-Control-Library', 'teslacam', 'HT1632', 'Android-Configuration-Manager', 'aprs-station-map', 'veta-trading-platform'];
+const featured = featuredNames
+	.map((name) => {
+		const repo = repos.find((r) => r.name === name);
+		if (!repo) return null;
+		return {
+			name: repo.name,
+			description: repo.description,
+			href: liveLinks[repo.name] ?? repo.html_url,
+			image: `https://opengraph.githubassets.com/1/milesburton/${repo.name}`,
+		};
+	})
+	.filter((item): item is NonNullable<typeof item> => item !== null);
 ---
 
-<Layout title="Projects" description="Open-source projects and libraries by Miles Burton.">
+<Layout title="GitHub Projects" description="Open-source projects and libraries by Miles Burton.">
 	<main class="shell">
 		<header class="page-header">
 			<p class="kicker">Engineering</p>
@@ -54,34 +71,125 @@ const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'nume
 			</p>
 		</header>
 
-		<ul class="project-list">
-			{repos.map((project) => (
-				<li class="project-card">
-					<div class="project-heading">
-						<a href={project.html_url} target="_blank" rel="noreferrer" class="project-name">
-							{project.name}
+		{featured.length > 0 && (
+			<div class="carousel" id="projects-carousel">
+				<div class="carousel-track" id="carousel-track">
+					{featured.map((item) => (
+						<a href={item.href} target="_blank" rel="noreferrer" class="carousel-slide">
+							<img src={item.image} alt={`${item.name} repository preview`} loading="lazy" />
+							<span class="carousel-caption">{item.name}</span>
 						</a>
-						{liveLinks[project.name] && (
-							<a href={liveLinks[project.name]} target="_blank" rel="noreferrer" class="live-link">
-								Live site &rarr;
+					))}
+				</div>
+				<button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous image">
+					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+						<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Next image">
+					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+						<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="carousel-dots" id="carousel-dots">
+					{featured.map((_, i) => (
+						<button type="button" class="carousel-dot" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
+					))}
+				</div>
+			</div>
+		)}
+
+		<ul class="post-list">
+			{repos.map((project) => (
+				<li class="post-card">
+					<span class="post-thumb post-thumb-placeholder">
+						<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+							<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+							<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+							<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</span>
+					<div class="post-body">
+						<div class="post-title-row">
+							<a href={project.html_url} target="_blank" rel="noreferrer" class="post-title">
+								{project.name}
 							</a>
-						)}
+							{liveLinks[project.name] && (
+								<a href={liveLinks[project.name]} target="_blank" rel="noreferrer" class="live-link">
+									Live site &rarr;
+								</a>
+							)}
+						</div>
+						{project.description && <p class="post-excerpt">{project.description}</p>}
+						<ul class="post-tags">
+							{project.language && <li>{project.language}</li>}
+							{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
+							<li class="muted">Updated {formatter.format(new Date(project.pushed_at))}</li>
+						</ul>
 					</div>
-					{project.description && <p class="project-description">{project.description}</p>}
-					<ul class="tags">
-						{project.language && <li>{project.language}</li>}
-						{project.stargazers_count > 0 && <li>&#9733; {project.stargazers_count}</li>}
-						<li class="muted">Updated {formatter.format(new Date(project.pushed_at))}</li>
-					</ul>
 				</li>
 			))}
 		</ul>
 	</main>
 </Layout>
 
+<script>
+	const track = document.getElementById('carousel-track') as HTMLDivElement | null;
+	if (track) {
+		const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+		const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+		const dotsContainer = document.getElementById('carousel-dots') as HTMLDivElement;
+		const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.carousel-dot'));
+		const slideCount = track.children.length;
+		let index = 0;
+		let timer: ReturnType<typeof setInterval> | undefined;
+
+		function render() {
+			track!.style.transform = `translateX(-${index * 100}%)`;
+			dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+		}
+
+		function goTo(i: number) {
+			index = (i + slideCount) % slideCount;
+			render();
+		}
+
+		function startAutoplay() {
+			stopAutoplay();
+			timer = setInterval(() => goTo(index + 1), 5000);
+		}
+
+		function stopAutoplay() {
+			if (timer) clearInterval(timer);
+		}
+
+		prevBtn.addEventListener('click', () => {
+			goTo(index - 1);
+			startAutoplay();
+		});
+		nextBtn.addEventListener('click', () => {
+			goTo(index + 1);
+			startAutoplay();
+		});
+		dots.forEach((dot, i) => {
+			dot.addEventListener('click', () => {
+				goTo(i);
+				startAutoplay();
+			});
+		});
+
+		const carousel = document.getElementById('projects-carousel') as HTMLDivElement;
+		carousel.addEventListener('mouseenter', stopAutoplay);
+		carousel.addEventListener('mouseleave', startAutoplay);
+
+		render();
+		startAutoplay();
+	}
+</script>
+
 <style>
 	.shell {
-		max-width: 860px;
+		max-width: 780px;
 		margin: 0 auto;
 		padding: 4rem 2rem 5rem;
 	}
@@ -120,36 +228,157 @@ const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'nume
 		text-decoration: underline;
 	}
 
-	.project-list {
+	.carousel {
+		position: relative;
+		margin-bottom: 2.5rem;
+		border-radius: 14px;
+		overflow: hidden;
+		border: 1px solid var(--border-strong);
+		background: var(--bg-raised);
+	}
+
+	.carousel-track {
+		display: flex;
+		transition: transform 400ms ease;
+	}
+
+	.carousel-slide {
+		position: relative;
+		flex: 0 0 100%;
+		display: block;
+		aspect-ratio: 16 / 8;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2.5rem 1.5rem 1rem;
+		background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.carousel-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		cursor: pointer;
+		transition: background 120ms ease;
+	}
+
+	.carousel-nav:hover {
+		background: rgba(0, 0, 0, 0.65);
+	}
+
+	.carousel-prev {
+		left: 0.75rem;
+	}
+
+	.carousel-next {
+		right: 0.75rem;
+	}
+
+	.carousel-dots {
+		position: absolute;
+		bottom: 0.65rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.4rem;
+	}
+
+	.carousel-dot {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		border: none;
+		padding: 0;
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		transition: background 120ms ease, transform 120ms ease;
+	}
+
+	.carousel-dot.active {
+		background: #fff;
+		transform: scale(1.3);
+	}
+
+	.post-list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		display: grid;
-		gap: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
 	}
 
-	.project-card {
-		background: var(--bg-card);
+	.post-card {
+		display: flex;
+		gap: 1.1rem;
+		border-bottom: 1px solid var(--border);
+		padding-bottom: 1.1rem;
+	}
+
+	.post-thumb {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 72px;
+		border-radius: 8px;
 		border: 1px solid var(--border);
-		border-radius: 10px;
-		padding: 1.25rem 1.5rem;
+		background: var(--bg-raised);
 	}
 
-	.project-heading {
+	.post-thumb-placeholder {
+		color: var(--text-dim);
+		border-style: dashed;
+	}
+
+	.post-body {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.post-title-row {
 		display: flex;
 		align-items: baseline;
 		gap: 1rem;
 		flex-wrap: wrap;
 	}
 
-	.project-name {
+	.post-title {
+		display: block;
 		font-size: 1.05rem;
 		font-weight: 600;
 		text-decoration: none;
 		color: var(--text);
+		line-height: 1.4;
 	}
 
-	.project-name:hover {
+	.post-title:hover {
 		color: var(--accent-strong);
 	}
 
@@ -164,14 +393,14 @@ const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'nume
 		color: var(--accent);
 	}
 
-	.project-description {
-		margin: 0.5rem 0 0.85rem;
+	.post-excerpt {
+		margin: 0.4rem 0 0.7rem;
 		color: var(--text-muted);
 		font-size: 0.92rem;
 		line-height: 1.55;
 	}
 
-	.tags {
+	.post-tags {
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -180,7 +409,7 @@ const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'nume
 		gap: 0.4rem;
 	}
 
-	.tags li {
+	.post-tags li {
 		font-size: 0.72rem;
 		font-weight: 600;
 		letter-spacing: 0.03em;
@@ -191,10 +420,17 @@ const formatter = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'nume
 		padding: 0.2rem 0.6rem;
 	}
 
-	.tags li.muted {
+	.post-tags li.muted {
 		background: transparent;
 		border-color: transparent;
 		padding-left: 0;
 		font-weight: 500;
+	}
+
+	@media (max-width: 560px) {
+		.post-thumb {
+			width: 72px;
+			height: 72px;
+		}
 	}
 </style>

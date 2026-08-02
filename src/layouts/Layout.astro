@@ -221,10 +221,24 @@ const currentPath = Astro.url.pathname;
 		line-height: 1.2;
 	}
 
-	.content-area h1 + p.wiki-date {
+	.content-area h1 + p.wiki-date,
+	.content-area h1 + span.wiki-section-badge + p.wiki-date {
 		margin: -1.1rem 0 1.5rem;
 		font-size: 0.82rem;
 		color: var(--text-dim);
+	}
+
+	.content-area .wiki-section-badge {
+		display: inline-block;
+		margin: -1.1rem 0 0.5rem;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		background: var(--nav-active-bg);
+		border-radius: 999px;
+		padding: 0.2rem 0.65rem;
 	}
 
 	.content-area h2,

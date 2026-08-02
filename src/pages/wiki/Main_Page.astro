@@ -1,6 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+// A handful of articles are really landing pages for a topic (they mostly
+// link out to other articles rather than being direct write-ups themselves).
+// Flagged by hand -- a link-count heuristic misfires on articles that just
+// happen to reference a few others inline.
+const SECTION_SLUGS = new Set(['arduino', 'engineering', 'android_development', 'thoughts']);
+
 const wikiFiles = import.meta.glob('./*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>;
 
 function extractDate(raw: string): { iso: string; display: string } | null {
@@ -17,7 +23,8 @@ function extractImage(raw: string): string | null {
 function extractDescription(raw: string): string | null {
 	const body = raw.replace(/^---\n[\s\S]*?\n---\n/, '');
 	const withoutHeading = body.replace(/^#\s+.+$/m, '');
-	const withoutDate = withoutHeading.replace(/<p class="wiki-date">.*?<\/p>/s, '');
+	const withoutBadge = withoutHeading.replace(/<span class="wiki-section-badge">.*?<\/span>/s, '');
+	const withoutDate = withoutBadge.replace(/<p class="wiki-date">.*?<\/p>/s, '');
 	const withoutToc = withoutDate.replace(/## Contents[\s\S]*?(?=\n##[^#]|\n[A-Za-z]|$)/, '');
 	const plain = withoutToc
 		.replace(/<[^>]+>/g, ' ')
@@ -179,6 +186,7 @@ const articles = [
 		date: dateBySlug.get(slug),
 		image: imageBySlug.get(slug),
 		description: descriptionBySlug.get(slug),
+		isSection: SECTION_SLUGS.has(slug),
 	};
 });
 
@@ -242,9 +250,12 @@ articles.sort((a, b) => {
 						)}
 					</a>
 					<div class="post-body">
-						<a href={article.href} class="post-title">
-							{article.title}
-						</a>
+						<div class="post-title-row">
+							<a href={article.href} class="post-title">
+								{article.title}
+							</a>
+							{article.isSection && <span class="section-badge">Section</span>}
+						</div>
 						{article.date && <time datetime={article.date.iso}>{article.date.display}</time>}
 						{article.description && <p class="post-excerpt">{article.description}</p>}
 					</div>
@@ -473,6 +484,13 @@ articles.sort((a, b) => {
 		min-width: 0;
 	}
 
+	.post-title-row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
 	.post-title {
 		display: block;
 		font-size: 1.05rem;
@@ -484,6 +502,17 @@ articles.sort((a, b) => {
 
 	.post-title:hover {
 		color: var(--accent-strong);
+	}
+
+	.section-badge {
+		font-size: 0.66rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--accent-strong);
+		background: var(--nav-active-bg);
+		border-radius: 999px;
+		padding: 0.15rem 0.55rem;
 	}
 
 	.post-card time {
