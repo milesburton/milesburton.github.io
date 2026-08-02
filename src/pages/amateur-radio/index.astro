@@ -19,19 +19,24 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 				Licensed as <strong>M0LHA</strong>. Notes on getting licensed, the gear, and tinkering with radios,
 				antennas, and packet software along the way.
 			</p>
-			<a href="https://www.qrz.com/db/M0LHA" target="_blank" rel="noreferrer" class="callsign-link">
-				View callsign on QRZ
-				<svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
-					<path
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M7 17L17 7M9 7h8v8"
-					/>
-				</svg>
-			</a>
+			<div class="header-links">
+				<a href="https://www.qrz.com/db/M0LHA" target="_blank" rel="noreferrer" class="callsign-link">
+					View callsign on QRZ
+					<svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
+						<path
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M7 17L17 7M9 7h8v8"
+						/>
+					</svg>
+				</a>
+				<a href="/wiki/m0lha/" class="callsign-link">
+					M0LHA wiki notes
+				</a>
+			</div>
 		</header>
 
 		<ul class="post-list">
@@ -80,11 +85,17 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 		line-height: 1.6;
 	}
 
+	.header-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.25rem;
+		margin-top: 1.1rem;
+	}
+
 	.callsign-link {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
-		margin-top: 1.1rem;
 		color: var(--accent-strong);
 		font-size: 0.88rem;
 		font-weight: 600;

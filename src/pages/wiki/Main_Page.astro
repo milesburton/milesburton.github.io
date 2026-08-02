@@ -1,6 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const wikiFiles = import.meta.glob('./*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>;
+
+function extractDate(raw: string): { iso: string; display: string } | null {
+	const match = raw.match(/<time datetime="([^"]+)">([^<]+)<\/time>/);
+	if (!match) return null;
+	return { iso: match[1], display: match[2] };
+}
+
+const dateBySlug = new Map<string, { iso: string; display: string }>();
+for (const [path, raw] of Object.entries(wikiFiles)) {
+	const slugMatch = path.match(/\.\/(.+)\.md$/);
+	if (!slugMatch) continue;
+	const date = extractDate(raw);
+	if (date) dateBySlug.set(slugMatch[1], date);
+}
+
 const featured = [
 	{
 		image: '/wiki-media/ArduinoAWD_Loaded.JPG',
@@ -125,7 +141,17 @@ const articles = [
 	{ title: 'VideoOnDemand', href: '/wiki/videoondemand/' },
 	{ title: 'Why Your Personal Projects Fail', href: '/wiki/why_your_personal_projects_fail/' },
 	{ title: 'Xbox Classic Controller Driver - XBCD for 64bit', href: '/wiki/xbox_classic_controller_driver_xbcd_for_64bit/' },
-];
+].map((article) => {
+	const slug = article.href.replace(/^\/wiki\//, '').replace(/\/$/, '');
+	return { ...article, date: dateBySlug.get(slug) };
+});
+
+articles.sort((a, b) => {
+	if (!a.date && !b.date) return a.title.localeCompare(b.title);
+	if (!a.date) return 1;
+	if (!b.date) return -1;
+	return new Date(b.date.iso).valueOf() - new Date(a.date.iso).valueOf();
+});
 ---
 
 <Layout title="Wiki" description="Miles Burton's personal wiki: organic thoughts, guides, and general write-ups.">
@@ -163,9 +189,14 @@ const articles = [
 		</div>
 
 		<h2 class="section-title">Articles</h2>
-		<ul class="article-list">
+		<ul class="post-list">
 			{articles.map((article) => (
-				<li><a href={article.href}>{article.title}</a></li>
+				<li class="post-card">
+					<a href={article.href} class="post-title">
+						{article.title}
+					</a>
+					{article.date && <time datetime={article.date.iso}>{article.date.display}</time>}
+				</li>
 			))}
 		</ul>
 	</main>
@@ -347,32 +378,37 @@ const articles = [
 		color: var(--text-dim);
 	}
 
-	.article-list {
+	.post-list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		columns: 2;
-		column-gap: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
 	}
 
-	.article-list li {
-		break-inside: avoid;
-		margin-bottom: 0.6rem;
+	.post-card {
+		border-bottom: 1px solid var(--border);
+		padding-bottom: 1.1rem;
 	}
 
-	.article-list a {
-		color: var(--text);
+	.post-title {
+		display: block;
+		font-size: 1.05rem;
+		font-weight: 600;
 		text-decoration: none;
-		font-size: 0.92rem;
+		color: var(--text);
+		line-height: 1.4;
 	}
 
-	.article-list a:hover {
+	.post-title:hover {
 		color: var(--accent-strong);
 	}
 
-	@media (max-width: 620px) {
-		.article-list {
-			columns: 1;
-		}
+	.post-card time {
+		display: block;
+		margin-top: 0.3rem;
+		font-size: 0.78rem;
+		color: var(--text-dim);
 	}
 </style>
