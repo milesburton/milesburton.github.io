@@ -1,5 +1,24 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Layout from '../../layouts/Layout.astro';
+
+// Thumbnails are pre-fetched from GitHub's OpenGraph card service and
+// committed to public/project-media/ via scripts/fetch-project-thumbnails.mjs
+// -- that endpoint rate-limits hard (~100 req/window), far below what fetching
+// all ~73 repos live on every build would need, so this reads local files
+// instead. Re-run the script when repos are added/renamed.
+const thumbnailManifest: Record<string, unknown> = JSON.parse(
+	fs.readFileSync(path.join(process.cwd(), 'public', 'project-media', 'manifest.json'), 'utf-8'),
+);
+function thumbnailFor(name: string): string | null {
+	return name in thumbnailManifest ? `/project-media/${name}.jpg` : null;
+}
+
+// Authenticating (when a token is available) raises the REST API limit from
+// 60/hour to 5000/hour, avoiding an empty repo list on a rate-limited build.
+const githubToken = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
+const githubAuthHeaders = githubToken ? { Authorization: `Bearer ${githubToken}` } : {};
 
 interface Repo {
 	name: string;
@@ -23,7 +42,9 @@ let repos: Repo[] = [];
 try {
 	const all: Repo[] = [];
 	for (let page = 1; page <= 10; page++) {
-		const res = await fetch(`https://api.github.com/users/milesburton/repos?per_page=100&type=owner&page=${page}`);
+		const res = await fetch(`https://api.github.com/users/milesburton/repos?per_page=100&type=owner&page=${page}`, {
+			headers: githubAuthHeaders,
+		});
 		if (!res.ok) break;
 		const batch = (await res.json()) as Repo[];
 		all.push(...batch);
@@ -53,7 +74,7 @@ const featured = featuredNames
 			name: repo.name,
 			description: repo.description,
 			href: liveLinks[repo.name] ?? repo.html_url,
-			image: `https://opengraph.githubassets.com/1/milesburton/${repo.name}`,
+			image: thumbnailFor(repo.name) ?? `https://opengraph.githubassets.com/1/milesburton/${repo.name}`,
 		};
 	})
 	.filter((item): item is NonNullable<typeof item> => item !== null);
@@ -119,13 +140,17 @@ const projectsSchema = {
 		<ul class="post-list">
 			{repos.map((project) => (
 				<li class="post-card">
-					<span class="post-thumb post-thumb-placeholder">
-						<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-							<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
-							<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
-							<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</span>
+					{thumbnailFor(project.name) ? (
+						<img src={thumbnailFor(project.name)!} alt={`${project.name} repository preview`} loading="lazy" class="post-thumb" />
+					) : (
+						<span class="post-thumb post-thumb-placeholder">
+							<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+								<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+								<circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+								<path d="M21 15l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+					)}
 					<div class="post-body">
 						<div class="post-title-row">
 							<a href={project.html_url} target="_blank" rel="noreferrer" class="post-title">
@@ -359,17 +384,19 @@ const projectsSchema = {
 
 	.post-thumb {
 		flex: 0 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: block;
 		width: 100px;
 		height: 72px;
+		object-fit: cover;
 		border-radius: 8px;
 		border: 1px solid var(--border);
 		background: var(--bg-raised);
 	}
 
 	.post-thumb-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		color: var(--text-dim);
 		border-style: dashed;
 	}

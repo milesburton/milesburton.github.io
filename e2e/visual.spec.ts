@@ -28,6 +28,21 @@ for (const { name, path } of TEMPLATES) {
 			await page.goto(path, { waitUntil: 'networkidle' });
 			// Freeze the theme so light/dark system-preference doesn't flip the baseline.
 			await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+			// fullPage screenshots don't wait for below-the-fold loading="lazy"
+			// images to finish decoding on their own -- force them to load by
+			// scrolling the full page height first, otherwise long pages with
+			// many lazy images (e.g. /projects/) can capture broken-image icons.
+			await page.evaluate(async () => {
+				const height = document.documentElement.scrollHeight;
+				for (let y = 0; y < height; y += window.innerHeight) {
+					window.scrollTo(0, y);
+					await new Promise((resolve) => setTimeout(resolve, 30));
+				}
+				window.scrollTo(0, 0);
+			});
+			await page.waitForFunction(() =>
+				Array.from(document.images).every((img) => img.complete && img.naturalWidth > 0),
+			);
 			await expect(page).toHaveScreenshot(`${name}-${viewport.name}.png`, {
 				fullPage: true,
 				animations: 'disabled',
