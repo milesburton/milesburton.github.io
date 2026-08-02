@@ -6,6 +6,26 @@ const allPosts = await getCollection('blog');
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+function heroImage(post: (typeof posts)[number]): string | undefined {
+	if (post.data.featuredImage) return post.data.featuredImage;
+	const match = post.body?.match(/<img[^>]+src="(\/blog-media\/[^"]+)"/);
+	return match?.[1];
+}
+
+const featured = [
+	{ slug: 'currents-of-change-a-first-hand-look-at-sainsburys-crayford-ev-charging-haven', image: '/blog-media/2023/11/img_9354.jpg', alt: 'A Tesla charging at a row of ultra-rapid EV chargers in a Sainsbury\'s car park' },
+	{ slug: 'can-a-mystery-aliexpress-server-be-any-good-intel-n100-16gig-1tssd-6x-i226-2-5g', image: '/blog-media/2024/07/server.jpg', alt: 'Close-up of a mini server\'s rear panel showing six ethernet ports and a large heatsink' },
+	{ slug: 'building-your-own-24-7-retro-gaming-kiosk-with-the-raspberry-pi', image: '/blog-media/2025/01/img_1339.jpg', alt: 'A small Raspberry Pi-powered arcade screen playing Double Dragon V, sat on a shelf of retro game consoles' },
+	{ slug: '2299', image: '/blog-media/2025/01/img_1323.jpg', alt: 'An LED matrix panel displaying a game of Pong next to a keyboard and mouse' },
+	{ slug: 'approaching-the-foundation-licence-amatuer-radio', image: '/blog-media/2016/05/front.png', alt: 'Cover slide for a presentation on approaching the UK amateur radio Foundation Licence' },
+	{ slug: 'barking-recycling-plant-engulfed-in-fire', image: '/blog-media/2018/06/img_4517.jpg', alt: 'Thick black smoke rising from a fire at a recycling plant, seen across the River Thames' },
+]
+	.map((item) => {
+		const post = posts.find((p) => p.data.slug === item.slug);
+		return post ? { ...item, title: post.data.title, href: `/blog/${post.data.slug}/` } : null;
+	})
+	.filter((item): item is NonNullable<typeof item> => item !== null);
 ---
 
 <Layout title="Blog" description="Writing on infrastructure, embedded electronics, and networking by Miles Burton.">
@@ -19,19 +39,107 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 			</p>
 		</header>
 
-		<ul class="post-list">
-			{posts.map((post) => (
-				<li class="post-card">
-					<a href={`/blog/${post.data.slug}/`} class="post-title">
-						{post.data.title}
+		<div class="carousel" id="blog-carousel">
+			<div class="carousel-track" id="carousel-track">
+				{featured.map((item) => (
+					<a href={item.href} class="carousel-slide">
+						<img src={item.image} alt={item.alt} loading="lazy" />
+						<span class="carousel-caption">{item.title}</span>
 					</a>
-					<time datetime={post.data.date.toISOString()}>{formatter.format(post.data.date)}</time>
-					{post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
-				</li>
-			))}
+				))}
+			</div>
+			<button type="button" class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous image">
+				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+					<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<button type="button" class="carousel-nav carousel-next" id="carousel-next" aria-label="Next image">
+				<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+					<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="carousel-dots" id="carousel-dots">
+				{featured.map((_, i) => (
+					<button type="button" class="carousel-dot" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
+				))}
+			</div>
+		</div>
+
+		<ul class="post-list">
+			{posts.map((post) => {
+				const image = heroImage(post);
+				return (
+					<li class="post-card">
+						{image && (
+							<a href={`/blog/${post.data.slug}/`} class="post-thumb-link" tabindex="-1" aria-hidden="true">
+								<img src={image} alt="" class="post-thumb" loading="lazy" />
+							</a>
+						)}
+						<div class="post-body">
+							<a href={`/blog/${post.data.slug}/`} class="post-title">
+								{post.data.title}
+							</a>
+							<time datetime={post.data.date.toISOString()}>{formatter.format(post.data.date)}</time>
+							{post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
+						</div>
+					</li>
+				);
+			})}
 		</ul>
 	</main>
 </Layout>
+
+<script>
+	const track = document.getElementById('carousel-track') as HTMLDivElement;
+	const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+	const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+	const dotsContainer = document.getElementById('carousel-dots') as HTMLDivElement;
+	const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.carousel-dot'));
+	const slideCount = track.children.length;
+	let index = 0;
+	let timer: ReturnType<typeof setInterval> | undefined;
+
+	function render() {
+		track.style.transform = `translateX(-${index * 100}%)`;
+		dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+	}
+
+	function goTo(i: number) {
+		index = (i + slideCount) % slideCount;
+		render();
+	}
+
+	function startAutoplay() {
+		stopAutoplay();
+		timer = setInterval(() => goTo(index + 1), 5000);
+	}
+
+	function stopAutoplay() {
+		if (timer) clearInterval(timer);
+	}
+
+	prevBtn.addEventListener('click', () => {
+		goTo(index - 1);
+		startAutoplay();
+	});
+	nextBtn.addEventListener('click', () => {
+		goTo(index + 1);
+		startAutoplay();
+	});
+	dots.forEach((dot, i) => {
+		dot.addEventListener('click', () => {
+			goTo(i);
+			startAutoplay();
+		});
+	});
+
+	const carousel = document.getElementById('blog-carousel') as HTMLDivElement;
+	carousel.addEventListener('mouseenter', stopAutoplay);
+	carousel.addEventListener('mouseleave', startAutoplay);
+
+	render();
+	startAutoplay();
+</script>
 
 <style>
 	.shell {
@@ -65,6 +173,102 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 		line-height: 1.6;
 	}
 
+	.carousel {
+		position: relative;
+		margin-bottom: 2.5rem;
+		border-radius: 14px;
+		overflow: hidden;
+		border: 1px solid var(--border-strong);
+		background: var(--bg-raised);
+	}
+
+	.carousel-track {
+		display: flex;
+		transition: transform 400ms ease;
+	}
+
+	.carousel-slide {
+		position: relative;
+		flex: 0 0 100%;
+		display: block;
+		aspect-ratio: 16 / 8;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2.5rem 1.5rem 1rem;
+		background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.carousel-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		cursor: pointer;
+		transition: background 120ms ease;
+	}
+
+	.carousel-nav:hover {
+		background: rgba(0, 0, 0, 0.65);
+	}
+
+	.carousel-prev {
+		left: 0.75rem;
+	}
+
+	.carousel-next {
+		right: 0.75rem;
+	}
+
+	.carousel-dots {
+		position: absolute;
+		bottom: 0.65rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.4rem;
+	}
+
+	.carousel-dot {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		border: none;
+		padding: 0;
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		transition: background 120ms ease, transform 120ms ease;
+	}
+
+	.carousel-dot.active {
+		background: #fff;
+		transform: scale(1.3);
+	}
+
 	.post-list {
 		list-style: none;
 		margin: 0;
@@ -75,8 +279,29 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 	}
 
 	.post-card {
+		display: flex;
+		gap: 1.1rem;
 		border-bottom: 1px solid var(--border);
 		padding-bottom: 1.1rem;
+	}
+
+	.post-thumb-link {
+		flex: 0 0 auto;
+	}
+
+	.post-thumb {
+		display: block;
+		width: 100px;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 1px solid var(--border);
+		background: var(--bg-raised);
+	}
+
+	.post-body {
+		flex: 1;
+		min-width: 0;
 	}
 
 	.post-title {
@@ -104,5 +329,12 @@ const formatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'sho
 		color: var(--text-muted);
 		font-size: 0.92rem;
 		line-height: 1.55;
+	}
+
+	@media (max-width: 560px) {
+		.post-thumb {
+			width: 72px;
+			height: 72px;
+		}
 	}
 </style>
