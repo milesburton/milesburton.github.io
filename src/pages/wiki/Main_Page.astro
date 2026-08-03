@@ -7,7 +7,7 @@ import PostCard from '../../components/PostCard.astro';
 // link out to other articles rather than being direct write-ups themselves).
 // Flagged by hand -- a link-count heuristic misfires on articles that just
 // happen to reference a few others inline.
-const SECTION_SLUGS = new Set(['arduino', 'engineering', 'android_development', 'thoughts']);
+const SECTION_SLUGS = new Set(['arduino', 'engineering', 'android_development', 'thoughts', 'm0lha']);
 
 const wikiFiles = import.meta.glob('./*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>;
 

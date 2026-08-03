@@ -2,13 +2,43 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import SocialIcon from '../../components/SocialIcon.astro';
+import Carousel from '../../components/Carousel.astro';
+import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../../lib/format';
+import { getHeroImage } from '../../lib/posts';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
 	.filter((post) => post.data.categories?.includes('Amateur Radio'))
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const carouselSlides = [
+	{
+		href: '/wiki/m0lha/',
+		image: '/wiki-media/2E0ERI_27-06-2016.jpg',
+		alt: 'Handing over an amateur radio licence certificate at a radio club',
+		caption: 'M0LHA: from Foundation to Advanced',
+	},
+	{
+		href: '/wiki/m0lha/',
+		image: '/wiki-media/Martin-Miles.jpg',
+		alt: 'Two amateur radio operators at a club meeting',
+		caption: 'Thurrock Acorns Radio Club',
+	},
+	{
+		href: '/wiki/m0lha/',
+		image: '/wiki-media/20160427_190156.jpg',
+		alt: 'Amateur radio licence documentation and study materials',
+		caption: 'Licence progression',
+	},
+	{
+		href: '/wiki/m0lha/',
+		image: '/wiki-media/20170506_115826.jpg',
+		alt: 'Amateur radio equipment and station setup',
+		caption: 'Station setup',
+	},
+];
 ---
 
 <Layout title="Amateur Radio" description="Miles Burton's amateur radio callsign, licence progression, and writing on the hobby.">
@@ -25,19 +55,21 @@ const posts = allPosts
 				</a>
 				<a href="/wiki/m0lha/" class="callsign-link">
 					M0LHA wiki notes
+					<span class="section-badge">Section</span>
 				</a>
 			</div>
 		</PageHeader>
 
+		<Carousel id="amateur-radio-carousel" slides={carouselSlides} />
+
 		<ul class="post-list">
 			{posts.map((post) => (
-				<li class="post-card">
-					<a href={`/blog/${post.data.slug}/`} class="post-title">
-						{post.data.title}
-					</a>
-					<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-					{post.data.excerpt && <p class="post-excerpt">{post.data.excerpt}</p>}
-				</li>
+				<PostCard href={`/blog/${post.data.slug}/`} image={getHeroImage(post)} title={post.data.title}>
+					<Fragment slot="meta">
+						<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+					</Fragment>
+					{post.data.excerpt && <p class="post-excerpt" slot="excerpt">{post.data.excerpt}</p>}
+				</PostCard>
 			))}
 		</ul>
 	</main>
@@ -70,31 +102,15 @@ const posts = allPosts
 		opacity: 0.7;
 	}
 
-	.post-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 1.1rem;
-	}
-
-	.post-card {
-		border-bottom: 1px solid var(--border);
-		padding-bottom: 1.1rem;
-	}
-
-	.post-title {
-		display: block;
-		font-size: 1.05rem;
-		font-weight: 600;
-		text-decoration: none;
-		color: var(--text);
-		line-height: 1.4;
-	}
-
-	.post-title:hover {
+	.section-badge {
+		font-size: 0.66rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
 		color: var(--accent-strong);
+		background: var(--nav-active-bg);
+		border-radius: 999px;
+		padding: 0.15rem 0.55rem;
 	}
 
 	time {
