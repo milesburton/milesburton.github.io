@@ -16,7 +16,19 @@ import { formatMonthYear } from '../../lib/format';
 const thumbnailManifest: Record<string, unknown> = JSON.parse(
 	fs.readFileSync(path.join(process.cwd(), 'public', 'project-media', 'manifest.json'), 'utf-8'),
 );
+
+// A handful of flagship repos have a real hand-picked screenshot (used on the
+// homepage's Featured Projects) rather than GitHub's generic repo-name card --
+// prefer those here too so this page doesn't show a worse thumbnail for the
+// same repo than the homepage does.
+const curatedImages: Record<string, string> = {
+	'Arduino-Temperature-Control-Library': '/images/projects/arduino-dashboard.jpg',
+	'veta-trading-platform': '/images/projects/veta-dashboard.jpg',
+	teslacam: '/images/projects/teslacam.jpg',
+};
+
 function thumbnailFor(name: string): string | null {
+	if (curatedImages[name]) return curatedImages[name];
 	return name in thumbnailManifest ? `/project-media/${name}.jpg` : null;
 }
 
