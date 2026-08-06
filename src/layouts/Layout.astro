@@ -189,6 +189,9 @@ const currentPath = Astro.url.pathname;
 		--card-gradient-bottom: rgba(15, 23, 42, 0.4);
 		--card-gradient-bottom-hover: rgba(15, 23, 42, 0.5);
 		--highlight-bg: rgba(56, 189, 248, 0.25);
+		--gradient-tint-rgb: 124, 58, 237;
+		--gradient-tint-opacity: 0.08;
+		--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 		color-scheme: dark;
 		font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
 	}
@@ -214,6 +217,9 @@ const currentPath = Astro.url.pathname;
 		--card-gradient-bottom: rgba(255, 255, 255, 0.6);
 		--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
 		--highlight-bg: rgba(2, 132, 199, 0.2);
+		--gradient-tint-rgb: 79, 70, 229;
+		--gradient-tint-opacity: 0.15;
+		--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 		color-scheme: light;
 	}
 
@@ -239,6 +245,9 @@ const currentPath = Astro.url.pathname;
 			--card-gradient-bottom: rgba(255, 255, 255, 0.6);
 			--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
 			--highlight-bg: rgba(2, 132, 199, 0.2);
+			--gradient-tint-rgb: 79, 70, 229;
+			--gradient-tint-opacity: 0.15;
+			--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 			color-scheme: light;
 		}
 	}
@@ -262,7 +271,7 @@ const currentPath = Astro.url.pathname;
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
-		background: var(--bg);
+		background: var(--bg-gradient, var(--bg));
 		color: var(--text);
 	}
 
