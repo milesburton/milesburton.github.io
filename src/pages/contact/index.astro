@@ -6,6 +6,10 @@ const links = [
 	{ label: 'GitHub', value: 'github.com/milesburton', href: 'https://github.com/milesburton' },
 	{ label: 'LinkedIn', value: 'linkedin.com/in/milesburton', href: 'https://www.linkedin.com/in/milesburton/' },
 	{ label: 'Callsign', value: 'M0LHA', href: 'https://www.qrz.com/db/M0LHA' },
+	// Doc is set to "Restricted" sharing -- the link prompts a request-access
+	// flow rather than opening the document directly, so this stays useful for
+	// recruiters without the CV being openly readable to anyone who finds it.
+	{ label: 'CV', value: 'Request access', href: 'https://docs.google.com/document/d/1LDko0Hen3ng-2-qIJYl9nFMgYMCXnmy1HdCn3MMDAUY/edit?usp=sharing', nofollow: true },
 ];
 
 // Split so the address never appears intact in the page source or JS bundle —
@@ -33,7 +37,7 @@ const emailDomain = 'gmail.com';
 			{links.map((link) => (
 				<li>
 					<span class="label">{link.label}</span>
-					<a href={link.href} target="_blank" rel="noreferrer">{link.value}</a>
+					<a href={link.href} target="_blank" rel={link.nofollow ? 'noreferrer nofollow' : 'noreferrer'}>{link.value}</a>
 				</li>
 			))}
 		</ul>
