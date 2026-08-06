@@ -167,13 +167,6 @@ const currentPath = Astro.url.pathname;
 </html>
 
 <style is:global>
-	:root {
-		/* Shared hue for the subtle body background gradient -- kept as raw RGB
-		   channels (not a hex/rgba color) so it composes with a per-theme opacity
-		   below without duplicating the color itself in each theme block. */
-		--gradient-tint-rgb: 124, 58, 237;
-	}
-
 	:root,
 	:root[data-theme='dark'] {
 		--bg: #05070d;
@@ -196,6 +189,7 @@ const currentPath = Astro.url.pathname;
 		--card-gradient-bottom: rgba(15, 23, 42, 0.4);
 		--card-gradient-bottom-hover: rgba(15, 23, 42, 0.5);
 		--highlight-bg: rgba(56, 189, 248, 0.25);
+		--gradient-tint-rgb: 124, 58, 237;
 		--gradient-tint-opacity: 0.08;
 		--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 		color-scheme: dark;
@@ -223,7 +217,8 @@ const currentPath = Astro.url.pathname;
 		--card-gradient-bottom: rgba(255, 255, 255, 0.6);
 		--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
 		--highlight-bg: rgba(2, 132, 199, 0.2);
-		--gradient-tint-opacity: 0.08;
+		--gradient-tint-rgb: 2, 132, 199;
+		--gradient-tint-opacity: 0.15;
 		--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 		color-scheme: light;
 	}
@@ -250,7 +245,8 @@ const currentPath = Astro.url.pathname;
 			--card-gradient-bottom: rgba(255, 255, 255, 0.6);
 			--card-gradient-bottom-hover: rgba(255, 255, 255, 0.8);
 			--highlight-bg: rgba(2, 132, 199, 0.2);
-			--gradient-tint-opacity: 0.08;
+			--gradient-tint-rgb: 2, 132, 199;
+			--gradient-tint-opacity: 0.15;
 			--bg-gradient: linear-gradient(135deg, rgba(var(--gradient-tint-rgb), var(--gradient-tint-opacity)) 0%, var(--bg) 60%);
 			color-scheme: light;
 		}
