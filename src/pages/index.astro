@@ -110,6 +110,13 @@ const more = [
 		title: 'Get in touch',
 		description: 'Reach out about engineering work, collaboration, or anything here.',
 	},
+	{
+		href: 'https://bexleywatchdog.milesburton.com/',
+		external: true,
+		kicker: 'Side Project',
+		title: 'Bexley Watchdog',
+		description: 'Consumer reviews on roofers, plumbers, and tradesmen in Erith and Bexley.',
+	},
 ];
 ---
 
@@ -255,7 +262,7 @@ const more = [
 			<h2 class="section-title">More</h2>
 			<div class="tiles">
 				{more.map((tile) => (
-					<a href={tile.href} class="tile">
+					<a href={tile.href} target={tile.external ? '_blank' : undefined} rel={tile.external ? 'noreferrer' : undefined} class="tile">
 						<p class="tile-kicker">{tile.kicker}</p>
 						<h3>{tile.title}</h3>
 						<p class="tile-description">{tile.description}</p>
