@@ -25,6 +25,7 @@ const curatedImages: Record<string, string> = {
 	'Arduino-Temperature-Control-Library': '/images/projects/arduino-dashboard.jpg',
 	'veta-trading-platform': '/images/projects/veta-dashboard.jpg',
 	teslacam: '/images/projects/teslacam.jpg',
+	'night-watch': '/images/projects/night-watch.jpg',
 };
 
 function thumbnailFor(name: string): string | null {
@@ -48,7 +49,7 @@ repos.sort((a, b) => {
 // Hand-picked flagship repos for the carousel. Uses GitHub's OpenGraph card
 // image service, which rate-limits hard (~100 req/window) — fine for this
 // small, rarely-reloaded set, but NOT used for the full list below.
-const featuredNames = ['Arduino-Temperature-Control-Library', 'teslacam', 'HT1632', 'Android-Configuration-Manager', 'aprs-station-map', 'veta-trading-platform'];
+const featuredNames = ['Arduino-Temperature-Control-Library', 'teslacam', 'HT1632', 'Android-Configuration-Manager', 'aprs-station-map', 'veta-trading-platform', 'night-watch'];
 const featured = featuredNames
 	.map((name) => {
 		const repo = repos.find((r) => r.name === name);
