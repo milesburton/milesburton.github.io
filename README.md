@@ -43,6 +43,17 @@ npm install
 npm run dev
 ```
 
+## Featured projects
+
+The homepage's Featured Projects tiles are driven by [src/data/featured.json](src/data/featured.json) (order, copy, tags, optional live link) and [src/lib/featured.ts](src/lib/featured.ts), which adds the repo URL and star count from the GitHub API at build time.
+
+- **Screenshots** are captured with Playwright by `node scripts/capture-featured.mjs` for every tile with a `screenshot` entry: `url` (optionally `clickText` to pass a sign-in screen, and `waitMs`), or `sketchUrl` (extracts the dashboard HTML from an Arduino sketch and serves it with mocked sensor data). Output goes to `public/images/projects/<image>.jpg`. A failed capture keeps the previous image and never fails the build.
+- **Projects page thumbnails:** `node scripts/capture-thumbnails.mjs` renders a card with Playwright for each repo with no committed thumbnail (output in the gitignored `public/project-media/generated/`), replacing GitHub's rate-limited OpenGraph service.
+- **Placeholder:** a tile with no image file renders its project name in a fixed 2:1 box (no alt text, no 404). Night Watch and Two Meter Watch use it until their repos get a demo mode. TeslaCam has no web UI, so its photo is a committed static file.
+- **Recently Active:** the homepage also lists the latest public repos that are not featured, from the GitHub API at build time.
+- **Daily refresh:** [deploy.yml](.github/workflows/deploy.yml) also runs on a daily cron: capture screenshots, render cards, rebuild from live GitHub data, deploy. `BUILD_TIME` stamps the footer. Nothing is committed by the bot.
+- **Tests** build against `e2e/fixtures/repos.json` (`REPOS_FIXTURE`), so visual baselines don't change with live star counts or API rate limits. Refresh the fixture deliberately when repos change.
+
 ## Adding content
 
 No CMS, no database — deliberately, so the site stays fully static and doesn't need a server to host or maintain (see [Why this migration](#why-this-migration)). New posts and articles are just Markdown files committed to this repo. Three scripts remove the boilerplate.
