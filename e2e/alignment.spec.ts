@@ -73,3 +73,14 @@ test('homepage: featured images never render as broken alt text', async ({ page 
 	);
 	expect(broken, 'no featured <img> may be broken').toEqual([]);
 });
+
+test('homepage: recently active cards share a row and size', async ({ page }) => {
+	await page.setViewportSize({ width: 1280, height: 900 });
+	await page.goto('/', { waitUntil: 'networkidle' });
+	const cards = page.locator('.recent-card');
+	expect(await cards.count()).toBeGreaterThanOrEqual(2);
+	const first = await cards.nth(0).boundingBox();
+	const second = await cards.nth(1).boundingBox();
+	expect(Math.abs((first?.y ?? 0) - (second?.y ?? 99))).toBeLessThanOrEqual(2);
+	expect(Math.abs((first?.height ?? 0) - (second?.height ?? 99))).toBeLessThanOrEqual(2);
+});

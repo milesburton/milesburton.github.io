@@ -49,7 +49,7 @@
 		"tags": ["C++", "Embedded", "1-Wire"],
 		"image": "arduino-dashboard",
 		"imageAlt": "Live sensor data dashboard showing a temperature graph over time",
-		"screenshot": null
+		"screenshot": { "sketchUrl": "https://raw.githubusercontent.com/milesburton/Arduino-Temperature-Control-Library/HEAD/examples/ESP-WebServer/ESP-WebServer.ino", "waitMs": 1500 }
 	},
 	{
 		"repo": "teslacam",

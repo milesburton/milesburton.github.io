@@ -4,7 +4,8 @@ import SocialIcon from '../components/SocialIcon.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../lib/format';
 import { getHeroImage } from '../lib/posts';
-import { loadFeaturedTiles } from '../lib/featured';
+import { loadFeaturedTiles, loadRecentRepos } from '../lib/featured';
+import { formatMonthYear } from '../lib/format';
 
 const allPosts = await getCollection('blog');
 
@@ -26,6 +27,7 @@ const latestPosts = allPosts
 	});
 
 const featured = await loadFeaturedTiles();
+const recent = await loadRecentRepos();
 
 const videos = [
 	{
@@ -156,6 +158,26 @@ const more = [
 				))}
 			</div>
 		</section>
+
+		{recent.length > 0 && (
+			<section class="recent">
+				<h2 class="section-title">Recently Active</h2>
+				<ul class="recent-grid">
+					{recent.map((repo) => (
+						<li>
+							<a href={repo.href} target="_blank" rel="noreferrer" class="recent-card">
+								<span class="recent-name">{repo.name}</span>
+								<span class="recent-description">{repo.description}</span>
+								<span class="recent-meta">
+									{repo.language && <span>{repo.language}</span>}
+									<span>Updated {formatMonthYear(repo.pushedAt)}</span>
+								</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		)}
 
 		<section class="latest">
 			<h2 class="section-title">Selected Writing</h2>
@@ -434,6 +456,10 @@ const more = [
 		color: var(--accent-strong);
 	}
 
+	.recent {
+		margin-bottom: 3rem;
+	}
+
 	.latest {
 		margin-bottom: 3rem;
 	}
@@ -547,6 +573,52 @@ const more = [
 		border-color: var(--accent-strong);
 		color: var(--accent-strong);
 		background: var(--bg-raised);
+	}
+
+	.recent-grid {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.recent-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--border-strong);
+		border-radius: 12px;
+		color: inherit;
+		text-decoration: none;
+		background: linear-gradient(180deg, var(--card-gradient-top), var(--card-gradient-bottom));
+		transition: border-color 130ms ease;
+	}
+
+	.recent-card:hover {
+		border-color: var(--accent-strong);
+	}
+
+	.recent-name {
+		font-weight: 700;
+	}
+
+	.recent-description {
+		flex: 1;
+		color: var(--text-muted);
+		font-size: 0.92rem;
+		line-height: 1.5;
+	}
+
+	.recent-meta {
+		display: flex;
+		gap: 0.75rem;
+		font-size: 0.8rem;
+		color: var(--text-muted);
 	}
 
 	.featured-grid {
@@ -776,6 +848,10 @@ const more = [
 	}
 
 	@media (max-width: 620px) {
+		.recent-grid {
+			grid-template-columns: 1fr;
+		}
+
 		.tiles {
 			grid-template-columns: 1fr;
 		}

@@ -25,7 +25,12 @@ const thumbnailManifest: Record<string, unknown> = JSON.parse(
 function thumbnailFor(name: string): string | null {
 	const curated = curatedImageForRepo(name);
 	if (curated) return curated;
-	return name in thumbnailManifest ? `/project-media/${name}.jpg` : null;
+	if (name in thumbnailManifest) return `/project-media/${name}.jpg`;
+	// Cards rendered by scripts/capture-thumbnails.mjs in the daily deploy. Skipped
+	// for fixture (test) builds so visual baselines don't depend on generated files.
+	if (process.env.REPOS_FIXTURE) return null;
+	const generated = `/project-media/generated/${name}.jpg`;
+	return fs.existsSync(path.join(process.cwd(), 'public', generated)) ? generated : null;
 }
 
 // Manual overrides for repos with a live deployment separate from GitHub's

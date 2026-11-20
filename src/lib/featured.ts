@@ -12,7 +12,7 @@ export interface FeaturedProject {
 	liveHref?: string;
 	image: string;
 	imageAlt: string;
-	screenshot: { url: string; waitMs?: number; clickText?: string } | null;
+	screenshot: { url?: string; sketchUrl?: string; waitMs?: number; clickText?: string } | null;
 }
 
 export interface FeaturedTile extends FeaturedProject {
@@ -56,4 +56,24 @@ export async function loadFeaturedTiles(): Promise<FeaturedTile[]> {
 			imageSrc: projectImageFor(project.image),
 		};
 	});
+}
+
+export interface RecentRepo {
+	name: string;
+	href: string;
+	description: string;
+	language: string | null;
+	pushedAt: string;
+}
+
+// The most recently pushed public repos that aren't already featured, so the
+// homepage keeps showing what is actually being worked on without hand edits.
+export async function loadRecentRepos(limit = 4): Promise<RecentRepo[]> {
+	const repos = await fetchOwnedRepos('milesburton');
+	const featuredNames = new Set(featuredProjects.map((p) => p.repo));
+	return repos
+		.filter((r) => !featuredNames.has(r.name) && !r.name.endsWith('.github.io') && r.description)
+		.sort((a, b) => new Date(b.pushed_at).valueOf() - new Date(a.pushed_at).valueOf())
+		.slice(0, limit)
+		.map((r) => ({ name: r.name, href: r.html_url, description: r.description ?? '', language: r.language, pushedAt: r.pushed_at }));
 }

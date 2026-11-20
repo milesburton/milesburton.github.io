@@ -12,7 +12,10 @@ function safeGit(command) {
 }
 
 const commitHash = safeGit('git rev-parse --short HEAD');
-const commitDate = safeGit('git log -1 --format=%cI');
+// The daily deploy sets BUILD_TIME so the footer reflects the real build, not the
+// last commit. Unset (local/test builds) falls back to the commit date, which
+// keeps the visual baselines stable.
+const commitDate = process.env.BUILD_TIME ?? safeGit('git log -1 --format=%cI');
 
 // https://astro.build/config
 export default defineConfig({
