@@ -217,5 +217,8 @@
 	},
 	"esp-oled-screensaver": {
 		"fetchedAt": "2026-08-02"
+	},
+	"drone-emulator": {
+		"fetchedAt": "2026-11-20"
 	}
 }

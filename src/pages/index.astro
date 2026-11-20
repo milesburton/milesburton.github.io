@@ -4,6 +4,7 @@ import SocialIcon from '../components/SocialIcon.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../lib/format';
 import { getHeroImage } from '../lib/posts';
+import { loadFeaturedTiles } from '../lib/featured';
 
 const allPosts = await getCollection('blog');
 
@@ -24,49 +25,7 @@ const latestPosts = allPosts
 		};
 	});
 
-const featured = [
-	{
-		href: 'https://github.com/milesburton/Arduino-Temperature-Control-Library',
-		external: true,
-		image: '/images/projects/arduino-dashboard.jpg',
-		imageAlt: 'Live sensor data dashboard showing a temperature graph over time',
-		kicker: 'Open Source · 1k+ stars',
-		title: 'Arduino Temperature Control Library',
-		description: 'The de-facto Arduino/ESP32 library for Maxim/Dallas 1-Wire temperature sensors (DS18B20 and family). Widely used across the embedded hobbyist and IoT ecosystem.',
-		tags: ['C++', 'Embedded', '1-Wire'],
-	},
-	{
-		href: 'https://github.com/milesburton/veta-trading-platform',
-		external: true,
-		liveHref: 'https://veta.mnetcs.com/',
-		image: '/images/projects/veta-dashboard.jpg',
-		imageAlt: 'VETA trading terminal showing a live market ladder, orders, and positions panels',
-		kicker: 'Finance · In progress',
-		title: 'VETA Trading Platform',
-		description: 'A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data, built to help people learn market dynamics without risking capital.',
-		tags: ['TypeScript', 'Trading', 'WIP'],
-	},
-	{
-		href: 'https://github.com/milesburton/teslacam',
-		external: true,
-		image: '/images/projects/teslacam.jpg',
-		imageAlt: 'Tesla center console showing dash-cam footage on screen with a laptop running the TeslaCam software',
-		kicker: 'Open Source · 100+ stars',
-		title: 'TeslaCam',
-		description: 'Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.',
-		tags: ['JavaScript', 'Raspberry Pi', 'Automation'],
-	},
-	{
-		href: 'https://github.com/milesburton/night-watch',
-		external: true,
-		image: '/images/projects/night-watch.jpg',
-		imageAlt: 'Night Watch satellite ground station dashboard showing live tracking and an FFT waterfall',
-		kicker: 'Open Source · SDR',
-		title: 'Night Watch',
-		description: 'A satellite ground station app for METEOR-M LRPT and ISS SSTV reception, with live pass tracking, an FFT waterfall, and automatic scheduling. Docker-ready for Raspberry Pi 4/5.',
-		tags: ['TypeScript', 'SDR', 'Raspberry Pi'],
-	},
-];
+const featured = await loadFeaturedTiles();
 
 const videos = [
 	{
@@ -167,7 +126,13 @@ const more = [
 			<div class="featured-grid">
 				{featured.map((project) => (
 					<div class="featured-card">
-						<img src={project.image} alt={project.imageAlt} class="featured-image" loading="lazy" />
+						{project.imageSrc ? (
+							<img src={project.imageSrc} alt={project.imageAlt} class="featured-image" loading="lazy" width="640" height="320" />
+						) : (
+							<div class="featured-image featured-placeholder" aria-hidden="true">
+								<span>{project.title}</span>
+							</div>
+						)}
 						<p class="featured-kicker">{project.kicker}</p>
 						<h3>{project.title}</h3>
 						<p class="featured-description">{project.description}</p>
@@ -177,9 +142,9 @@ const more = [
 							))}
 						</ul>
 						<div class="featured-links">
-							<a href={project.href} target={project.external ? '_blank' : undefined} rel={project.external ? 'noreferrer' : undefined} class={project.external ? 'external' : undefined}>
+							<a href={project.href} target="_blank" rel="noreferrer" class="external">
 								GitHub
-								{project.external && <SocialIcon name="external-link" size={12} class="external-icon" />}
+								<SocialIcon name="external-link" size={12} class="external-icon" />
 							</a>
 							{project.liveHref && (
 								<a href={project.liveHref} target="_blank" rel="noreferrer" class="featured-live-link">
@@ -605,11 +570,28 @@ const more = [
 	.featured-image {
 		display: block;
 		width: 100%;
-		height: 140px;
+		aspect-ratio: 2 / 1;
+		height: auto;
+		max-height: 140px;
 		object-fit: cover;
 		object-position: top;
 		border-bottom: 1px solid var(--border);
 		background: var(--bg-raised);
+	}
+
+	/* Placeholder for tiles with no screenshot: same box as a real image, with the
+	   project name centred so nothing ever renders as stray alt text. */
+	.featured-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 1.5rem;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.15rem;
+		letter-spacing: 0.01em;
+		color: var(--text-muted);
+		background: linear-gradient(135deg, var(--bg-raised), var(--card-gradient-top));
 	}
 
 	.featured-card > :not(.featured-image) {

@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Daily rebuild so featured-project screenshots and GitHub metadata (stars,
+  # descriptions, repo list) track what is actually being developed. Nothing is
+  # committed: screenshots are captured fresh and deployed straight from the build.
+  schedule:
+    - cron: '17 4 * * *'
 
 permissions:
   contents: read
@@ -29,6 +34,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Chromium for screenshots
+        run: npx playwright install --with-deps chromium
+
+      - name: Capture featured-project screenshots
+        run: node scripts/capture-featured.mjs
 
       - name: Build site
         run: npm run build

@@ -1,0 +1,64 @@
+[
+	{
+		"repo": "veta-trading-platform",
+		"title": "VETA Trading Platform",
+		"category": "Finance · In progress",
+		"description": "A near-real-world trading platform for paper-trading algorithmic strategies against simulated and real market data, built to help people learn market dynamics without risking capital.",
+		"tags": ["TypeScript", "Trading", "WIP"],
+		"liveHref": "https://veta.mnetcs.com/",
+		"image": "veta-dashboard",
+		"imageAlt": "VETA trading terminal showing a live market ladder, orders, and positions panels",
+		"screenshot": { "url": "https://veta.mnetcs.com/", "clickText": "Rajesh Patel", "waitMs": 6000 }
+	},
+	{
+		"repo": "night-watch",
+		"title": "Night Watch",
+		"category": "Open Source · SDR",
+		"description": "A satellite ground station app for METEOR-M LRPT and ISS SSTV reception, with live pass tracking, an FFT waterfall, and automatic scheduling. Docker-ready for Raspberry Pi 4/5.",
+		"tags": ["TypeScript", "SDR", "Raspberry Pi"],
+		"image": "night-watch",
+		"imageAlt": "Night Watch satellite ground station dashboard showing live tracking and an FFT waterfall",
+		"screenshot": null
+	},
+	{
+		"repo": "esheep",
+		"title": "esheep",
+		"category": "Open Source · Desktop",
+		"description": "A desktop sheep you can grab and toss. Electron and TypeScript, with a thoroughly tested core and a playable browser demo.",
+		"tags": ["TypeScript", "Electron", "Playwright"],
+		"liveHref": "https://milesburton.com/esheep/",
+		"image": "esheep",
+		"imageAlt": "A pixel-art sheep walking across a desktop in the esheep browser demo",
+		"screenshot": { "url": "https://milesburton.com/esheep/", "waitMs": 2500 }
+	},
+	{
+		"repo": "two-meter-watch",
+		"title": "Two Meter Watch",
+		"category": "Open Source · SDR",
+		"description": "A public monitor for the 2-metre amateur band (144–146 MHz) with a waterfall, band activity and SSTV detection. RTL-SDR on a Raspberry Pi, and a sibling to Night Watch.",
+		"tags": ["TypeScript", "SDR", "Raspberry Pi"],
+		"image": "two-meter-watch",
+		"imageAlt": "Two Meter Watch dashboard showing a 2-metre band waterfall and recent activity",
+		"screenshot": null
+	},
+	{
+		"repo": "Arduino-Temperature-Control-Library",
+		"title": "Arduino Temperature Control Library",
+		"category": "Open Source",
+		"description": "The de-facto Arduino/ESP32 library for Maxim/Dallas 1-Wire temperature sensors (DS18B20 and family). Widely used across the embedded hobbyist and IoT ecosystem.",
+		"tags": ["C++", "Embedded", "1-Wire"],
+		"image": "arduino-dashboard",
+		"imageAlt": "Live sensor data dashboard showing a temperature graph over time",
+		"screenshot": null
+	},
+	{
+		"repo": "teslacam",
+		"title": "TeslaCam",
+		"category": "Open Source",
+		"description": "Automates backup, cloud storage, and remote access for Tesla dash-cam footage using a Raspberry Pi Zero W.",
+		"tags": ["JavaScript", "Raspberry Pi", "Automation"],
+		"image": "teslacam",
+		"imageAlt": "Tesla center console showing dash-cam footage on screen with a laptop running the TeslaCam software",
+		"screenshot": null
+	}
+]

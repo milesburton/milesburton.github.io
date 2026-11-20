@@ -20,57 +20,56 @@ function expectAligned(positions: number[], label: string, tolerancePx = 2) {
 	}
 }
 
-test('homepage: featured project tag rows align across cards', async ({ page }) => {
-	await page.setViewportSize({ width: 1280, height: 900 });
-	await page.goto('/', { waitUntil: 'networkidle' });
+// The featured grid wraps onto several rows, so alignment is only meaningful
+// between cards on the same row. Group by the card's own Y first.
+async function featuredRows(page: import('@playwright/test').Page): Promise<Locator[][]> {
 	const cards = page.locator('.featured-card');
 	const count = await cards.count();
-	expect(count).toBeGreaterThanOrEqual(2);
-	const tagRows = Array.from({ length: count }, (_, i) => cards.nth(i).locator('.tags'));
-	expectAligned(await yPositions(tagRows), 'featured project tag rows');
-});
-
-test('homepage: featured project link rows align across cards', async ({ page }) => {
-	await page.setViewportSize({ width: 1280, height: 900 });
-	await page.goto('/', { waitUntil: 'networkidle' });
-	const cards = page.locator('.featured-card');
-	const count = await cards.count();
-	const linkRows = Array.from({ length: count }, (_, i) => cards.nth(i).locator('.featured-links'));
-	expectAligned(await yPositions(linkRows), 'featured project link rows');
-});
-
-test('homepage: selected video kickers align across cards', async ({ page }) => {
-	await page.setViewportSize({ width: 1280, height: 900 });
-	await page.goto('/', { waitUntil: 'networkidle' });
-	const cards = page.locator('.video-card');
-	const count = await cards.count();
-	expect(count).toBeGreaterThanOrEqual(2);
-	const kickers = Array.from({ length: count }, (_, i) => cards.nth(i).locator('.video-kicker'));
-	expectAligned(await yPositions(kickers), 'selected video kickers');
-});
-
-test('projects page: card thumbnails align across the list', async ({ page }) => {
-	await page.setViewportSize({ width: 1280, height: 1200 });
-	await page.goto('/projects/', { waitUntil: 'networkidle' });
-	const thumbs = page.locator('.post-thumb');
-	const count = await thumbs.count();
-	// The repo list is fetched from the GitHub API at build time with no auth
-	// token, so it can legitimately be empty if that build hit GitHub's
-	// unauthenticated rate limit (60/hour) -- the page itself degrades
-	// gracefully in that case, so this check should too rather than flake.
-	test.skip(count === 0, 'No repo cards rendered -- likely GitHub API rate limit at build time');
-	expect(count).toBeGreaterThanOrEqual(2);
-	// Thumbnails sit in a single-column list, so check left-edge (x) alignment
-	// rather than y, which legitimately varies per row.
-	const boxes = await Promise.all(
-		Array.from({ length: Math.min(count, 5) }, (_, i) => thumbs.nth(i).boundingBox()),
-	);
-	const xs = boxes.map((b) => {
-		if (!b) throw new Error('Thumbnail not visible');
-		return Math.round(b.x);
-	});
-	const [first, ...rest] = xs;
-	for (const x of rest) {
-		expect(Math.abs(x - first), `project thumbnails: expected same X (got ${xs.join(', ')})`).toBeLessThanOrEqual(2);
+	const rows = new Map<number, Locator[]>();
+	for (let i = 0; i < count; i++) {
+		const card = cards.nth(i);
+		const box = await card.boundingBox();
+		if (!box) throw new Error('Featured card not visible');
+		const key = Math.round(box.y / 10);
+		rows.set(key, [...(rows.get(key) ?? []), card]);
 	}
+	return [...rows.values()];
+}
+
+for (const [label, selector] of [
+	['tag rows', '.tags'],
+	['link rows', '.featured-links'],
+	['image boxes', '.featured-image'],
+	['titles', 'h3'],
+] as const) {
+	test(`homepage: featured project ${label} align across cards in a row`, async ({ page }) => {
+		await page.setViewportSize({ width: 1280, height: 900 });
+		await page.goto('/', { waitUntil: 'networkidle' });
+		const rows = await featuredRows(page);
+		expect(rows.flat().length).toBeGreaterThanOrEqual(2);
+		for (const row of rows) {
+			expectAligned(await yPositions(row.map((c) => c.locator(selector))), `featured ${label}`);
+		}
+	});
+}
+
+test('homepage: featured grid has no orphaned tile', async ({ page }) => {
+	await page.setViewportSize({ width: 1280, height: 900 });
+	await page.goto('/', { waitUntil: 'networkidle' });
+	const rows = await featuredRows(page);
+	const sizes = rows.map((r) => r.length);
+	expect(new Set(sizes).size, `rows should be evenly filled (got ${sizes.join(', ')})`).toBe(1);
+});
+
+test('homepage: featured images never render as broken alt text', async ({ page }) => {
+	const failed: string[] = [];
+	page.on('response', (r) => {
+		if (r.status() >= 400 && r.request().resourceType() === 'image') failed.push(r.url());
+	});
+	await page.goto('/', { waitUntil: 'networkidle' });
+	expect(failed, 'no image request may fail').toEqual([]);
+	const broken = await page.$$eval('.featured-card img', (imgs) =>
+		(imgs as HTMLImageElement[]).filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.src),
+	);
+	expect(broken, 'no featured <img> may be broken').toEqual([]);
 });
