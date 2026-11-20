@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+
 export interface Repo {
 	name: string;
 	html_url: string;
@@ -22,6 +24,12 @@ function authHeaders(): HeadersInit {
 // rate limit or network blip degrades to an empty section instead of a
 // failed build.
 export async function fetchOwnedRepos(username: string): Promise<Repo[]> {
+	// Test builds point this at a committed fixture so pages (and their visual
+	// baselines) don't change with live star counts or API rate limits.
+	if (process.env.REPOS_FIXTURE) {
+		const fixture = JSON.parse(fs.readFileSync(process.env.REPOS_FIXTURE, 'utf-8')) as Repo[];
+		return fixture.filter((r) => !r.fork && !r.private && !r.archived);
+	}
 	try {
 		const all: Repo[] = [];
 		for (let page = 1; page <= 10; page++) {

@@ -7,7 +7,7 @@ export default defineConfig({
 	retries: process.env.CI ? 1 : 0,
 	reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
 	webServer: {
-		command: 'npm run build && npm run preview',
+		command: 'REPOS_FIXTURE=e2e/fixtures/repos.json npm run build && npm run preview',
 		url: 'http://localhost:4321',
 		reuseExistingServer: !process.env.CI,
 		timeout: 120_000,
